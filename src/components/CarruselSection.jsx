@@ -12,7 +12,7 @@ const CarruselSection = () => {
   const animations = ["animate-marquee-left", "animate-marquee-right", "animate-marquee-left", "animate-marquee-right"];
 
   return (
-    <section className="w-full mt-52 bg-black text-white h-[700px] flex items-center justify-center flex-col">
+    <section className="w-full mt-52 bg-black text-white h-[600px] flex items-center justify-center flex-col mb-20">
       <div className="text-center mb-12 px-4">
         <h2 className="text-4xl sm:text-7xl font-bold mb-6">
           Impulsa tu marca en un océano azul

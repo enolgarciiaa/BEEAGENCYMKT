@@ -4,6 +4,7 @@ import TextPressure from '../components/TextPressure';
 import FlowingMenu from '../components/FlowingMenu';
 import CarruselSection from '../components/CarruselSection';
 import Lanyard from '../components/Lanyard';
+import Metodologia from '../components/Metodologia';
 import { motion } from "framer-motion";
 
 const demoItems = [
@@ -52,7 +53,7 @@ function Home() {
             />
           </div>
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white max-w-4xl leading-relaxed">
-            En un entorno cada vez mas cambiante, la diferencia es la meta.
+            En un entorno cada vez más cambiante, la diferencia es la meta.
           </p>
         </div>
       </header>
@@ -113,13 +114,34 @@ function Home() {
           </motion.button>
         </motion.div>
       </section>
+
       {/******SECCION 3***********/}
       <CarruselSection />
 
       {/******SECCION 4: LANYARD 3D******/}
-      <section className="relative w-full h-[590px] bg-black flex items-center justify-center overflow-hidden">
-        <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
+      <section className="bg-black flex flex-col lg:flex-row items-center justify-between px-6 md:px-10 lg:px-20 2xl:px-40 py-10 2xl:py-10 
+        min-h-[700px] sm:min-h-[750px] md:min-h-[800px] lg:min-h-[850px] xl:min-h-[900px] 2xl:min-h-[950px]">
+  
+        {/* Texto */}
+        <div className="w-full lg:w-2/5 flex flex-col justify-center text-white text-center lg:text-left pt-10 lg:pt-0 pr-0 lg:pr-12">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl 2xl:text-8xl font-extrabold leading-normal max-w-2xl">
+            No tenemos <span className="text-yellow-400">límites</span> a la hora de <span className="text-blue-400">innovar</span> 🚀
+          </h2>
+          <p className="mt-8 text-lg sm:text-xl 2xl:text-2xl text-neutral-300 max-w-2xl leading-normal tracking-normal">
+            En BeeAgency creemos que la creatividad y la tecnología son nuestras mejores aliadas para ayudarte a destacar de forma única y memorable.
+          </p>
+        </div>
+
+        {/* Lanyard */}
+        <div className="w-full lg:w-3/5 h-[600px] sm:h-[650px] lg:h-[700px] xl:h-[750px] 2xl:h-[800px] flex justify-center items-start mt-16 lg:mt-0">
+          <Lanyard position={[0, 1.5, 20]} gravity={[0, -40, 0]} />
+        </div>
       </section>
+
+
+
+      {/******SECCION 5: METODOLOGÍA******/}
+      <Metodologia />
     </div>
   );
 }
