@@ -10,10 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "^10.0.5",
+    "@react-three/fiber": "^9.1.1",
+    "@react-three/rapier": "^2.0.0",
     "@tabler/icons-react": "^3.31.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.6.2",
     "gsap": "^3.12.7",
+    "meshline": "^3.3.1",
     "motion": "^12.6.2",
     "ogl": "^1.0.11",
     "react": "^19.0.0",
