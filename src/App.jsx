@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
-import Home from './views/Home';
-import Beeagency from './views/Beeagency';
-import Services from './views/services';
-import Blog from './views/Blog';
-import Contact from './views/Contact';
+import Home from '/src/views/Home';
+import Beeagency from '/src/views/Beeagency';
+import Services from '/src/views/services';
+import Blog from '/src/views/Blog';
+import Contact from '/src/views/Contact';
 
 function App() {
   return (

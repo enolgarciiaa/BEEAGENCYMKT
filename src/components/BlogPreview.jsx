@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import blogPosts from "../data/blogPosts.json";
+import blogPosts from "/src/data/blogPosts.json";
 
 const BlogPreview = () => {
   return (

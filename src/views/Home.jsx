@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import Aurora from '../components/Aurora';
-import TextPressure from '../components/TextPressure';
-import FlowingMenu from '../components/FlowingMenu';
-import CarruselSection from '../components/CarruselSection';
-import Lanyard from '../components/Lanyard';
-import Metodologia from '../components/Metodologia';
-import BlogPreview from '../components/BlogPreview';
-import ContactForm from '../components/ContactForm'; 
-import fondoSeccion from "../assets/fondo-seccion3.png";
-import CarruselIconos from "../components/CarruselIconos";
-import Footer from '../components/Footer';
+import Aurora from '/src/components/Aurora';
+import TextPressure from '/src/components/TextPressure';
+import FlowingMenu from '/src/components/FlowingMenu';
+import CarruselSection from '/src/components/CarruselSection';
+import Lanyard from '/src/components/Lanyard';
+import Metodologia from '/src/components/Metodologia';
+import BlogPreview from '/src/components/BlogPreview';
+import ContactForm from '/src/components/ContactForm'; 
+import fondoSeccion from "/src/assets/fondo-seccion3.png";
+import CarruselIconos from "/src/components/CarruselIconos";
+import Footer from '/src/components/Footer';
 import { motion } from "framer-motion";
 
 const demoItems = [

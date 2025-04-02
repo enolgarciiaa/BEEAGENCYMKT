@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import fondoSeccion  from "../assets/fondo-seccion3.png";
-import bombilla from "../assets/bombillacards.png";
+import fondoSeccion  from "/src/assets/fondo-seccion3.png";
+import bombilla from "/src/assets/bombillacards.png";
 
 
 const cardsData = [

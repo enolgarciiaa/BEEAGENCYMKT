@@ -1,7 +1,7 @@
 // src/components/ContactForm.jsx
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import fondoContacto from "../assets/fondo-contacto.jpg"; // Asegúrate de tener esta imagen en tu proyecto
+import fondoContacto from "/src/assets/fondo-contacto.jpg"; // Asegúrate de tener esta imagen en tu proyecto
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
