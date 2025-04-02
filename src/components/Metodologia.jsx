@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import fondoSeccion  from "../assets/fondo-seccion3.png";
 import bombilla from "../assets/bombillacards.png";
+
 
 const cardsData = [
   {
@@ -34,14 +36,20 @@ export default function Metodologia() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    AOS.init({ duration: 2500, once: true });
+    AOS.init({ duration: 3000, once: true });
   }, []);
 
   return (
     <section
-      className="w-full bg-white text-black px-6 lg:px-16 2xl:px-32 py-10 lg:py-20 overflow-hidden flex items-center justify-center min-h-[650px] xl:min-h-[750px] 2xl:min-h-[800px]"
+      className="w-full text-black px-6 md:px-10 lg:px-16 2xl:px-32 py-12 lg:py-20 overflow-hidden flex items-center justify-center min-h-[700px] sm:min-h-[750px] md:min-h-[800px] lg:min-h-[850px] xl:min-h-[900px]"
       data-aos="slide-left"
       data-aos-anchor-placement="top-bottom"
+      style={{
+                backgroundImage: `url(${fondoSeccion})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
     >
       <div className="flex flex-col lg:flex-row justify-between items-center w-full max-w-[1600px] h-full gap-12 lg:gap-16 xl:gap-20">
         {/* Texto */}
@@ -59,7 +67,7 @@ export default function Metodologia() {
         </div>
 
         {/* Cards */}
-        <div className="w-full lg:w-[75%] flex flex-col sm:flex-row sm:flex-wrap justify-center items-center gap-6">
+        <div className="w-full lg:w-[75%] flex flex-col sm:flex-row lg:flex-nowrap justify-between items-center gap-6 lg:gap-4">
           {cardsData.map((card, index) => {
             const isActive = activeIndex === index;
             return (
@@ -67,7 +75,7 @@ export default function Metodologia() {
                 key={index}
                 className={`flex flex-col border border-black p-4 transition-all duration-300 cursor-pointer items-start bg-white hover:shadow-lg hover:scale-105 hover:border-yellow-400 ${
                   isActive ? "bg-black/5" : ""
-                } w-[90%] sm:w-[45%] lg:w-[22%] h-[420px] min-w-[200px]`}
+                } w-full sm:w-[45%] lg:w-[23%] h-[400px]`}
                 onClick={() => setActiveIndex(index)}
               >
                 <p className="text-xl font-bold text-black">{card.number}</p>

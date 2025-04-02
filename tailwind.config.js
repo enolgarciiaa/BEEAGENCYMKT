@@ -11,25 +11,27 @@ export default {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-100%)' },
         },
-        'marquee-right': {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(100%)' },
+        
+        'marquee-right-reverse': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' },
         },
       },
       animation: {
-        'marquee-left': 'marquee-left 30s linear infinite',
-        'marquee-right': 'marquee-right 30s linear infinite',
+        'marquee-left': 'marquee-left 80s linear infinite',
+        'marquee-right-reverse': 'marquee-right-reverse 100s linear infinite',
+        
       },
-      animationDuration: {
-        '20s': '20s',
-        '30s': '30s',
-        '40s': '40s',
-        '60s': '60s',
-        '80s': '80s',
-        '100s': '100s',
-        '120s': '120s',
+      colors: {
+        amarillo: '#FFD700',
+      },
+      fontFamily: {
+        cinzel: ['Cinzel', 'serif'],
+        prata: ['Prata', 'serif'],
+        ubuntu: ['Ubuntu', 'sans-serif'],
       },
     },
   },
   plugins: [],
-}
+};
+

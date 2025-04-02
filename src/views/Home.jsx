@@ -5,6 +5,11 @@ import FlowingMenu from '../components/FlowingMenu';
 import CarruselSection from '../components/CarruselSection';
 import Lanyard from '../components/Lanyard';
 import Metodologia from '../components/Metodologia';
+import BlogPreview from '../components/BlogPreview';
+import ContactForm from '../components/ContactForm'; 
+import fondoSeccion from "../assets/fondo-seccion3.png";
+import CarruselIconos from "../components/CarruselIconos";
+import Footer from '../components/Footer';
 import { motion } from "framer-motion";
 
 const demoItems = [
@@ -19,7 +24,7 @@ function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="w-full">
+    <div className="w-full overflow-x-hidden">
       {/* HEADER */}
       <header className="relative w-full h-[120vh] overflow-hidden flex items-center justify-center">
         <Aurora
@@ -73,17 +78,26 @@ function Home() {
         </div>
       )}
 
-      {/******SECCION 2*********/}
-      <section className="relative w-full h-[950px] bg-white dark:bg-black py-24 sm:py-32 lg:py-40 px-6 text-center overflow-hidden">
+      {/* SECCIÓN 2: INTRO */}
+      <section
+        className="relative w-full bg-white dark:bg-black flex items-center justify-center text-center px-6 overflow-hidden
+          min-h-[650px] sm:min-h-[700px] md:min-h-[750px] lg:min-h-[800px] xl:min-h-[850px] 2xl:min-h-[950px]"
+        style={{
+          backgroundImage: `url(${fondoSeccion})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+        >
         <motion.div
-          className="max-w-5xl mx-auto px-2"
+          className="max-w-5xl mx-auto px-2 flex flex-col items-center justify-center"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
           <motion.h1
-            className="text-6xl sm:text-7xl lg:text-8xl font-extrabold text-neutral-900 dark:text-white leading-tight mt-10 sm:mt-14 lg:mt-20 mb-6"
+            className="text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold text-[#1a1a1a] leading-tight mb-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -93,7 +107,7 @@ function Home() {
           </motion.h1>
 
           <motion.p
-            className="text-lg sm:text-xl md:text-2xl text-neutral-700 dark:text-neutral-300 max-w-3xl mx-auto mb-8 leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl text-neutral-800 max-w-3xl mx-auto mb-8 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
@@ -104,44 +118,81 @@ function Home() {
           </motion.p>
 
           <motion.button
-            className="mt-4 inline-block px-8 py-4 rounded-full bg-black text-white text-lg font-semibold hover:bg-neutral-800 transition-colors duration-300 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
+            className="mt-4 inline-block px-8 py-4 rounded-full bg-black border border-black text-white text-lg font-semibold 
+              transform transition duration-300 ease-in-out 
+              hover:bg-yellow-400 hover:text-black hover:scale-105"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             viewport={{ once: true }}
-          >
+            >
             <p>¡Únete al cambio!</p>
           </motion.button>
         </motion.div>
       </section>
 
-      {/******SECCION 3***********/}
+      {/* SECCIÓN 3: CARRUSEL */}
       <CarruselSection />
 
-      {/******SECCION 4: LANYARD 3D******/}
-      <section className="bg-black flex flex-col lg:flex-row items-center justify-between px-6 md:px-10 lg:px-20 2xl:px-40 py-10 2xl:py-10 
-        min-h-[700px] sm:min-h-[750px] md:min-h-[800px] lg:min-h-[850px] xl:min-h-[900px] 2xl:min-h-[950px]">
-  
-        {/* Texto */}
-        <div className="w-full lg:w-2/5 flex flex-col justify-center text-white text-center lg:text-left pt-10 lg:pt-0 pr-0 lg:pr-12">
+      {/* SECCIÓN 4: LANYARD */}
+      <section className="bg-black flex flex-col lg:flex-row items-center justify-between px-6 md:px-10 lg:px-20 2xl:px-40 py-10 2xl:py-20 min-h-[700px] sm:min-h-[750px] md:min-h-[800px] lg:min-h-[850px] xl:min-h-[900px] 2xl:min-h-[950px]">
+        {/* Texto animado */}
+        <motion.div
+          className="w-full lg:w-2/5 flex flex-col justify-center text-white text-center lg:text-left pt-10 lg:pt-0 pr-0 lg:pr-12"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl 2xl:text-8xl font-extrabold leading-normal max-w-2xl">
             No tenemos <span className="text-yellow-400">límites</span> a la hora de <span className="text-blue-400">innovar</span> 🚀
           </h2>
-          <p className="mt-8 text-lg sm:text-xl 2xl:text-2xl text-neutral-300 max-w-2xl leading-normal tracking-normal">
+          <p className="mt-8 text-lg sm:text-xl 2xl:text-2xl text-neutral-300 max-w-2xl leading-normal">
             En BeeAgency creemos que la creatividad y la tecnología son nuestras mejores aliadas para ayudarte a destacar de forma única y memorable.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Lanyard */}
-        <div className="w-full lg:w-3/5 h-[600px] sm:h-[650px] lg:h-[700px] xl:h-[750px] 2xl:h-[800px] flex justify-center items-start mt-16 lg:mt-0">
+        {/* Tarjeta con animación desde arriba */}
+        <motion.div
+          className="w-full lg:w-3/5 h-[600px] sm:h-[650px] lg:h-[700px] xl:h-[750px] 2xl:h-[800px] flex justify-center items-start mt-16 lg:mt-0"
+          initial={{ opacity: 0, y: -100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.3, ease: "easeOut", delay: 0.4 }}
+          viewport={{ once: true }}
+        >
           <Lanyard position={[0, 1.5, 20]} gravity={[0, -40, 0]} />
-        </div>
+        </motion.div>
       </section>
 
-
-
-      {/******SECCION 5: METODOLOGÍA******/}
+      {/* SECCIÓN 5: METODOLOGÍA */}
       <Metodologia />
+
+      {/* SECCIÓN 6: CARROUSEL ICONOS HERRAMIENTAS */}
+      <CarruselIconos />
+
+      {/* SECCIÓN 7: BLOG PREVIEW */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+      >
+        <BlogPreview />
+      </motion.section>
+
+      {/* SECCIÓN 8: FORMULARIO DE CONTACTO */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="relative"
+      >
+        <ContactForm />
+      </motion.section>
+
+      {/* SECCIÓN 9: FOOTER*/}
+      <Footer />
     </div>
   );
 }

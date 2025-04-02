@@ -27,4 +27,21 @@ body {
     .animation-delay-start-right {
       transform: translateX(-90%);
     }
-  }
+}
+
+.marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content;
+  animation: marquee-left 350s linear infinite;
+}
+
+/* Ajuste específico para la fila reverse (segunda fila) */
+.reverse .marquee-content {
+  animation: marquee-right-reverse 100s linear infinite;
+}
