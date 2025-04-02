@@ -1,6 +1,6 @@
-import imgBranding from '../assets/branding.jpg';
-import imgMarketing from '../assets/marketingdigital.jpg';
-import imgTecnologia from '../assets/tecnologia.jpg';
+import imgBranding from '/src/assets/branding.jpg';
+import imgMarketing from '/src/assets/marketingdigital.jpg';
+import imgTecnologia from '/src/assets/tecnologia.jpg';
 
 const blogPosts = [
   {
