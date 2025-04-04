@@ -1,13 +1,9 @@
-import imgBranding from '/src/assets/branding.jpg';
-import imgMarketing from '/src/assets/marketingdigital.jpg';
-import imgTecnologia from '/src/assets/tecnologia.jpg';
-
 const blogPosts = [
   {
     id: 1,
     title: "Inteligencia Artificial en el Branding: Cómo ChatGPT está revolucionando la creatividad",
     excerpt: "Descubre cómo las herramientas de IA están transformando la creación de identidades de marca y estrategias de contenido.",
-    image: imgBranding,
+    image: "/beeagencymkt/branding.jpg",
     date: "2024-06-10",
     slug: "ia-en-branding",
     category: "Branding",
@@ -17,7 +13,7 @@ const blogPosts = [
     id: 2,
     title: "Tendencias 2024 en Marketing Digital: Del Metaverso a los Micro-Momentos",
     excerpt: "Analizamos las estrategias que dominarán este año, desde experiencias inmersivas hasta la hiper-personalización.",
-    image: imgMarketing,
+    image: "/beeagencymkt/marketingdigital.jpg",
     date: "2024-05-22",
     slug: "tendencias-marketing-2024",
     category: "Marketing Digital",
@@ -27,7 +23,7 @@ const blogPosts = [
     id: 3,
     title: "Web3 para Marcas: Cómo aprovechar Blockchain en tu estrategia digital",
     excerpt: "Guía práctica para integrar NFTs, tokens y comunidades descentralizadas en tu plan de marketing tecnológico.",
-    image: imgTecnologia,
+    image: "/beeagencymkt/tecnologia.jpg",
     date: "2024-04-15",
     slug: "web3-para-marcas",
     category: "Tecnología",
@@ -36,3 +32,5 @@ const blogPosts = [
 ];
 
 export default blogPosts;
+
+

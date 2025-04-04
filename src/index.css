@@ -3,45 +3,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Estilos personalizados */
+/* ----------------------------- */
+/* 🌍 Estilos base personalizados */
+/* ----------------------------- */
+@layer base {
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;    
+    box-sizing: border-box;
+  }
 
-* {
-    @apply m-0 p-0 border-0;
+  body {
+    @apply h-full w-full bg-black;
+    font-family: 'Ubuntu', sans-serif;
+  }
 }
 
-body {
-    @apply m-0 p-0 h-full w-full bg-black
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-@layer utilities {
-    .animation-duration-80s {
-      animation-duration: 100s;
-    }
-    .animation-duration-100s {
-      animation-duration: 350s;
-    }
-    .animation-duration-120s {
-      animation-duration: 250s;
-    }
-
-    .animation-delay-start-right {
-      transform: translateX(-90%);
-    }
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
-.marquee {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
+.animate-scroll-left {
+  animation: scrollLeft 100s linear infinite;
 }
 
-.marquee-content {
-  display: flex;
-  width: max-content;
-  animation: marquee-left 350s linear infinite;
+.animate-scroll-right {
+  animation: scrollRight 100s linear infinite;
 }
 
-/* Ajuste específico para la fila reverse (segunda fila) */
-.reverse .marquee-content {
-  animation: marquee-right-reverse 100s linear infinite;
+@keyframes iconScrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes iconScrollRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-icon-scroll-left {
+  animation: iconScrollLeft 40s linear infinite;
+}
+
+.animate-icon-scroll-right {
+  animation: iconScrollRight 40s linear infinite;
 }

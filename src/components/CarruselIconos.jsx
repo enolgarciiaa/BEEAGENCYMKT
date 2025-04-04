@@ -2,88 +2,88 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// Importa los logos
-import wordpress from "/src/assets/wordpress-icon.svg";
-import woocommerce from "/src/assets/VectorWiki-yAnVI__woocommerce.svg";
-import notion from "/src/assets/notion-icon.svg";
-import photoshop from "/src/assets/photoshop.svg";
-import slack from "/src/assets/slack.svg";
-import github from "/src/assets/github-icon.svg";
-import pinterest from "/src/assets/pinterest.svg";
-import tiktok from "/src/assets/TikTok.svg";
-import shopify from "/src/assets/shopify-icon.svg";
-import figma from "/src/assets/figma-icon.svg";
+// Importamos los iconos directamente desde src/assets
+import wordpress from "../assets/wordpress-icon.svg";
+import woocommerce from "../assets/VectorWiki-yAnVI__woocommerce.svg";
+import notion from "../assets/notion-icon.svg";
+import photoshop from "../assets/photoshop.svg";
+import slack from "../assets/slack.svg";
+import github from "../assets/github-icon.svg";
+import pinterest from "../assets/pinterest.svg";
+import tiktok from "../assets/TikTok.svg";
+import shopify from "../assets/shopify-icon.svg";
+import figma from "../assets/figma-icon.svg";
 
 const icons = [
-  wordpress, woocommerce, notion, photoshop, slack,
-  github, pinterest, tiktok, shopify, figma,wordpress, woocommerce, notion, photoshop, slack,
-  github, pinterest, tiktok, shopify, figma,wordpress, woocommerce, notion, photoshop, slack,
-  github, pinterest, tiktok, shopify, figma,wordpress, woocommerce, notion, photoshop, slack,
-  github, pinterest, tiktok, shopify, figma,wordpress, woocommerce, notion, photoshop, slack,
-  github, pinterest, tiktok, shopify, figma,wordpress, woocommerce, notion, photoshop, slack,
-  github, pinterest, tiktok, shopify, figma,wordpress, woocommerce, notion, photoshop, slack,
-  github, pinterest, tiktok, shopify, figma
+  wordpress,
+  woocommerce,
+  notion,
+  photoshop,
+  slack,
+  github,
+  pinterest,
+  tiktok,
+  shopify,
+  figma,
 ];
+
+const duplicate = (arr, times = 3) => Array(times).fill(arr).flat();
 
 export default function CarruselIconos() {
   useEffect(() => {
-    AOS.init({ duration: 2500 });
+    AOS.init();
   }, []);
 
+  const rows = [
+    { content: duplicate(icons, 3), direction: "left" },
+    { content: duplicate(icons, 4), direction: "right" },
+    { content: duplicate(icons, 3), direction: "left" },
+  ];
+
   return (
-    <section className="flex flex-col items-center justify-center gap-16 bg-[radial-gradient(circle,black_20%,#131313_100%)] overflow-hidden py-24 px-4
-        min-h-screen sm:min-h-[80vh] md:min-h-[85vh] lg:min-h-[90vh] xl:min-h-[95vh] 2xl:min-h-screen">
-  
-        {/* Texto */}
-        <div
-            className="text-center max-w-full"
-            data-aos="fade-up"
-            data-aos-anchor-placement="top-bottom"
-        >
-            <h2 className="text-white text-4xl sm:text-5xl lg:text-7xl font-ubuntu font-semibold mb-6">
-            Codo a codo con los mejores
-            </h2>
-            <p className="text-neutral-300 text-lg sm:text-xl font-ubuntu">
-            Personalizamos tus necesidades para conseguir los mejores resultados de la mano de herramientas de primer nivel.
-            </p>
-        </div>
+    <section className="w-full bg-black text-white py-40 md:py-52 lg:py-64 px-4 overflow-hidden">
+      {/* Texto superior */}
+      <div
+        className="text-center max-w-4xl mx-auto"
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"
+        data-aos-duration="3000"
+      >
+        <h2 className="text-3xl md:text-6xl font-bold mb-4">
+          Codo a codo con los mejores
+        </h2>
+        <p className="text-lg md:text-xl">
+          Personalizamos tus necesidades para conseguir los mejores resultados de la mano de herramientas de primer nivel
+        </p>
+      </div>
 
-        {/* Carrusel de logos */}
-        <div className="flex flex-col gap-10 w-[85%] sm:w-[80%] md:w-[75%] lg:w-[70%] overflow-hidden">
-            {/* Fila 1 */}
-            <div className="marquee">
-            <div className="marquee-content">
-                {[...icons, ...icons].map((icon, idx) => (
-                <span key={`fila1-${idx}`} className="mx-6 inline-block hover:scale-110 transition-transform duration-300">
-                    <img src={icon} alt="icono herramienta" className="w-14 h-14 object-contain" />
+      {/* Carrusel con contenedor más grande */}
+      <div className="mt-16 w-full max-w-7xl mx-auto">
+        {rows.map((row, i) => (
+          <div key={i} className="w-full overflow-hidden">
+            <div
+              className={`flex whitespace-nowrap gap-8 w-[200%] py-6 ${
+                row.direction === "left"
+                  ? "animate-icon-scroll-left"
+                  : "animate-icon-scroll-right"
+              }`}
+            >
+              {row.content.map((src, idx) => (
+                <span
+                  key={idx}
+                  className="shrink-0 w-16 h-16 md:w-16 md:h-16 flex items-center justify-center"
+                >
+                  <img
+                    src={src}
+                    alt={`icono ${idx}`}
+                    className="h-full w-auto object-contain"
+                  />
                 </span>
-                ))}
+              ))}
             </div>
-            </div>
-
-            {/* Fila 2 */}
-            <div className="marquee reverse">
-            <div className="marquee-content">
-                {[...icons, ...icons, ...icons].map((icon, idx) => (
-                <span key={`fila2-${idx}`} className="mx-6 inline-block hover:scale-110 transition-transform duration-300">
-                    <img src={icon} alt="icono herramienta" className="w-14 h-14 object-contain" />
-                </span>
-                ))}
-            </div>
-            </div>
-
-            {/* Fila 3 */}
-            <div className="marquee">
-            <div className="marquee-content">
-                {[...icons, ...icons].map((icon, idx) => (
-                <span key={`fila3-${idx}`} className="mx-6 inline-block hover:scale-110 transition-transform duration-300">
-                    <img src={icon} alt="icono herramienta" className="w-14 h-14 object-contain" />
-                </span>
-                ))}
-            </div>
-            </div>
-        </div>
+          </div>
+        ))}
+      </div>
     </section>
-
   );
 }

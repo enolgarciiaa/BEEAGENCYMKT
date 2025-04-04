@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import blogPosts from "/src/data/blogData.js";
+import blogPosts from '../data/blogData.js';
 
 const BlogPreview = () => {
   return (

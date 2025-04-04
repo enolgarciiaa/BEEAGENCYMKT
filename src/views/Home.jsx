@@ -1,16 +1,15 @@
 import { useState } from 'react';
-import Aurora from '/src/components/Aurora';
-import TextPressure from '/src/components/TextPressure';
+import Cabecera from "/src/components/Cabecera";
 import FlowingMenu from '/src/components/FlowingMenu';
-import CarruselSection from '/src/components/CarruselSection';
+import ImpulsaMarca from '../components/ImpulsaMarca';
 import Lanyard from '/src/components/Lanyard';
 import Metodologia from '/src/components/Metodologia';
 import BlogPreview from '/src/components/BlogPreview';
 import ContactForm from '/src/components/ContactForm'; 
-import fondoSeccion from "/src/assets/fondo-seccion3.png";
 import CarruselIconos from "/src/components/CarruselIconos";
 import Footer from '/src/components/Footer';
 import { motion } from "framer-motion";
+
 
 const demoItems = [
   { link: '/', text: 'Home', image: 'https://picsum.photos/600/400?random=1' },
@@ -25,43 +24,8 @@ function Home() {
 
   return (
     <div className="w-full overflow-x-hidden">
-      {/* HEADER */}
-      <header className="relative w-full h-[120vh] overflow-hidden flex items-center justify-center">
-        <Aurora
-          colorStops={["#001f4d", "#3399ff", "#ffcc00"]}
-          blend={0.6}
-          amplitude={1.2}
-          speed={0.5}
-        />
-        <div className="absolute inset-0 bg-black/30 backdrop-blur-sm z-0" />
-
-        <button
-          className="absolute top-6 right-6 z-20 text-white text-3xl sm:text-4xl"
-          onClick={() => setMenuOpen(true)}
-        >
-          ☰
-        </button>
-
-        <div className="absolute z-10 w-full px-4 flex flex-col justify-center items-center text-center">
-          <div className="w-full max-w-6xl h-[150px] sm:h-[200px] md:h-[200px] lg:h-[250px] xl:h-[300px] flex justify-center items-center">
-            <TextPressure
-              text="BEEAGENCY"
-              flex={true}
-              alpha={false}
-              stroke={false}
-              width={true}
-              weight={true}
-              italic={true}
-              textColor="#ffffff"
-              strokeColor="#ff0000"
-              minFontSize={24}
-            />
-          </div>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white max-w-4xl leading-relaxed">
-            En un entorno cada vez más cambiante, la diferencia es la meta.
-          </p>
-        </div>
-      </header>
+      {/* CABECERA NUEVA */}
+      <Cabecera setMenuOpen={setMenuOpen} />
 
       {/* MENÚ FULLSCREEN */}
       {menuOpen && (
@@ -78,65 +42,12 @@ function Home() {
         </div>
       )}
 
-      {/* SECCIÓN 2: INTRO */}
-      <section
-        className="relative w-full bg-white dark:bg-black flex items-center justify-center text-center px-6 overflow-hidden
-          min-h-[650px] sm:min-h-[700px] md:min-h-[750px] lg:min-h-[800px] xl:min-h-[850px] 2xl:min-h-[950px]"
-        style={{
-          backgroundImage: `url(${fondoSeccion})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-        >
-        <motion.div
-          className="max-w-5xl mx-auto px-2 flex flex-col items-center justify-center"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          <motion.h1
-            className="text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold text-[#1a1a1a] leading-tight mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            Agencia de marketing digital
-          </motion.h1>
-
-          <motion.p
-            className="text-lg sm:text-xl md:text-2xl text-neutral-800 max-w-3xl mx-auto mb-8 leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            Impulsamos tu negocio con estrategias creativas, tecnología de vanguardia y una visión enfocada en resultados.
-            Nos especializamos en conectar marcas con personas, optimizando cada punto de contacto.
-          </motion.p>
-
-          <motion.button
-            className="mt-4 inline-block px-8 py-4 rounded-full bg-black border border-black text-white text-lg font-semibold 
-              transform transition duration-300 ease-in-out 
-              hover:bg-yellow-400 hover:text-black hover:scale-105"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            viewport={{ once: true }}
-            >
-            <p>¡Únete al cambio!</p>
-          </motion.button>
-        </motion.div>
-      </section>
-
+      
       {/* SECCIÓN 3: CARRUSEL */}
-      <CarruselSection />
+      <ImpulsaMarca />
 
       {/* SECCIÓN 4: LANYARD */}
       <section className="bg-black flex flex-col lg:flex-row items-center justify-between px-6 md:px-10 lg:px-20 2xl:px-40 py-10 2xl:py-20 min-h-[700px] sm:min-h-[750px] md:min-h-[800px] lg:min-h-[850px] xl:min-h-[900px] 2xl:min-h-[950px]">
-        {/* Texto animado */}
         <motion.div
           className="w-full lg:w-2/5 flex flex-col justify-center text-white text-center lg:text-left pt-10 lg:pt-0 pr-0 lg:pr-12"
           initial={{ opacity: 0, x: -50 }}
@@ -152,7 +63,6 @@ function Home() {
           </p>
         </motion.div>
 
-        {/* Tarjeta con animación desde arriba */}
         <motion.div
           className="w-full lg:w-3/5 h-[600px] sm:h-[650px] lg:h-[700px] xl:h-[750px] 2xl:h-[800px] flex justify-center items-start mt-16 lg:mt-0"
           initial={{ opacity: 0, y: -100 }}
@@ -167,7 +77,7 @@ function Home() {
       {/* SECCIÓN 5: METODOLOGÍA */}
       <Metodologia />
 
-      {/* SECCIÓN 6: CARROUSEL ICONOS HERRAMIENTAS */}
+      {/* SECCIÓN 6: CARRUSEL ICONOS */}
       <CarruselIconos />
 
       {/* SECCIÓN 7: BLOG PREVIEW */}
@@ -180,7 +90,7 @@ function Home() {
         <BlogPreview />
       </motion.section>
 
-      {/* SECCIÓN 8: FORMULARIO DE CONTACTO */}
+      {/* SECCIÓN 8: CONTACTO */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -191,7 +101,7 @@ function Home() {
         <ContactForm />
       </motion.section>
 
-      {/* SECCIÓN 9: FOOTER*/}
+      {/* FOOTER */}
       <Footer />
     </div>
   );

@@ -105,34 +105,7 @@ const Footer = () => {
           </motion.div>
         </div>
 
-        {/* Blog Preview */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h3 className="text-2xl font-bold mb-8 text-center">
-            Últimas entradas del <span className="text-yellow-400">blog</span>
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Ejemplo de artículos del blog - deberías mapear tus datos reales aquí */}
-            {[1, 2, 3].map((item) => (
-              <div key={item} className="bg-gray-900 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="h-48 bg-gray-700"></div>
-                <div className="p-6">
-                  <span className="text-sm text-yellow-400">Categoría {item}</span>
-                  <h4 className="text-xl font-semibold mt-2 mb-3">Título del artículo {item}</h4>
-                  <p className="text-gray-300 mb-4">Breve descripción del contenido del artículo...</p>
-                  <Link to="/blog" className="text-yellow-400 hover:text-yellow-300 transition-colors font-medium">
-                    Leer más →
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+        
 
         {/* Línea divisoria */}
         <div className="border-t border-gray-800 my-8"></div>
