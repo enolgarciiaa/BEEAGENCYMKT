@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Cabecera from "/src/components/Cabecera";
 import FlowingMenu from '/src/components/FlowingMenu';
-import ImpulsaMarca from '../components/ImpulsaMarca';
+import ImpulsaMarca from '/src/components/ImpulsaMarca';
 import Lanyard from '/src/components/Lanyard';
 import Metodologia from '/src/components/Metodologia';
 import BlogPreview from '/src/components/BlogPreview';
