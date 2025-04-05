@@ -61,7 +61,9 @@ export default function Metodologia() {
           <p className="text-sm xl:text-base text-black font-light max-w-md mx-auto lg:mx-0">
             Buscamos alinearnos con el cliente en búsqueda de su satisfacción, definiendo los objetivos, la estrategia para conseguirlos y lo más divertido, ¡las acciones!
           </p>
-          <button className="mt-4 w-fit mx-auto lg:mx-0 border border-black rounded-full px-6 py-2 text-sm italic hover:bg-yellow-400 hover:text-black transition-all duration-700 font-ubuntu">
+          <button
+            className="mt-4 w-fit mx-auto lg:mx-0 bg-black text-white border border-black rounded-full px-6 py-2 text-sm italic font-ubuntu transition-all duration-300 transform hover:scale-105 hover:bg-yellow-400 hover:text-black"
+            >
             Únete al cambio
           </button>
         </div>

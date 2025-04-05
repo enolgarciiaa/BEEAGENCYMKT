@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import blogPosts from '../data/blogData.js';
+import blogPosts from '/src/data/blogData.js';
 
 const BlogPreview = () => {
   return (
@@ -27,11 +27,21 @@ const BlogPreview = () => {
         <div className="text-center mt-12">
           <Link
             to="/blog"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-gray-800 transition-colors shadow-lg hover:shadow-xl"
-          >
+            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black transition-all duration-300 transform hover:scale-105 hover:bg-yellow-400 hover:text-black shadow-lg hover:shadow-xl"
+            >
             Explora nuestro blog
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            <svg
+              className="w-5 h-5 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
             </svg>
           </Link>
         </div>

@@ -23,7 +23,7 @@ export default function ImpulsaMarca() {
   ];
 
   return (
-    <section className="w-full bg-black text-white py-20 mt-20 md:mt-60 ">
+    <section className="w-full bg-[#060606] text-white py-20 mt-20 md:mt-72 ">
       {/* Contenido superior */}
         <div
           className="text-center mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-12 lg:px-20"

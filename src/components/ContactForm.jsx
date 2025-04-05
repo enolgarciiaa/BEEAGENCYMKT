@@ -34,7 +34,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="w-full bg-black text-white py-20 px-1 sm:px-4 overflow-hidden">
+    <section className="w-full bg-[#060606] text-white py-20 px-1 sm:px-4 overflow-hidden">
       <div className="max-w-[110rem] mx-auto flex flex-col lg:flex-row gap-8 items-center min-h-[700px]">
         {/* Imagen a la izquierda */}
         <motion.div className="w-full lg:w-[60%] h-full flex justify-center items-center">

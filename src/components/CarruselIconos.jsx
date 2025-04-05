@@ -41,7 +41,7 @@ export default function CarruselIconos() {
   ];
 
   return (
-    <section className="w-full bg-black text-white py-40 md:py-52 lg:py-64 px-4 overflow-hidden">
+    <section className="w-full bg-[#060606] text-white py-40 md:py-52 lg:py-64 px-4 overflow-hidden">
       {/* Texto superior */}
       <div
         className="text-center max-w-4xl mx-auto"

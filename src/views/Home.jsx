@@ -47,32 +47,29 @@ function Home() {
       <ImpulsaMarca />
 
       {/* SECCIÓN 4: LANYARD */}
-      <section className="bg-black flex flex-col lg:flex-row items-center justify-between px-6 md:px-10 lg:px-20 2xl:px-40 py-10 2xl:py-20 min-h-[700px] sm:min-h-[750px] md:min-h-[800px] lg:min-h-[850px] xl:min-h-[900px] 2xl:min-h-[950px]">
+      <section className="bg-[#060606] overflow-visible flex flex-col lg:flex-row items-center justify-between  px-3 pr-0 md:pl-10 md:pr-0 lg:pl-20 lg:pr-0 2xl:pl-30 2xl:pr-0 py-10 2xl:py-20 mt-28 min-h-[700px] sm:min-h-[750px] md:min-h-[800px] lg:min-h-[850px] xl:min-h-[900px] 2xl:min-h-[950px]">
         <motion.div
-          className="w-full lg:w-2/5 flex flex-col justify-center text-white text-center lg:text-left pt-10 lg:pt-0 pr-0 lg:pr-12"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          className="w-full flex flex-col lg:flex-row items-center justify-between gap-10"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl 2xl:text-8xl font-extrabold leading-normal max-w-2xl">
-            No tenemos <span className="text-yellow-400">límites</span> a la hora de <span className="text-blue-400">innovar</span> 🚀
-          </h2>
-          <p className="mt-8 text-lg sm:text-xl 2xl:text-2xl text-neutral-300 max-w-2xl leading-normal">
-            En BeeAgency creemos que la creatividad y la tecnología son nuestras mejores aliadas para ayudarte a destacar de forma única y memorable.
-          </p>
-        </motion.div>
+          <div className="w-full lg:w-2/5 flex flex-col px-3 justify-center text-white text-center lg:text-left">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl 2xl:text-8xl font-extrabold leading-normal max-w-2xl">
+              No tenemos <span className="text-yellow-400">límites</span> a la hora de <span className="text-blue-400">innovar</span> 🚀
+            </h2>
+            <p className="mt-8 text-lg sm:text-xl 2xl:text-2xl text-neutral-300 max-w-2xl leading-normal">
+              En BeeAgency creemos que la creatividad y la tecnología son nuestras mejores aliadas para ayudarte a destacar de forma única y memorable.
+            </p>
+          </div>
 
-        <motion.div
-          className="w-full lg:w-3/5 h-[600px] sm:h-[650px] lg:h-[700px] xl:h-[750px] 2xl:h-[800px] flex justify-center items-start mt-16 lg:mt-0"
-          initial={{ opacity: 0, y: -100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.3, ease: "easeOut", delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <Lanyard position={[0, 1.5, 20]} gravity={[0, -40, 0]} />
+          <div className="w-full lg:w-3/5 h-[600px] sm:h-[650px] lg:h-[700px] xl:h-[750px] 2xl:h-[800px] mt-10 flex justify-center items-center overflow-visible">
+            <Lanyard position={[0, 1.5, 20]} gravity={[0, -40, 0]} />
+          </div>
         </motion.div>
       </section>
+
 
       {/* SECCIÓN 5: METODOLOGÍA */}
       <Metodologia />

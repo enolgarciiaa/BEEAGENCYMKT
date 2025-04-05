@@ -14,7 +14,7 @@ extend({ MeshLineGeometry, MeshLineMaterial });
 
 export default function Lanyard({ position = [0, 1.5, 20], gravity = [0, -40, 0], fov = 20, transparent = true }) {
   return (
-    <div className="w-full lg:w-3/5 flex justify-center items-start mt-12 lg:mt-0 h-[600px] sm:h- [650px]  lg:h-[700px] 2xl:h-[800px]">
+    <div className="w-full lg:max-w-[90%] xl:max-w-[1200px] h-[600px] sm:h-[700px] md:h-[800px] lg:h-[900px] 2xl:h-[1000px] flex justify-center items-center mx-auto overflow-visible">
       <Canvas
         camera={{ position, fov }}
         gl={{ alpha: transparent }}
@@ -51,7 +51,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
   useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1]);
 
   // 🔧 Cuerda más corta aquí:
-  useSphericalJoint(j3, card, [[0, 0, 0], [0, 2.2, 0]]);
+  useSphericalJoint(j3, card, [[0, 0, 0], [0, 1.6, 0]]);
 
   useEffect(() => {
     if (hovered) {
@@ -104,7 +104,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
         <RigidBody position={[2, 0, 0]} ref={card} {...segmentProps} type={dragged ? 'kinematicPosition' : 'dynamic'}>
           <CuboidCollider args={[0.8, 1.125, 0.01]} />
           <group
-            scale={3.25}
+            scale={2.5}
             position={[0, -1.2, -0.05]}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
@@ -128,7 +128,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
           useMap
           map={texture}
           repeat={[-4, 1]}
-          lineWidth={3}
+          lineWidth={2}
         />
       </mesh>
     </>

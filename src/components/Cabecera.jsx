@@ -66,7 +66,7 @@ export default function Cabecera({ setMenuOpen }) {
 
       {/* Botón menú */}
       <button
-        className="absolute top-6 right-6 z-30 text-white text-3xl sm:text-4xl "
+        className="absolute top-6 md:top-8 right-6 z-30 text-white text-3xl sm:text-4xl "
         onClick={() => setMenuOpen(true)}
       >
         ☰
@@ -86,7 +86,7 @@ export default function Cabecera({ setMenuOpen }) {
       </div>
 
       {/* Tarjeta superpuesta – solo visible en tablets y ordenadores */}
-      <div className="hidden md:flex absolute bottom-[-150px] left-1/2 transform -translate-x-1/2 w-[95%] max-w-[1050px]  h-[400px] bg-white shadow-xl flex-col md:flex-row items-center gap-6 p-6 z-30 ">
+      <div className="hidden md:flex absolute bottom-[-200px] left-1/2 transform -translate-x-1/2 w-[95%] max-w-[1050px]  h-[400px] bg-white shadow-xl flex-col md:flex-row items-center gap-6 p-6 z-30 ">
         <div
           className="flex flex-col justify-center items-center text-center w-full md:w-2/3 h-full gap-4"
           data-aos="fade-up"
