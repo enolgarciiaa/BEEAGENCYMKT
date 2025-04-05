@@ -1,8 +1,7 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vite'; // Asegúrate de importar esto
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/beeagencymkt/', // 👈 ¡Esta línea es clave!
   plugins: [react()],
   assetsInclude: ['**/*.glb', '**/*.gltf'],
   build: {

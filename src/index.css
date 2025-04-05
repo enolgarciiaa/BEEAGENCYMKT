@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Inspiration&family=Roboto+Slab:wght@300;400&display=swap');
+
 /* index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 /* ----------------------------- */
 /* 🌍 Estilos base personalizados */
@@ -40,11 +43,11 @@
 }
 
 .animate-scroll-left {
-  animation: scrollLeft 100s linear infinite;
+  animation: scrollLeft 200s linear infinite;
 }
 
 .animate-scroll-right {
-  animation: scrollRight 100s linear infinite;
+  animation: scrollRight 300s linear infinite;
 }
 
 @keyframes iconScrollLeft {

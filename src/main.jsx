@@ -4,9 +4,10 @@ import { BrowserRouter } from 'react-router-dom';
 import App from '/src/App.jsx';
 import '/src/index.css';
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/beeagencymkt">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>

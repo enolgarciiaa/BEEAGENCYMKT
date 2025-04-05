@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import videoBg from "/src/assets/fondomain.webm";
+import videoBg from "/src/assets/fotosph/fondomain.mp4";
 import tarjetaImg from "/src/assets/fotosph/fondotarjeta.png";
 import logoBA from "/src/assets/logoBAheader.png";
 
@@ -41,12 +41,7 @@ export default function Cabecera({ setMenuOpen }) {
   }, [letraIndex, borrando, palabraIndex]);
 
   return (
-    <section
-      className="relative w-full 
-        min-h-[600px] sm:min-h-[700px] md:min-h-[800px] 
-        lg:min-h-[850px] xl:min-h-[950px] 2xl:min-h-[1000px] 
-        flex flex-col items-center justify-center text-center overflow-visible pb-[300px]"
-      >
+    <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center overflow-visible pb-[300px]">
       <video
         autoPlay
         loop
@@ -61,19 +56,19 @@ export default function Cabecera({ setMenuOpen }) {
       <img
         src={logoBA}
         alt="Logo BeeAgency"
-        className="absolute top-0 left-10 z-30 w-20 sm:w-24 md:w-28 lg:w-35"
+        className="absolute top-0 left-10 z-30 w-16 sm:w-20 md:w-24 lg:w-28 xl:w-32"
       />
 
       {/* Botón menú */}
       <button
-        className="absolute top-6 md:top-8 right-6 z-30 text-white text-3xl sm:text-4xl "
+        className="absolute top-6 md:top-8 right-6 z-30 text-white text-3xl sm:text-4xl"
         onClick={() => setMenuOpen(true)}
       >
         ☰
       </button>
 
       {/* Título central */}
-      <div className="w-[95%] max-w-[950px] h-[200px] md:h-[300px] flex flex-col items-center justify-center bg-black/70 border-2 border-white z-40 px-4 mt-64 md:mt-28 shadow-lg">
+      <div className="w-[95%] max-w-[950px] h-[200px] md:h-[300px] flex flex-col items-center justify-center bg-black/70 border-2 border-white z-40 px-4 mt-48 sm:mt-36 md:mt-28 shadow-lg">
         <h2 className="text-white text-[2rem] sm:text-[2.8rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] 2xl:text-[5rem] font-cinzel font-normal leading-tight">
           Descubre el{" "}
           <span className={`${palabras[palabraIndex].clase}`}>
@@ -86,13 +81,13 @@ export default function Cabecera({ setMenuOpen }) {
       </div>
 
       {/* Tarjeta superpuesta – solo visible en tablets y ordenadores */}
-      <div className="hidden md:flex absolute bottom-[-200px] left-1/2 transform -translate-x-1/2 w-[95%] max-w-[1050px]  h-[400px] bg-white shadow-xl flex-col md:flex-row items-center gap-6 p-6 z-30 ">
+      <div className="hidden md:flex absolute bottom-[-200px] left-1/2 transform -translate-x-1/2 w-[90%] max-w-[1050px] h-auto bg-white shadow-xl flex-col md:flex-row items-center gap-6 p-6 z-30">
         <div
           className="flex flex-col justify-center items-center text-center w-full md:w-2/3 h-full gap-4"
           data-aos="fade-up"
           data-aos-anchor-placement="top-bottom"
           data-aos-duration="3000"
-          >
+        >
           <h1 className="text-2xl sm:text-3xl md:text-5xl font-cinzel text-black leading-snug">
             Agencia de Marketing Digital
           </h1>
@@ -105,7 +100,6 @@ export default function Cabecera({ setMenuOpen }) {
             Únete al cambio
           </button>
         </div>
-
 
         <div className="w-full md:w-1/3 flex justify-center md:justify-center">
           <img
