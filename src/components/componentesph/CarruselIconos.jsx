@@ -3,16 +3,16 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 // Importamos los iconos directamente desde src/assets
-import wordpress from "../assets/wordpress-icon.svg";
-import woocommerce from "../assets/VectorWiki-yAnVI__woocommerce.svg";
-import notion from "../assets/notion-icon.svg";
-import photoshop from "../assets/photoshop.svg";
-import slack from "../assets/slack.svg";
-import github from "../assets/github-icon.svg";
-import pinterest from "../assets/pinterest.svg";
-import tiktok from "../assets/TikTok.svg";
-import shopify from "../assets/shopify-icon.svg";
-import figma from "../assets/figma-icon.svg";
+import wordpress from "/src/assets/fotosph/wordpress-icon.svg";
+import woocommerce from "/src/assets/fotosph/VectorWiki-yAnVI__woocommerce.svg";
+import notion from "/src/assets/fotosph/notion-icon.svg";
+import photoshop from "/src/assets/fotosph/photoshop.svg";
+import slack from "/src/assets/fotosph/slack.svg";
+import github from "/src/assets/fotosph/github-icon.svg";
+import pinterest from "/src/assets/fotosph/pinterest.svg";
+import tiktok from "/src/assets/fotosph/TikTok.svg";
+import shopify from "/src/assets/fotosph/shopify-icon.svg";
+import figma from "/src/assets/fotosph/figma-icon.svg";
 
 const icons = [
   wordpress,

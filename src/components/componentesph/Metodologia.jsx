@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import fondoSeccion  from "/src/assets/fondo-seccion3.png";
-import bombilla from "/src/assets/bombillacards.png";
+import bombilla from "/src/assets/fotosph/bombillacards.png";
 
 
 const cardsData = [

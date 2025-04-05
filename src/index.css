@@ -66,9 +66,9 @@
 }
 
 .animate-icon-scroll-left {
-  animation: iconScrollLeft 40s linear infinite;
+  animation: iconScrollLeft 100s linear infinite;
 }
 
 .animate-icon-scroll-right {
-  animation: iconScrollRight 40s linear infinite;
+  animation: iconScrollRight 200s linear infinite;
 }

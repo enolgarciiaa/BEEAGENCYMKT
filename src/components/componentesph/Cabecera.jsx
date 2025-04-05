@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import videoBg from "/src/assets/fondomain.webm";
-import tarjetaImg from "/src/assets/fondotarjeta.png";
+import tarjetaImg from "/src/assets/fotosph/fondotarjeta.png";
 import logoBA from "/src/assets/logoBAheader.png";
 
 const palabras = [
@@ -73,7 +73,7 @@ export default function Cabecera({ setMenuOpen }) {
       </button>
 
       {/* Título central */}
-      <div className="w-[95%] max-w-[950px] h-[200px] md:h-[300px] flex flex-col items-center justify-center bg-black/70 border-2 border-white z-40 px-4 mt-60 md:mt-10 shadow-lg">
+      <div className="w-[95%] max-w-[950px] h-[200px] md:h-[300px] flex flex-col items-center justify-center bg-black/70 border-2 border-white z-40 px-4 mt-64 md:mt-28 shadow-lg">
         <h2 className="text-white text-[2rem] sm:text-[2.8rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] 2xl:text-[5rem] font-cinzel font-normal leading-tight">
           Descubre el{" "}
           <span className={`${palabras[palabraIndex].clase}`}>

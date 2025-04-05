@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import Cabecera from "/src/components/Cabecera";
-import FlowingMenu from '/src/components/FlowingMenu';
-import ImpulsaMarca from '/src/components/ImpulsaMarca';
-import Lanyard from '/src/components/Lanyard';
-import Metodologia from '/src/components/Metodologia';
-import BlogPreview from '/src/components/BlogPreview';
-import ContactForm from '/src/components/ContactForm'; 
-import CarruselIconos from "/src/components/CarruselIconos";
-import Footer from '/src/components/Footer';
+import Cabecera from "/src/components/componentesph/Cabecera";
+import FlowingMenu from '/src/components/componentesph/FlowingMenu';
+import ImpulsaMarca from '/src/components/componentesph/ImpulsaMarca';
+import Lanyard from '/src/components/componentesph/Lanyard';
+import Metodologia from '/src/components/componentesph/Metodologia';
+import BlogPreview from '/src/components/componentesph/BlogPreview';
+import ContactForm from '/src/components/componentesph/ContactForm'; 
+import CarruselIconos from "/src/components/componentesph/CarruselIconos";
+import Footer from '/src/components/componentesph/Footer';
 import { motion } from "framer-motion";
 
 
