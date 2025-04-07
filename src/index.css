@@ -75,3 +75,28 @@
 .animate-icon-scroll-right {
   animation: iconScrollRight 200s linear infinite;
 }
+
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient-title {
+  background: linear-gradient(270deg, #facc15, #1e3a8a); /* amarillo → azul */
+  background-size: 400% 400%;
+  animation: gradientMove 6s ease infinite;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}

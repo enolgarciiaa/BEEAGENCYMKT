@@ -2,8 +2,11 @@ import { useState, useEffect } from 'react';
 import Cabecera from '/src/components/componentespb/Cabecerapb';
 import FlowingMenu from '/src/components/componentesph/FlowingMenu';
 import TextoCreativo from '/src/components/componentespb/TextoCreativo';
-import Sectores from '/src/components/componentespb/Sectores'; 
+import SectoresFondoDoble from '/src/components/componentespb/SectoresFondoDoble';
 import Ribbons from '/src/components/componentespb/Ribbons';
+import { Feature6 } from '/src/components/componentespb/lucide-react';
+import ContactForm from '/src/components/ContactForm'; 
+import Footer from '/src/components/Footer';
 import { motion } from "framer-motion"; 
 
 const demoItems = [
@@ -13,6 +16,7 @@ const demoItems = [
   { link: '/blog', text: 'Blog', image: 'https://picsum.photos/600/400?random=4' },
   { link: '/contact', text: 'Contact', image: 'https://picsum.photos/600/400?random=5' }
 ];
+
 
 function Beeagency() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -60,10 +64,9 @@ function Beeagency() {
       <TextoCreativo />
 
       {/* NUEVA SECCIÓN SECTORES */}
-      <Sectores /> {/* Aquí agregamos la sección Sectores */}
-
+      <SectoresFondoDoble />
       {/* NUEVA SECCIÓN RIBBONS */}
-      <section className="relative overflow-hidden bg-black" style={{ height: "100vh" }}>
+      <section className="relative w-full min-h-screen md:min-h-[120vh] xl:min-h-[140vh] overflow-hidden bg-black">
         <Ribbons
           baseThickness={30}
           colors={['#FFD100']}
@@ -92,6 +95,23 @@ function Beeagency() {
           </p>
         </motion.div>
       </section>
+
+      {/* NUEVA SECCIÓN VALORES */}
+      <Feature6 />
+
+      {/* SECCIÓN CONTACTO */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="relative"
+        >
+        <ContactForm />
+      </motion.section>
+
+      {/* FOOTER */}
+      <Footer />
     </div>
   );
 }

@@ -5,9 +5,9 @@ import ImpulsaMarca from '/src/components/componentesph/ImpulsaMarca';
 import Lanyard from '/src/components/componentesph/Lanyard';
 import Metodologia from '/src/components/componentesph/Metodologia';
 import BlogPreview from '/src/components/componentesph/BlogPreview';
-import ContactForm from '/src/components/componentesph/ContactForm'; 
+import ContactForm from '/src/components/ContactForm'; 
 import CarruselIconos from "/src/components/componentesph/CarruselIconos";
-import Footer from '/src/components/componentesph/Footer';
+import Footer from '/src/components/Footer';
 import { motion } from "framer-motion";
 
 
