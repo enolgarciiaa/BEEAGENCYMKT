@@ -39,7 +39,7 @@ export default function SectoresFondoDoble() {
       initial={{ opacity: 0, y: 100 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 1 }}
-      className="w-full min-h-screen md:min-h-[120vh] xl:min-h-[140vh] 2xl:min-h-[160vh] px-4 sm:px-6 py-20 sm:py-28 flex flex-col items-center justify-start bg-cover bg-center bg-no-repeat"
+      className="w-full min-h-screen md:min-h-[120vh] xl:min-h-[140vh] 2xl:min-h-[140vh] px-4 sm:px-6 py-20 sm:py-28 flex flex-col items-center justify-start bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${fondoGeneral})` }}
     >
       {/* Título estilo valores */}

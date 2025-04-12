@@ -4,9 +4,9 @@ import FlowingMenu from '/src/components/componentesph/FlowingMenu';
 import TextoCreativo from '/src/components/componentespb/TextoCreativo';
 import SectoresFondoDoble from '/src/components/componentespb/SectoresFondoDoble';
 import Ribbons from '/src/components/componentespb/Ribbons';
-import { Feature6 } from '/src/components/componentespb/lucide-react';
-
+import Nuestrosvalores from '/src/components/componentespb/Nuestrosvalores'
 import Footer from '/src/components/Footer';
+import ScrollToTopButton from '/src/components/ScrollToTopButton';
 import { motion } from "framer-motion"; 
 
 const demoItems = [
@@ -97,7 +97,7 @@ function Beeagency() {
       </section>
 
       {/* NUEVA SECCIÓN VALORES */}
-      <Feature6 />
+      <Nuestrosvalores />
 
       {/* SECCIÓN CONTACTO */}
       <motion.section
@@ -112,6 +112,8 @@ function Beeagency() {
 
       {/* FOOTER */}
       <Footer />
+      
+      <ScrollToTopButton />
     </div>
   );
 }
