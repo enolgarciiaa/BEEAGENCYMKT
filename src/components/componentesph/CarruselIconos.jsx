@@ -44,13 +44,13 @@ export default function CarruselIconos() {
     <section className="w-full bg-[#060606] text-white py-40 md:py-52 lg:py-64 px-4 overflow-hidden">
       {/* Texto superior */}
       <div
-        className="text-center max-w-4xl mx-auto"
+        className="text-center max-w-8xl mx-auto"
         data-aos="fade-up"
         data-aos-anchor-placement="top-bottom"
         data-aos-duration="3000"
       >
-        <h2 className="text-3xl md:text-6xl font-bold mb-4">
-          Codo a codo con los mejores
+        <h2 className="text-3xl md:text-7xl font-bold mb-4">
+          Codo a codo con <span className="text-yellow-400">los mejores</span>
         </h2>
         <p className="text-lg md:text-xl">
           Personalizamos tus necesidades para conseguir los mejores resultados de la mano de herramientas de primer nivel

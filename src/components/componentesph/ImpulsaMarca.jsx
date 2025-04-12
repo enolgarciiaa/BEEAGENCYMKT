@@ -26,13 +26,13 @@ export default function ImpulsaMarca() {
     <section className="w-full bg-[#060606] text-white py-20 mt-20 md:mt-72 ">
       {/* Contenido superior */}
         <div
-          className="text-center mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-12 lg:px-20"
+          className="text-center mx-auto w-full max-w-8xl px-4 sm:px-6 md:px-8 lg:px-10"
           data-aos="slide-up"
           data-aos-anchor-placement="top-bottom"
           data-aos-duration="3000"
           >
-          <h2 className="w-full max-w-none text-3xl md:text-6xl font-bold mb-4">
-            Impulsa tu marca en un océano azul
+          <h2 className="w-full max-w-none text-3xl md:text-7xl font-bold mb-4">
+            Impulsa tu marca en un <span className="text-blue-400">océano azul</span> 
           </h2>
           <p className="text-lg md:text-xl">
             La diferencia es la ventaja más buscada, conoce más sobre los servicios

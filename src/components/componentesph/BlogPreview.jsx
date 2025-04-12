@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
 import blogPosts from '/src/data/blogData.js';
+import fondoSeccion3 from "/src/assets/fondo-seccion3.png";
 
 const BlogPreview = () => {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
+    <section
+      className="py-16 px-4 sm:px-6 lg:px-8 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${fondoSeccion3})` }}
+    >
+
       <div className="max-w-7xl mx-auto">
         {/* Encabezado */}
         <div className="text-center mb-12">
@@ -30,19 +35,6 @@ const BlogPreview = () => {
             className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black transition-all duration-300 transform hover:scale-105 hover:bg-yellow-400 hover:text-black shadow-lg hover:shadow-xl"
             >
             Explora nuestro blog
-            <svg
-              className="w-5 h-5 ml-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M19 14l-7 7m0 0l-7-7m7 7V3"
-              />
-            </svg>
           </Link>
         </div>
       </div>
@@ -84,9 +76,7 @@ const ArticleCard = ({ post }) => (
         className="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium transition-colors"
       >
         Leer artículo
-        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-        </svg>
+        
       </Link>
     </div>
   </article>

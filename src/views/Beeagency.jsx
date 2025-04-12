@@ -5,7 +5,7 @@ import TextoCreativo from '/src/components/componentespb/TextoCreativo';
 import SectoresFondoDoble from '/src/components/componentespb/SectoresFondoDoble';
 import Ribbons from '/src/components/componentespb/Ribbons';
 import { Feature6 } from '/src/components/componentespb/lucide-react';
-import ContactForm from '/src/components/ContactForm'; 
+
 import Footer from '/src/components/Footer';
 import { motion } from "framer-motion"; 
 
@@ -107,7 +107,7 @@ function Beeagency() {
         viewport={{ once: true }}
         className="relative"
         >
-        <ContactForm />
+        
       </motion.section>
 
       {/* FOOTER */}

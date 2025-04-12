@@ -13,6 +13,8 @@ export default function Cabecera({ setMenuOpen }) {
   const [letraIndex, setLetraIndex] = useState(0);
   const [actualPalabra, setActualPalabra] = useState("");
   const [borrando, setBorrando] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const [showHeader, setShowHeader] = useState(true); // 👈 visibilidad del header
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -40,8 +42,24 @@ export default function Cabecera({ setMenuOpen }) {
     return () => clearTimeout(timeout);
   }, [letraIndex, borrando, palabraIndex]);
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      setHasScrolled(currentScrollY > 50);
+      setShowHeader(currentScrollY < lastScrollY || currentScrollY < 50);
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center overflow-visible pb-[300px]">
+    <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center overflow-visible pt-24 pb-[300px]">
       <video
         autoPlay
         loop
@@ -52,20 +70,24 @@ export default function Cabecera({ setMenuOpen }) {
         Tu navegador no soporta el video
       </video>
 
-      {/* Logo arriba a la izquierda */}
-      <img
-        src={logoBA}
-        alt="Logo BeeAgency"
-        className="absolute top-0 left-10 z-30 w-16 sm:w-20 md:w-24 lg:w-28 xl:w-32"
-      />
-
-      {/* Botón menú */}
-      <button
-        className="absolute top-6 md:top-8 right-6 z-30 text-white text-3xl sm:text-4xl"
-        onClick={() => setMenuOpen(true)}
-      >
-        ☰
-      </button>
+      {/* Header con visibilidad dinámica */}
+      <div className={`
+        fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 z-50 transition-all duration-500
+        ${hasScrolled ? 'bg-gradient-to-r from-[#0f0f0f]/80 to-[#1e1e1e]/80 backdrop-blur-md shadow-md' : ''}
+        ${showHeader ? 'translate-y-0' : '-translate-y-full'}
+      `}>
+        <img
+          src={logoBA}
+          alt="Logo BeeAgency"
+          className="w-12 sm:w-16 md:w-20 lg:w-24"
+        />
+        <button
+          className="text-white text-3xl sm:text-4xl"
+          onClick={() => setMenuOpen(true)}
+        >
+          ☰
+        </button>
+      </div>
 
       {/* Título central */}
       <div className="w-[95%] max-w-[950px] h-[200px] md:h-[300px] flex flex-col items-center justify-center bg-black/70 border-2 border-white z-40 px-4 mt-48 sm:mt-36 md:mt-28 shadow-lg">
@@ -80,7 +102,7 @@ export default function Cabecera({ setMenuOpen }) {
         </p>
       </div>
 
-      {/* Tarjeta superpuesta – solo visible en tablets y ordenadores */}
+      {/* Tarjeta */}
       <div className="hidden md:flex absolute bottom-[-200px] left-1/2 transform -translate-x-1/2 w-[90%] max-w-[1050px] h-auto bg-white shadow-xl flex-col md:flex-row items-center gap-6 p-6 z-30">
         <div
           className="flex flex-col justify-center items-center text-center w-full md:w-2/3 h-full gap-4"
