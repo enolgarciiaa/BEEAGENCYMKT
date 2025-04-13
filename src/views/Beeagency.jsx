@@ -5,8 +5,10 @@ import TextoCreativo from '/src/components/componentespb/TextoCreativo';
 import SectoresFondoDoble from '/src/components/componentespb/SectoresFondoDoble';
 import Ribbons from '/src/components/componentespb/Ribbons';
 import Nuestrosvalores from '/src/components/componentespb/Nuestrosvalores'
+import Contacto from '/src/components/Contacto'
 import Footer from '/src/components/Footer';
 import ScrollToTopButton from '/src/components/ScrollToTopButton';
+import CustomCursor from "/src/components/CustomCursor";
 import { motion } from "framer-motion"; 
 
 const demoItems = [
@@ -99,21 +101,23 @@ function Beeagency() {
       {/* NUEVA SECCIÓN VALORES */}
       <Nuestrosvalores />
 
-      {/* SECCIÓN CONTACTO */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
-        className="relative"
-        >
-        
-      </motion.section>
+      {/* SECCIÓN 8: CONTACTO */}
+          <motion.section
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <Contacto />
+        </motion.section>
 
       {/* FOOTER */}
       <Footer />
       
       <ScrollToTopButton />
+
+        <CustomCursor />
     </div>
   );
 }
