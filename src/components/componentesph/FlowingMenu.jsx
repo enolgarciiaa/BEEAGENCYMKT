@@ -13,7 +13,7 @@ function FlowingMenu({ items = [] }) {
   );
 }
 
-function MenuItem({ link, text, image }) {
+function MenuItem({ link, text, image, target }) {
   const itemRef = React.useRef(null);
   const marqueeRef = React.useRef(null);
   const marqueeInnerRef = React.useRef(null);
@@ -62,6 +62,8 @@ function MenuItem({ link, text, image }) {
       <a
         className="flex items-center justify-center h-full relative cursor-pointer uppercase no-underline font-semibold text-white text-[4vh] hover:text-[#060606]"
         href={link}
+        target={target || "_self"}
+        rel={target === "_blank" ? "noopener noreferrer" : undefined}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >

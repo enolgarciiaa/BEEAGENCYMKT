@@ -65,7 +65,7 @@ const Footer = () => {
             <h4 className="text-xl font-semibold mb-6">Secciones</h4>
             <nav className="space-y-3">
               <Link to="/" className="block text-gray-300 hover:text-yellow-400 transition-colors">Home</Link>
-              <Link to="/beeagency" className="block text-gray-300 hover:text-yellow-400 transition-colors">BeeAgency</Link>
+              <Link to="/Beeagency" className="block text-gray-300 hover:text-yellow-400 transition-colors">BeeAgency</Link>
               <Link to="/services" className="block text-gray-300 hover:text-yellow-400 transition-colors">Services</Link>
               <Link to="/blog" className="block text-gray-300 hover:text-yellow-400 transition-colors">Blog</Link>
               <Link to="/contact" className="block text-gray-300 hover:text-yellow-400 transition-colors">Contact</Link>

@@ -5,7 +5,7 @@ import TextoCreativo from '/src/components/componentespb/TextoCreativo';
 import SectoresFondoDoble from '/src/components/componentespb/SectoresFondoDoble';
 import Ribbons from '/src/components/componentespb/Ribbons';
 import Nuestrosvalores from '/src/components/componentespb/Nuestrosvalores'
-import Contacto from '/src/components/Contacto'
+import ContactoBee from '/src/components/componentespb/ContactoBee'
 import Footer from '/src/components/Footer';
 import ScrollToTopButton from '/src/components/ScrollToTopButton';
 import CustomCursor from "/src/components/CustomCursor";
@@ -16,8 +16,9 @@ const demoItems = [
   { link: '/Beeagency', text: 'Beeagency', image: 'https://picsum.photos/600/400?random=2' },
   { link: '/services', text: 'Services', image: 'https://picsum.photos/600/400?random=3' },
   { link: '/blog', text: 'Blog', image: 'https://picsum.photos/600/400?random=4' },
-  { link: '/contact', text: 'Contact', image: 'https://picsum.photos/600/400?random=5' }
+  { link: '/contact', text: 'Contact', image: 'https://picsum.photos/600/400?random=5', target: '_blank' }
 ];
+
 
 
 function Beeagency() {
@@ -109,7 +110,7 @@ function Beeagency() {
             viewport={{ once: true }}
             className="relative"
           >
-            <Contacto />
+            <ContactoBee />
         </motion.section>
 
       {/* FOOTER */}

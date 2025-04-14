@@ -5,7 +5,7 @@ import ImpulsaMarca from '/src/components/componentesph/ImpulsaMarca';
 import Lanyard from '/src/components/componentesph/Lanyard';
 import Metodologia from '/src/components/componentesph/Metodologia';
 import BlogPreview from '/src/components/componentesph/BlogPreview';
-import Contacto from '/src/components/Contacto'
+import Contacto from '/src/components/componentesph/Contacto'
 import CarruselIconos from "/src/components/componentesph/CarruselIconos";
 import Footer from '/src/components/Footer';
 import ScrollToTopButton from '/src/components/ScrollToTopButton';
@@ -18,8 +18,9 @@ const demoItems = [
   { link: '/Beeagency', text: 'Beeagency', image: 'https://picsum.photos/600/400?random=2' },
   { link: '/services', text: 'Services', image: 'https://picsum.photos/600/400?random=3' },
   { link: '/blog', text: 'Blog', image: 'https://picsum.photos/600/400?random=4' },
-  { link: '/contact', text: 'Contact', image: 'https://picsum.photos/600/400?random=5' }
+  { link: '/contact', text: 'Contact', image: 'https://picsum.photos/600/400?random=5', target: '_blank' }
 ];
+
 
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
