@@ -21,9 +21,11 @@ export default function CookieBanner() {
   };
 
   const loadGoogleAnalytics = () => {
-    if (window.gtag) return; // evita duplicar
+    // Si ya se ha cargado GA, no volver a cargarlo
+    if (document.querySelector('script[src^="https://www.googletagmanager.com/gtag/js"]')) return;
+
     const script1 = document.createElement("script");
-    script1.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"; // 🔁 tu ID aquí
+    script1.src = "https://www.googletagmanager.com/gtag/js?id=G-74FLS5796Q"; // ✅ Tu ID real aquí
     script1.async = true;
     document.head.appendChild(script1);
 
