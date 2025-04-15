@@ -10,6 +10,7 @@ import CarruselIconos from "/src/components/componentesph/CarruselIconos";
 import Footer from '/src/components/Footer';
 import ScrollToTopButton from '/src/components/ScrollToTopButton';
 import CustomCursor from "/src/components/CustomCursor";
+import CookieBanner from "/src/components/CookieBanner";
 import { motion } from "framer-motion";
 
 
@@ -26,7 +27,9 @@ function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
+    
     <div className="w-full overflow-x-hidden">
+      <CookieBanner />
       {/* CABECERA NUEVA */}
       <Cabecera setMenuOpen={setMenuOpen} />
 
@@ -50,24 +53,26 @@ function Home() {
       <ImpulsaMarca />
 
       {/* SECCIÓN 4: LANYARD */}
-      <section className="bg-[#060606] overflow-visible flex flex-col lg:flex-row items-center justify-between  px-3 pr-0 md:pl-10 md:pr-0 lg:pl-20 lg:pr-0 2xl:pl-30 2xl:pr-0 py-10 2xl:py-20 mt-28 min-h-[700px] sm:min-h-[750px] md:min-h-[800px] lg:min-h-[850px] xl:min-h-[900px] 2xl:min-h-[950px]">
+      <section className="w-full overflow-visible flex flex-col lg:flex-row items-center justify-between px-4 sm:px-6 md:px-10 xl:pl-20 2xl:pl-32 py-12 sm:py-20 lg:py-28 2xl:py-32 mt-28 min-h-[700px] sm:min-h-[750px] md:min-h-[800px] lg:min-h-[850px] xl:min-h-[900px] 2xl:min-h-[950px]">
         <motion.div
-          className="w-full flex flex-col lg:flex-row items-center justify-between gap-10"
+          className="w-full flex flex-col lg:flex-row items-center justify-between gap-12 xl:gap-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <div className="w-full lg:w-2/5 flex flex-col px-3 justify-center text-white text-center lg:text-left">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl 2xl:text-8xl font-extrabold leading-normal max-w-2xl">
+          {/* Texto */}
+          <div className="w-full lg:w-2/5 flex flex-col justify-center text-center lg:text-left text-white">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl 2xl:text-8xl font-extrabold leading-snug max-w-2xl mx-auto lg:mx-0">
               No tenemos <span className="text-yellow-400">límites</span> a la hora de <span className="text-blue-400">innovar</span> 🚀
             </h2>
-            <p className="mt-8 text-lg sm:text-xl 2xl:text-2xl text-neutral-300 max-w-2xl leading-normal">
+            <p className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl 2xl:text-2xl text-gray-300 max-w-xl mx-auto lg:mx-0 leading-relaxed">
               En BeeAgency creemos que la creatividad y la tecnología son nuestras mejores aliadas para ayudarte a destacar de forma única y memorable.
             </p>
           </div>
 
-          <div className="w-full lg:w-3/5 h-[600px] sm:h-[650px] lg:h-[700px] xl:h-[750px] 2xl:h-[800px] mt-10 flex justify-center items-center overflow-visible">
+          {/* Lanyard */}
+          <div className="w-full lg:w-3/5 h-[500px] sm:h-[600px] md:h-[650px] lg:h-[700px] xl:h-[750px] 2xl:h-[800px] mt-12 lg:mt-0 flex justify-center items-center">
             <Lanyard position={[0, 1.5, 20]} gravity={[0, -40, 0]} />
           </div>
         </motion.div>

@@ -70,9 +70,7 @@ export default function Cabecera({ setMenuOpen }) {
           </span>
         </h1>
         <div className="w-20 h-1 bg-yellow-400 rounded-full"></div>
-        <p className="text-neutral-300 text-lg sm:text-xl md:text-2xl font-prata max-w-2xl drop-shadow-[0_2px_2px_rgba(0,0,0,0.6)]">
-          Estrategia, presencia y creatividad. Todo empieza aquí.
-        </p>
+        
       </motion.div>
     </section>
   );

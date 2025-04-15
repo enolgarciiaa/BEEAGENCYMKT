@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import fondoGeneral from "/src/assets/fondo-seccion3.png";
+import fondoVideo from "/src/assets/fondoblanco.mp4";
 import fondoAsesoria from "/src/assets/fotospb/asesoria-juridica.png";
 import fondoEcommerce from "/src/assets/fotospb/ecommerce.png";
 import fondoHosteleria from "/src/assets/fotospb/hosteleria.png";
@@ -39,23 +39,34 @@ export default function SectoresFondoDoble() {
       initial={{ opacity: 0, y: 100 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 1 }}
-      className="w-full min-h-screen md:min-h-[120vh] xl:min-h-[140vh] 2xl:min-h-[140vh] px-4 sm:px-6 py-20 sm:py-28 flex flex-col items-center justify-start bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${fondoGeneral})` }}
+      className="relative w-full min-h-screen md:min-h-[120vh] xl:min-h-[140vh] 2xl:min-h-[140vh] px-4 sm:px-6 py-20 sm:py-28 flex flex-col items-center justify-start text-white overflow-hidden"
     >
-      {/* Título estilo valores */}
+      {/* 🎥 Fondo en vídeo */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        src={fondoVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+
+      
+
+      {/* Título */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="relative text-center w-full flex flex-col items-center mb-[150px] sm:mb-[200px] mt-[80px] sm:mt-[100px] px-4"
+        className="relative text-center w-full flex flex-col items-center mb-[150px] sm:mb-[200px] mt-[80px] sm:mt-[100px] px-4 z-10"
       >
-        <div className="text-[1.5rem] sm:text-[1.6rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] 2xl:text-[5.5rem] font-cinzel font-normal uppercase text-blue-900 leading-tight whitespace-nowrap">
+        <div className="text-[1.5rem] sm:text-[1.6rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] 2xl:text-[5.5rem] font-cinzel font-normal uppercase text-blue-600 leading-tight whitespace-nowrap">
           <h2 className="text-sectores">somos nuestros clientes</h2>
         </div>
 
         <div className="w-full max-w-7xl relative">
-          <div className="absolute bottom-[-20px] sm:bottom-[-30px] left-0 w-full h-[20px] sm:h-[40px] bg-blue-900" />
+          <div className="absolute bottom-[-20px] sm:bottom-[-30px] left-0 w-full h-[20px] sm:h-[40px] bg-blue-600" />
           <div className="font-[Inspiration,cursive] font-medium text-[3rem] xs:text-[4rem] sm:text-[6rem] md:text-[6rem] lg:text-[7rem] xl:text-[9rem] text-yellow-500 absolute bottom-[-50px] sm:bottom-[-140px] md:bottom-[-100px] xl:bottom-[-130px] left-16 sm:left-44 md:left-32 lg:left-36 xl:left-48 transform -translate-x-1/2 z-[3]">
             Sectores
           </div>
@@ -63,7 +74,7 @@ export default function SectoresFondoDoble() {
       </motion.div>
 
       {/* Tarjetas */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 w-full max-w-[1800px] px-4">
+      <div className="z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 w-full max-w-[1800px] px-4">
         {sectores.map((sector, index) => (
           <motion.div
             key={index}

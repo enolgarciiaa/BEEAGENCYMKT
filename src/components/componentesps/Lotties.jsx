@@ -123,7 +123,7 @@ function FlipCard({ servicio }) {
             {servicio.items.map((item, idx) => (
               <li
                 key={idx}
-                className="bg-white font-semibold rounded-md px-4 py-3 text-center text-black hover:scale-105 transition transform duration-300 shadow-md"
+                className="bg-blue-500 font-semibold rounded-md px-4 py-3 text-center text-white hover:scale-105 transition transform duration-300 shadow-md"
               >
                 {item}
               </li>

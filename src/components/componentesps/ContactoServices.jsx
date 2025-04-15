@@ -57,7 +57,7 @@ export default function ContactoServices() {
               <select
                 id="servicio"
                 required
-                className="w-full bg-white text-black border-b border-white py-2 outline-none"
+                className="w-full bg-blue-500 text-white   border-white py-2 outline-none"
                 >
                 <option value="">Selecciona una opción</option>
                 <option value="desarrollo-web">Desarrollo Web</option>
@@ -94,7 +94,7 @@ export default function ContactoServices() {
                 />
                 <label htmlFor="privacidad">
                   Acepto la{" "}
-                  <a href="/politica-privacidad" className="underline hover:text-blue-300">
+                  <a href="/politica_privacidad" className="underline hover:text-blue-300">
                     política de privacidad
                   </a>
                 </label>

@@ -14,7 +14,7 @@ extend({ MeshLineGeometry, MeshLineMaterial });
 
 export default function Lanyard({ position = [0, 1.5, 20], gravity = [0, -40, 0], fov = 20, transparent = true }) {
   return (
-    <div className="w-full lg:max-w-[90%] xl:max-w-[1200px] h-[600px] sm:h-[700px] md:h-[800px] lg:h-[900px] 2xl:h-[1000px] flex justify-center items-center mx-auto overflow-visible">
+    <div className="w-full lg:max-w-[90%] xl:max-w-[1200px] h-[600px] sm:h-[700px] md:h-[800px] lg:h-[900px] 2xl:h-[1100px] flex justify-center items-center mx-auto overflow-visible">
       <Canvas
         camera={{ position, fov }}
         gl={{ alpha: transparent }}
@@ -46,12 +46,13 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
   const [hovered, hover] = useState(false);
   const [isSmall, setIsSmall] = useState(() => typeof window !== 'undefined' && window.innerWidth < 1024);
 
-  useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 1]);
-  useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 1]);
-  useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1]);
+  useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 0.5]);
+useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 1]);
+useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1]);
+useSphericalJoint(j3, card, [[0, 0, 0], [0, 1.8, 0]]);
 
   // 🔧 Cuerda más corta aquí:
-  useSphericalJoint(j3, card, [[0, 0, 0], [0, 1.6, 0]]);
+  useSphericalJoint(j3, card, [[0, 0, 0], [0, 1.8, 0]]);
 
   useEffect(() => {
     if (hovered) {
@@ -127,7 +128,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
           resolution={isSmall ? [1000, 2000] : [1000, 1000]}
           useMap
           map={texture}
-          repeat={[-4, 1]}
+          repeat={[4, 1]}
           lineWidth={2}
         />
       </mesh>

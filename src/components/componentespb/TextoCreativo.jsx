@@ -30,7 +30,7 @@ export default function TextoCreativo() {
       initial={{ opacity: 0, y: 100 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 1 }}
-      className="w-full mb-48 relative overflow-hidden"
+      className="w-full  relative overflow-hidden"
     >
       {/* TÍTULO */}
       <motion.div
@@ -41,12 +41,12 @@ export default function TextoCreativo() {
         className="relative max-w-5xl mx-6 mt-24 text-left z-10 lg:ml-20"
       >
         <div className="font-cinzel uppercase text-3xl md:text-6xl lg:text-8xl leading-tight relative">
-          <h2 className="text-color-principal-azul">¿QUIERES</h2>
-          <h2 className="text-color-principal-azul">UNIRTE A</h2>
-          <h2 className="text-color-principal-azul">NUESTRO EQUIPO?</h2>
+          <h2 className="text-blue-600">¿QUIERES</h2>
+          <h2 className="text-blue-600">UNIRTE A</h2>
+          <h2 className="text-blue-600">NUESTRO EQUIPO?</h2>
         </div>
-        <div className="absolute top-2 lg:top-4 left-[150px] sm:left-[290px] lg:left-[450px] h-[20px] sm:h-[30px] lg:h-[50px] w-[40%] bg-color-principal-azul z-0" />
-        <div className="absolute bottom-[-20px] sm:bottom-[-30px] lg:bottom-[-55px] left-0 w-[90%] lg:w-[100%] h-[20px] sm:h-[30px] lg:h-[50px] bg-color-principal-azul z-0" />
+        <div className="absolute top-2 lg:top-4 left-[150px] sm:left-[290px] lg:left-[450px] h-[20px] sm:h-[30px] lg:h-[50px] w-[40%] bg-blue-600 z-0" />
+        <div className="absolute bottom-[-20px] sm:bottom-[-30px] lg:bottom-[-55px] left-0 w-[90%] lg:w-[100%] h-[20px] sm:h-[30px] lg:h-[50px] bg-blue-600 z-0" />
         <div className="font-inspiration text-[4rem] sm:text-[8rem] md:text-[8rem] lg:text-[13rem] text-color-secundario-amarillo absolute bottom-[-60px] md:bottom-[-120px] lg:bottom-[-200px] left-10 z-20">
           Equipo
         </div>
@@ -58,7 +58,7 @@ export default function TextoCreativo() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
         viewport={{ once: true }}
-        className="relative flex sm:justify-center mt-[100px] sm:mt-[250px] md:mt-[200px] px-10 z-10"
+        className="relative flex sm:justify-center mb-36 mt-[100px] sm:mt-[250px] md:mt-[200px] px-10 z-10"
       >
         <p className="text-white text-2xl sm:text-[2rem] md:text-[2.3rem] lg:text-[2.5rem] font-roboto-slab font-light leading-relaxed max-w-[1000px] text-center md:text-center lg:text-center lg:mt-10 lg:ml-auto lg:mr-20">
           Las mejores ideas no se planifican, se descubren. A veces aparecen bailando en una {" "}

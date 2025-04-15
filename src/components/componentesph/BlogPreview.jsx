@@ -1,50 +1,62 @@
 import { Link } from "react-router-dom";
 import blogPosts from '/src/data/blogData.js';
-import fondoSeccion3 from "/src/assets/fondo-seccion3.png";
+import fondoVideo from "/src/assets/fondoblanco.mp4"; // Asegúrate de que esta ruta sea correcta
 
 const BlogPreview = () => {
   return (
-    <section
-      className="py-16 px-4 sm:px-6 lg:px-8 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${fondoSeccion3})` }}
-    >
+    <section className="py-20 px-4 sm:px-6 lg:px-12 text-white relative overflow-hidden">
 
-      <div className="max-w-7xl mx-auto">
-        {/* Encabezado */}
-        <div className="text-center mb-12">
-          <span className="inline-block px-3 py-1 text-sm font-semibold text-yellow-600 bg-yellow-100 rounded-full mb-4">
-            Blog BeeAgency
-          </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 font-cinzel">
-            Insights para hacer crecer tu marca
-          </h2>
-          <hr className="w-20 mx-auto mt-6 border-yellow-400 border-2" />
-        </div>
+      {/* Fondo de video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source src={fondoVideo} type="video/mp4" />
+        Tu navegador no soporta video HTML5.
+      </video>
 
-        {/* Grid de artículos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.slice(0, 3).map((post) => (
-            <ArticleCard key={post.id} post={post} />
-          ))}
-        </div>
+      
 
-        {/* Botón ver todo */}
-        <div className="text-center mt-12">
-          <Link
-            to="/blog"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black transition-all duration-300 transform hover:scale-105 hover:bg-yellow-400 hover:text-black shadow-lg hover:shadow-xl"
-            >
-            Explora nuestro blog
-          </Link>
-        </div>
+      {/* Título y subtítulo */}
+      <div className="max-w-7xl mx-auto text-center mb-16 z-10 relative">
+        <span className="inline-block px-4 py-1 text-sm font-bold text-black bg-yellow-400 rounded-full tracking-wide shadow-lg">
+          Blog BeeAgency
+        </span>
+        <h2 className="text-4xl sm:text-6xl font-extrabold mt-6 tracking-tight">
+          <span className="text-slate-900">Insights para hacer crecer</span> <span className="text-blue-400"> tu marca</span>
+        </h2>
+        <p className="mt-4 text-gray-500 max-w-2xl mx-auto">
+          Conocimiento práctico, innovación y tendencias para marcas que quieren dejar huella en la era digital.
+        </p>
+        <div className="mt-6 w-24 h-1 bg-gradient-to-r from-yellow-400 to-blue-400 mx-auto rounded-full"></div>
       </div>
+
+      {/* Artículos */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 z-10 relative">
+        {blogPosts.slice(0, 3).map((post) => (
+          <ArticleCard key={post.id} post={post} />
+        ))}
+      </div>
+
+      {/* Botón de acción */}
+      <div className="text-center mt-14 z-10 relative">
+        <Link
+          to="/blog"
+          className="px-8 py-3 bg-yellow-400 text-black font-semibold rounded-full shadow-lg hover:bg-blue-500 hover:text-white transition-all duration-300 transform hover:scale-105"
+        >
+          Explora nuestro blog
+        </Link>
+      </div>
+
     </section>
   );
 };
 
-// Componente interno para cada artículo
 const ArticleCard = ({ post }) => (
-  <article className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+  <article className="bg-gray-500 rounded-xl border border-white/10 backdrop-blur-sm shadow-md hover:shadow-yellow-400/10 transition-all duration-300 overflow-hidden group relative">
     <div className="h-48 overflow-hidden">
       <img
         src={post.image}
@@ -55,28 +67,22 @@ const ArticleCard = ({ post }) => (
 
     <div className="p-6">
       <div className="flex justify-between items-center mb-3">
-        <span className="text-xs font-semibold px-2 py-1 bg-gray-100 text-gray-600 rounded">
+        <span className="text-xs font-semibold px-3 py-1 bg-yellow-400 text-black rounded-full">
           {post.category}
         </span>
-        <span className="text-xs text-gray-500">
+        <span className="text-xs text-gray-400">
           {post.readingTime}
         </span>
       </div>
-      
-      <h3 className="text-xl font-bold text-gray-900 mb-2 font-cinzel">
+      <h3 className="text-xl font-bold mb-2 text-yellow-400 font-cinzel group-hover:text-blue-400 transition-colors">
         {post.title}
       </h3>
-      
-      <p className="text-gray-600 mb-4">
-        {post.excerpt}
-      </p>
-      
+      <p className="text-gray-200 mb-4">{post.excerpt}</p>
       <Link
         to={`/blog/${post.slug}`}
-        className="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium transition-colors"
+        className="text-sm text-yellow-400 hover:text-blue-400 font-semibold transition-colors"
       >
-        Leer artículo
-        
+        Leer artículo 
       </Link>
     </div>
   </article>

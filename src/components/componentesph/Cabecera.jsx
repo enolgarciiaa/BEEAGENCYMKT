@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import videoBg from "/src/assets/fotosph/fondomain.mp4";
 import tarjetaImg from "/src/assets/fotosph/fondotarjeta.png";
 import logoBA from "/src/assets/logoBAheader.png";
@@ -15,6 +16,7 @@ export default function Cabecera({ setMenuOpen }) {
   const [borrando, setBorrando] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [showHeader, setShowHeader] = useState(true); // 👈 visibilidad del header
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -91,7 +93,7 @@ export default function Cabecera({ setMenuOpen }) {
 
       {/* Título central */}
       <div className="w-[95%] max-w-[950px] h-[200px] md:h-[300px] flex flex-col items-center justify-center bg-black/70 border-2 border-white z-40 px-4 mt-48 sm:mt-36 md:mt-28 shadow-lg">
-        <h2 className="text-white text-[2rem] sm:text-[2.8rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] 2xl:text-[5rem] font-cinzel font-normal leading-tight">
+        <h2 className="text-white text-[2rem] sm:text-[2.8rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] 2xl:text-[5rem] font-bold leading-tight">
           Descubre el{" "}
           <span className={`${palabras[palabraIndex].clase}`}>
             {actualPalabra}
@@ -103,24 +105,28 @@ export default function Cabecera({ setMenuOpen }) {
       </div>
 
       {/* Tarjeta */}
-      <div className="hidden md:flex absolute bottom-[-200px] left-1/2 transform -translate-x-1/2 w-[90%] max-w-[1050px] h-auto bg-white shadow-xl flex-col md:flex-row items-center gap-6 p-6 z-30">
+      <div className="hidden md:flex absolute bottom-[-270px] left-1/2 transform -translate-x-1/2 w-[90%] max-w-[1050px] h-auto bg-white  shadow-xl flex-col md:flex-row items-center gap-6 p-6 z-30">
         <div
           className="flex flex-col justify-center items-center text-center w-full md:w-2/3 h-full gap-4"
           data-aos="fade-up"
           data-aos-anchor-placement="top-bottom"
           data-aos-duration="3000"
         >
-          <h1 className="text-2xl sm:text-3xl md:text-5xl font-cinzel text-black leading-snug">
-            Agencia de Marketing Digital
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-cinzel font-semibold text-black leading-snug">
+           <span className="text-yellow-500">Agencia</span> de <span className="text-blue-500">Marketing</span> Digital
           </h1>
-          <p className="text-black font-roboto-slab text-sm sm:text-base md:text-lg max-w-xl leading-relaxed">
+          <p className="text-black font-light text-sm sm:text-base md:text-lg max-w-xl leading-relaxed">
             Descubre la revolución del Marketing Digital con nosotros integrando las últimas
             tendencias de Inteligencia Artificial, Procesos Automatizados y el lado más humano con
             la creatividad que nos representa.
           </p>
-          <button className="px-4 py-2 text-sm sm:text-base md:text-lg font-ubuntu italic font-light rounded-full bg-black border border-black text-white hover:bg-yellow-400 hover:text-black transition-all duration-700">
+          <button
+            onClick={() => navigate("/contact")}
+            className="px-4 py-2 text-sm sm:text-base md:text-lg font-ubuntu italic font-light rounded-full bg-yellow-400 text-black hover:bg-blue-500 hover:text-white transition-all duration-700"
+            >
             Únete al cambio
           </button>
+
         </div>
 
         <div className="w-full md:w-1/3 flex justify-center md:justify-center">

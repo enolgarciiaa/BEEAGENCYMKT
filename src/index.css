@@ -19,7 +19,7 @@
   body {
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(to bottom right, #0c0c13, #0a0a11, #000000);
+    background: linear-gradient(to bottom right, #121212, #0b0b0b, #050505);
     font-family: 'Ubuntu', sans-serif;
     cursor: none;
   }

@@ -55,21 +55,20 @@ export default function ContactoCompleto() {
         src={videoFondo}
       />
 
-      {/* Capa oscura */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black/70 z-10"></div>
+      
 
       {/* Estilo flotante */}
       <style>
         {`
           @keyframes float {
             0%, 100% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-40px) scale(1.02); }
+            50% { transform: translateY(-30px) scale(1.02); }
           }
         `}
       </style>
 
       {/* Contenido principal */}
-      <div className="relative z-20 flex flex-col items-center px-6 pt-20 pb-20 min-h-screen">
+      <div className="relative z-20 flex flex-col items-center px-6  pb-20 min-h-screen">
         {/* Cabecera + tarjeta con animación compartida */}
         <div className="animate-[float_10s_ease-in-out_infinite] w-full max-w-7xl">
           {/* Cabecera */}

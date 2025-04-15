@@ -2,10 +2,9 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// Contenido de cada fila
-const fila1 = ["Social Media", "Efecto WOW", "Let's do it 🤝", "Marketing", "Stories", "Viral","Social Media", "Efecto WOW", "Let's do it 🤝", "Marketing", "Stories", "Viral","Social Media", "Efecto WOW", "Let's do it 🤝", "Marketing", "Stories", "Viral","Social Media", "Efecto WOW", "Let's do it 🤝", "Marketing", "Stories", "Viral","Social Media", "Efecto WOW", "Let's do it 🤝", "Marketing", "Stories", "Viral","Social Media", "Efecto WOW", "Let's do it 🤝", "Marketing", "Stories", "Viral","Social Media", "Efecto WOW", "Let's do it 🤝", "Marketing", "Stories", "Viral","Social Media", "Efecto WOW", "Let's do it 🤝", "Marketing", "Stories", "Viral"];
-const fila2 = ["Paid Media 💰💲", "Programación", "Diseño UX", "Eventos", "Branding", "Contenido","Paid Media 💰💲", "Programación", "Diseño UX", "Eventos", "Branding", "Contenido","Paid Media 💰💲", "Programación", "Diseño UX", "Eventos", "Branding", "Contenido","Paid Media 💰💲", "Programación", "Diseño UX", "Eventos", "Branding", "Contenido","Paid Media 💰💲", "Programación", "Diseño UX", "Eventos", "Branding", "Contenido","Paid Media 💰💲", "Programación", "Diseño UX", "Eventos", "Branding", "Contenido","Paid Media 💰💲", "Programación", "Diseño UX", "Eventos", "Branding", "Contenido"];
-const fila3 = ["Inteligencia Artificial", "Vídeos", "Creatividad 🎨", "Responsive", "UI", "Posts","Inteligencia Artificial", "Vídeos", "Creatividad 🎨", "Responsive", "UI", "Posts","Inteligencia Artificial", "Vídeos", "Creatividad 🎨", "Responsive", "UI", "Posts","Inteligencia Artificial", "Vídeos", "Creatividad 🎨", "Responsive", "UI", "Posts","Inteligencia Artificial", "Vídeos", "Creatividad 🎨", "Responsive", "UI", "Posts","Inteligencia Artificial", "Vídeos", "Creatividad 🎨", "Responsive", "UI", "Posts","Inteligencia Artificial", "Vídeos", "Creatividad 🎨", "Responsive", "UI", "Posts"];
+const fila1 = ["Social Media", "Efecto WOW", "Let's do it 🤝", "Marketing", "Stories", "Viral","Social Media", "Efecto WOW", "Let's do it 🤝", "Marketing", "Stories", "Viral","Social Media", "Efecto WOW", "Let's do it 🤝", "Marketing", "Stories", "Viral","Social Media", "Efecto WOW", "Let's do it 🤝", "Marketing", "Stories", "Viral"];
+const fila2 = ["Paid Media 💰💲", "Programación", "Diseño UX", "Eventos", "Branding", "Contenido","Paid Media 💰💲", "Programación", "Diseño UX", "Eventos", "Branding", "Contenido","Paid Media 💰💲", "Programación", "Diseño UX", "Eventos", "Branding", "Contenido","Paid Media 💰💲", "Programación", "Diseño UX", "Eventos", "Branding", "Contenido"];
+const fila3 = ["Inteligencia Artificial", "Vídeos", "Creatividad 🎨", "Responsive", "UI", "Posts","Inteligencia Artificial", "Vídeos", "Creatividad 🎨", "Responsive", "UI", "Posts","Inteligencia Artificial", "Vídeos", "Creatividad 🎨", "Responsive", "UI", "Posts","Inteligencia Artificial", "Vídeos", "Creatividad 🎨", "Responsive", "UI", "Posts"];
 const fila4 = [...fila3];
 
 const duplicate = (arr, times = 4) => Array(times).fill(arr).flat();
@@ -23,48 +22,49 @@ export default function ImpulsaMarca() {
   ];
 
   return (
-    <section className="w-full bg-[#060606] text-white py-20 mt-20 md:mt-72 ">
-      {/* Contenido superior */}
-        <div
-          className="text-center mx-auto w-full max-w-8xl px-4 sm:px-6 md:px-8 lg:px-10"
-          data-aos="slide-up"
-          data-aos-anchor-placement="top-bottom"
-          data-aos-duration="3000"
-          >
-          <h2 className="w-full max-w-none text-3xl md:text-7xl font-bold mb-4">
-            Impulsa tu marca en un <span className="text-blue-400">océano azul</span> 
-          </h2>
-          <p className="text-lg md:text-xl">
-            La diferencia es la ventaja más buscada, conoce más sobre los servicios
-            de Bee Agency y cómo es nuestra metodología para destacar entre la multitud.
-          </p>
-        </div>
+    <section className="relative w-full min-h-screen text-white py-20 md:py-32   overflow-hidden">
+      {/* Fondo IA futurista */}
+      
 
-      {/* Carruseles (full width) */}
+      {/* Título y texto */}
       <div
-        className="mt-20  w-full"
-        data-aos="slide-up"
-        data-aos-anchor-placement="top-bottom"
-        data-aos-duration="3000"
+        className="relative z-10 text-center mx-auto w-full max-w-8xl px-4 sm:px-6 lg:px-10"
+        data-aos="fade-up"
+        data-aos-duration="2000"
       >
+        <h2 className="text-4xl md:text-6xl font-extrabold mb-4 md:mt-80 xl:mt-96 leading-tight tracking-tight">
+          Impulsa tu marca en un{" "}
+          <span className="text-yellow-400 ">
+            entorno inteligente
+          </span>
+        </h2>
+        <p className="text-lg md:text-xl text-gray-300 font-light max-w-3xl mx-auto">
+          La diferencia es la ventaja más buscada. Descubre cómo Bee Agency combina IA, creatividad y estrategia para destacar entre la multitud.
+        </p>
+      </div>
+
+      {/* Carruseles */}
+      <div className="relative z-10 mt-20 space-y-6">
         {filas.map((fila, i) => (
-          <div key={i} className="w-full overflow-hidden border-t border-b border-white">
+          <div key={i} className="w-full overflow-hidden border-t border-b border-white/10">
             <div
-              className={`flex whitespace-nowrap  w-[200%] py-4 px-2 animate-scroll-${fila.direction}`}
+              className={`flex whitespace-nowrap w-[200%] py-4 px-2 animate-scroll-${fila.direction}`}
             >
-              {fila.contenido.map((item, idx) => (
-                <span
-                key={idx}
-                className={`px-4 py-2 rounded-full shrink-0 whitespace-nowrap text-lg font-semibold ${
-                  item.includes("🤝") || item.includes("💰") || item.includes("🎨")
-                    ? "bg-white text-black font-semibold border border-white"
-                    : ""
-                }`}
-              >
-                {item}
-              </span>
-              
-              ))}
+              {fila.contenido.map((item, idx) => {
+                const isHighlight = item.includes("🤝") || item.includes("💰") || item.includes("🎨");
+
+                return (
+                  <span
+                    key={idx}
+                    className={`mx-2 px-4 py-2 rounded-full text-sm sm:text-base font-semibold transition-all duration-300 whitespace-nowrap 
+                    ${isHighlight
+                      ? "bg-white text-black border border-white shadow-xl hover:scale-105"
+                      : "bg-white/10 border border-white/10 text-white hover:bg-white/20"}`}
+                  >
+                    {item}
+                  </span>
+                );
+              })}
             </div>
           </div>
         ))}
