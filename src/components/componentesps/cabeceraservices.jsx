@@ -69,9 +69,7 @@ export default function CabeceraServices({ setMenuOpen }) {
 
         <div className="w-20 h-1 bg-yellow-400 rounded-full"></div>
 
-        <p className="text-neutral-300 text-base sm:text-lg font-prata max-w-xl drop-shadow-sm">
-          Elige estrategia, diseño y resultados reales.
-        </p>
+        
       </motion.div>
     </section>
   );

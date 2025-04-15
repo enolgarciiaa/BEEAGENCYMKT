@@ -4,7 +4,7 @@ export default function ContactoServices() {
   const [acepta, setAcepta] = useState(false);
 
   return (
-    <section className="w-full bg-gradient-to-b from-black via-zinc-900 to-black text-white py-24 px-6 sm:px-10 md:px-20 lg:px-32">
+    <section className="w-full  text-white py-24 px-6 sm:px-10 md:px-20 lg:px-32">
       <div className="max-w-7xl mx-auto">
         {/* Título principal */}
         <div className="text-left mb-16">
