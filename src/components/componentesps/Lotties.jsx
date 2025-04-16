@@ -11,21 +11,21 @@ const servicios = [
     color: lottieAzul2,
     descripcion:
       "Creamos sitios que combinan funcionalidad, diseño visual y posicionamiento SEO para ayudarte a destacar en internet. Desde webs corporativas hasta ecommerce avanzados. Siempre enfocados en la conversión, el rendimiento y la experiencia de usuario.",
-    items: ["Ecommerce", "Webs Corporativas", "SEO y SEM", "Landing Pages"],
+    items: ["Ecommerce", "Empresas", "SEO y SEM", "Webs corporativas"],
   },
   {
     title: "Consultoría de Negocio",
     color: lottieAmarillo,
     descripcion:
       "Auditorías, planificación estratégica y automatización para impulsar tu crecimiento digital. Analizamos tu negocio, creamos un plan personalizado y lo ejecutamos contigo paso a paso para lograr resultados reales.",
-    items: ["Auditoría Digital", "Plan de Marketing", "Automatización", "Consultoría Estratégica"],
+    items: ["Auditoría", "Plan de Marketing", "Automatización", "Consultoría"],
   },
   {
     title: "Branding & Identidad",
     color: lottieAzul,
     descripcion:
       "Diseñamos marcas con coherencia, personalidad y propósito. Cuidamos cada detalle visual y verbal para crear una identidad única que conecte con tu público objetivo en todos los canales digitales.",
-    items: ["Social Media", "Diseño Gráfico", "Naming y Voz", "Manual de Marca"],
+    items: ["Social Media", "Diseño Gráfico", "Comunicacion", "Manual de Marca"],
   },
 ];
 

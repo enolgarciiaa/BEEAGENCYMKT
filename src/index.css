@@ -34,10 +34,10 @@
   100% { transform: translateX(0); }
 }
 .animate-scroll-left {
-  animation: scroll-left 150s linear infinite;
+  animation: scroll-left 50s linear infinite;
 }
 .animate-scroll-right {
-  animation: scroll-right 150s linear infinite;
+  animation: scroll-right 50s linear infinite;
 }
 
 
@@ -60,11 +60,11 @@
 }
 
 .animate-icon-scroll-left {
-  animation: iconScrollLeft 100s linear infinite;
+  animation: iconScrollLeft 50s linear infinite;
 }
 
 .animate-icon-scroll-right {
-  animation: iconScrollRight 200s linear infinite;
+  animation: iconScrollRight 80s linear infinite;
 }
 
 
