@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import CabeceraServices from '/src/components/componentesps/CabeceraServices';
 import FlowingMenu from '/src/components/componentesph/FlowingMenu';
-import Lotties from "/src/components/componentesps/Lotties";
-import ImpulsaMarcaservices from "/src/components/componentesps/ImpulsaMarcaservices";
-import MetodologiaServices from "/src/components/componentesps/MetodologiaServices"; 
-import ContactoServices from "/src/components/componentesps/ContactoServices";
 import Footer from '/src/components/Footer';
 import ScrollToTopButton from '/src/components/ScrollToTopButton';
 import CustomCursor from "/src/components/CustomCursor";
 
+const Lotties = lazy(() => import("/src/components/componentesps/Lotties"));
+const ImpulsaMarcaservices = lazy(() => import("/src/components/componentesps/ImpulsaMarcaservices"));
+const MetodologiaServices = lazy(() => import("/src/components/componentesps/MetodologiaServices"));
+const ContactoServices = lazy(() => import("/src/components/componentesps/ContactoServices"));
 
 const demoItems = [
   { link: '/', text: 'Home', image: 'https://picsum.photos/600/400?random=1' },
@@ -23,43 +23,41 @@ function Services() {
 
   return (
     <>
-      {/*Cabecera*/}
       <CabeceraServices setMenuOpen={setMenuOpen} />
-      
-      
-       {/* MENÚ FULLSCREEN */}
-        {menuOpen && (
-          <div className="fixed inset-0 z-50 bg-black text-white flex flex-col items-center justify-center">
-            <button
-              className="absolute top-6 right-6 text-4xl sm:text-5xl z-50"
-              onClick={() => setMenuOpen(false)}
-              >
-                  ✕
-            </button>
-            <div className="w-full h-full flex items-center justify-center px-4">
-              <FlowingMenu items={demoItems} />
-            </div>
+
+      {menuOpen && (
+        <div className="fixed inset-0 z-50 bg-black text-white flex flex-col items-center justify-center">
+          <button
+            className="absolute top-6 right-6 text-4xl sm:text-5xl z-50"
+            onClick={() => setMenuOpen(false)}
+          >
+            ✕
+          </button>
+          <div className="w-full h-full flex items-center justify-center px-4">
+            <FlowingMenu items={demoItems} />
           </div>
-        )}
+        </div>
+      )}
 
-        {/*Seccion Lotties servicios*/}
+      <Suspense fallback={null}>
         <Lotties />
+      </Suspense>
 
-        {/*Seccion ImpulsaMarca servicios*/}
+      <Suspense fallback={null}>
         <ImpulsaMarcaservices />
+      </Suspense>
 
-        {/*Seccion metodologia servicios*/}
+      <Suspense fallback={null}>
         <MetodologiaServices />
+      </Suspense>
 
-        {/*Seccion metodologia servicios*/}
+      <Suspense fallback={null}>
         <ContactoServices />
+      </Suspense>
 
-        {/* FOOTER */}
-        <Footer />
-
-
-        <ScrollToTopButton />
-        <CustomCursor />
+      <Footer />
+      <ScrollToTopButton />
+      <CustomCursor />
     </>
   );
 }

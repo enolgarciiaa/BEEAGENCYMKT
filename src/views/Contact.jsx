@@ -1,23 +1,20 @@
-import FormularioContact from '/src/components/componentespc/FormularioContact';
+import { lazy, Suspense } from 'react';
 import Footer from '/src/components/Footer';
 import CustomCursor from "/src/components/CustomCursor";
 
+const FormularioContact = lazy(() => import('/src/components/componentespc/FormularioContact'));
 
 function Contact() {
   return (
     <div className="bg-white">
-      
-      <FormularioContact />
+      <Suspense fallback={null}>
+        <FormularioContact />
+      </Suspense>
 
-      {/* FOOTER */}
-        <Footer />
-        
-       <CustomCursor />
-      
+      <Footer />
+      <CustomCursor />
     </div>
   );
 }
 
 export default Contact;
-
-  

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import blogPosts from '/src/data/blogData.js';
-import fondoVideo from "/src/assets/fondoblanco.mp4"; // Asegúrate de que esta ruta sea correcta
+import fondoVideo from "/src/assets/fondoblanco.mp4";
 
 const BlogPreview = () => {
   return (

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import videoBg from "/src/assets/fotosps/coverr-timelapse-using-social-media-1556-1080p.mp4";
+import videoBg from "/src/assets/fotosps/coverr-timelapse-using-social-media-1556-1080p.webm";
 import logoBA from "/src/assets/logoBAheader.png";
 
 export default function CabeceraServices({ setMenuOpen }) {
@@ -28,7 +28,9 @@ export default function CabeceraServices({ setMenuOpen }) {
         autoPlay
         loop
         muted
-        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+        playsInline
+        controls={false}
+        className="absolute top-0 left-0 w-full h-full object-cover -z-10 pointer-events-none select-none"
       >
         <source src={videoBg} type="video/mp4" />
         Tu navegador no soporta el video
@@ -68,8 +70,6 @@ export default function CabeceraServices({ setMenuOpen }) {
         </h1>
 
         <div className="w-20 h-1 bg-yellow-400 rounded-full"></div>
-
-        
       </motion.div>
     </section>
   );

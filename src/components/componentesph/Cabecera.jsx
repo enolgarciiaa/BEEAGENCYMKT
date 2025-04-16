@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import videoBg from "/src/assets/fotosph/fondomain.mp4";
+import videoBg from "/src/assets/fotosph/fondomain.webm";
 import tarjetaImg from "/src/assets/fotosph/fondotarjeta.png";
 import logoBA from "/src/assets/logoBAheader.png";
 
@@ -15,7 +15,7 @@ export default function Cabecera({ setMenuOpen }) {
   const [actualPalabra, setActualPalabra] = useState("");
   const [borrando, setBorrando] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
-  const [showHeader, setShowHeader] = useState(true); // 👈 visibilidad del header
+  const [showHeader, setShowHeader] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -66,7 +66,9 @@ export default function Cabecera({ setMenuOpen }) {
         autoPlay
         loop
         muted
-        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+        playsInline
+        controls={false}
+        className="absolute top-0 left-0 w-full h-full object-cover -z-10 pointer-events-none select-none"
       >
         <source src={videoBg} type="video/mp4" />
         Tu navegador no soporta el video

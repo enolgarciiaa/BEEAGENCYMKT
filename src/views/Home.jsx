@@ -1,18 +1,18 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import Cabecera from "/src/components/componentesph/Cabecera";
 import FlowingMenu from '/src/components/componentesph/FlowingMenu';
-import ImpulsaMarca from '/src/components/componentesph/ImpulsaMarca';
-import Lanyard from '/src/components/componentesph/Lanyard';
-import Metodologia from '/src/components/componentesph/Metodologia';
-import BlogPreview from '/src/components/componentesph/BlogPreview';
-import Contacto from '/src/components/componentesph/Contacto'
-import CarruselIconos from "/src/components/componentesph/CarruselIconos";
 import Footer from '/src/components/Footer';
 import ScrollToTopButton from '/src/components/ScrollToTopButton';
 import CustomCursor from "/src/components/CustomCursor";
 import CookieBanner from "/src/components/CookieBanner";
 import { motion } from "framer-motion";
 
+const ImpulsaMarca = lazy(() => import('/src/components/componentesph/ImpulsaMarca'));
+import Lanyard from '/src/components/componentesph/Lanyard';
+const Metodologia = lazy(() => import('/src/components/componentesph/Metodologia'));
+const BlogPreview = lazy(() => import('/src/components/componentesph/BlogPreview'));
+const Contacto = lazy(() => import('/src/components/componentesph/Contacto'));
+const CarruselIconos = lazy(() => import('/src/components/componentesph/CarruselIconos'));
 
 const demoItems = [
   { link: '/', text: 'Home', image: 'https://picsum.photos/600/400?random=1' },
@@ -22,18 +22,14 @@ const demoItems = [
   { link: '/contact', text: 'Contact', image: 'https://picsum.photos/600/400?random=5', target: '_blank' }
 ];
 
-
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    
     <div className="w-full overflow-x-hidden">
       <CookieBanner />
-      {/* CABECERA NUEVA */}
       <Cabecera setMenuOpen={setMenuOpen} />
 
-      {/* MENÚ FULLSCREEN */}
       {menuOpen && (
         <div className="fixed inset-0 z-50 bg-black text-white flex flex-col items-center justify-center">
           <button
@@ -48,11 +44,10 @@ function Home() {
         </div>
       )}
 
-      
-      {/* SECCIÓN 3: CARRUSEL */}
-      <ImpulsaMarca />
+      <Suspense fallback={null}>
+        <ImpulsaMarca />
+      </Suspense>
 
-      {/* SECCIÓN 4: LANYARD */}
       <section className="w-full overflow-visible flex flex-col lg:flex-row items-center justify-between px-4 sm:px-6 md:px-10 xl:pl-20 2xl:pl-32 py-12 sm:py-20 lg:py-28 2xl:py-32 mt-28 min-h-[700px] sm:min-h-[750px] md:min-h-[800px] lg:min-h-[850px] xl:min-h-[900px] 2xl:min-h-[950px]">
         <motion.div
           className="w-full flex flex-col lg:flex-row items-center justify-between gap-12 xl:gap-20"
@@ -61,7 +56,6 @@ function Home() {
           transition={{ duration: 1.2, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          {/* Texto */}
           <div className="w-full lg:w-2/5 flex flex-col justify-center text-center lg:text-left text-white">
             <h2 className="text-3xl sm:text-5xl lg:text-6xl 2xl:text-8xl font-extrabold leading-snug max-w-2xl mx-auto lg:mx-0">
               No tenemos <span className="text-yellow-400">límites</span> a la hora de <span className="text-blue-400">innovar</span> 🚀
@@ -71,31 +65,31 @@ function Home() {
             </p>
           </div>
 
-          {/* Lanyard */}
           <div className="w-full lg:w-3/5 h-[500px] sm:h-[600px] md:h-[650px] lg:h-[700px] xl:h-[750px] 2xl:h-[800px] mt-12 lg:mt-0 flex justify-center items-center">
             <Lanyard position={[0, 1.5, 20]} gravity={[0, -40, 0]} />
           </div>
         </motion.div>
       </section>
 
+      <Suspense fallback={null}>
+        <Metodologia />
+      </Suspense>
 
-      {/* SECCIÓN 5: METODOLOGÍA */}
-      <Metodologia />
+      <Suspense fallback={null}>
+        <CarruselIconos />
+      </Suspense>
 
-      {/* SECCIÓN 6: CARRUSEL ICONOS */}
-      <CarruselIconos />
-
-      {/* SECCIÓN 7: BLOG PREVIEW */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
       >
-        <BlogPreview />
+        <Suspense fallback={null}>
+          <BlogPreview />
+        </Suspense>
       </motion.section>
 
-      {/* SECCIÓN 8: CONTACTO */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -103,16 +97,14 @@ function Home() {
         viewport={{ once: true }}
         className="relative"
       >
-        <Contacto />
+        <Suspense fallback={null}>
+          <Contacto />
+        </Suspense>
       </motion.section>
 
-      {/* FOOTER */}
       <Footer />
-
       <ScrollToTopButton />
-
       <CustomCursor />
-
     </div>
   );
 }
