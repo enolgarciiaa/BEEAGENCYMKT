@@ -2,8 +2,8 @@ import { Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import CookieConsent from '/src/components/CookieConsent'; 
 
-// Lazy load de las vistas
-const Home = lazy(() => import('/src/views/Home'));
+const HomeRouter = lazy(() => import('/src/views/HomeRouter')); // 👈 NUEVO
+
 const Beeagency = lazy(() => import('/src/views/Beeagency'));
 const Services = lazy(() => import('/src/views/Services'));
 const Blog = lazy(() => import('/src/views/Blog'));
@@ -15,10 +15,10 @@ const Politicacookies = lazy(() => import('/src/views/Politicacookies'));
 function App() {
   return (
     <>
-    <CookieConsent />
+      <CookieConsent />
       <Suspense fallback={null}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<HomeRouter />} /> {/* 👈 actualizamos esto */}
           <Route path="/Beeagency" element={<Beeagency />} />
           <Route path="/services" element={<Services />} />
           <Route path="/blog" element={<Blog />} />
@@ -28,9 +28,6 @@ function App() {
           <Route path="/Politicacookies" element={<Politicacookies />} />
         </Routes>
       </Suspense>
-
-      
-      
     </>
   );
 }

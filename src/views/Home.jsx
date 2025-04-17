@@ -22,20 +22,21 @@ const demoItems = [
 
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(null);
+  const [isDesktop, setIsDesktop] = useState(null);
   const [LanyardComponent, setLanyardComponent] = useState(null);
 
   useEffect(() => {
-    const mobile = window.innerWidth < 768;
-    setIsMobile(mobile);
-    if (!mobile) {
+    const isWideScreen = window.innerWidth >= 768;
+    setIsDesktop(isWideScreen);
+    if (isWideScreen) {
       import('/src/components/componentesph/Lanyard').then(mod => {
         setLanyardComponent(() => mod.default);
       });
     }
   }, []);
 
-  if (isMobile === null) return null;
+  if (isDesktop === null) return null;
+  if (!isDesktop) return null; // Evita mostrarlo en móvil
 
   return (
     <div className="w-full overflow-x-hidden">
@@ -59,40 +60,29 @@ function Home() {
         <ImpulsaMarca />
       </Suspense>
 
-      <section className={`w-full overflow-visible flex flex-col items-center px-4 sm:px-6 md:px-10 xl:pl-20 2xl:pl-32 ${isMobile ? 'py-20 min-h-[200px]' : 'py-12 sm:py-20 lg:py-28 2xl:py-32 mt-28 min-h-[800px]'}`}>
-        {isMobile ? (
-          <div className="text-white text-center max-w-2xl">
-            <h2 className="text-3xl sm:text-4xl font-bold">
-              La innovación <span className="text-yellow-400">no tiene límites</span> 🚀
+      <section className="w-full overflow-visible flex flex-col items-center px-10 xl:pl-20 2xl:pl-32 py-12 sm:py-20 lg:py-28 2xl:py-32 mt-28 min-h-[800px]">
+        <motion.div
+          className="w-full flex flex-col lg:flex-row items-center justify-between gap-12 xl:gap-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          <div className="w-full lg:w-2/5 flex flex-col justify-center text-center lg:text-left text-white">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl 2xl:text-8xl font-extrabold leading-snug max-w-2xl mx-auto lg:mx-0">
+              No tenemos <span className="text-yellow-400">límites</span> a la hora de <span className="text-blue-400">innovar</span> 🚀
             </h2>
-            <p className="mt-4 text-base sm:text-lg text-gray-300">
-              En BeeAgency creemos que la creatividad y la tecnología son nuestras mejores aliadas para ayudarte a destacar.
+            <p className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl 2xl:text-2xl text-gray-300 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              En BeeAgency creemos que la creatividad y la tecnología son nuestras mejores aliadas para ayudarte a destacar de forma única y memorable.
             </p>
           </div>
-        ) : (
-          <motion.div
-            className="w-full flex flex-col lg:flex-row items-center justify-between gap-12 xl:gap-20"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            viewport={{ once: true }}
-          >
-            <div className="w-full lg:w-2/5 flex flex-col justify-center text-center lg:text-left text-white">
-              <h2 className="text-3xl sm:text-5xl lg:text-6xl 2xl:text-8xl font-extrabold leading-snug max-w-2xl mx-auto lg:mx-0">
-                No tenemos <span className="text-yellow-400">límites</span> a la hora de <span className="text-blue-400">innovar</span> 🚀
-              </h2>
-              <p className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl 2xl:text-2xl text-gray-300 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                En BeeAgency creemos que la creatividad y la tecnología son nuestras mejores aliadas para ayudarte a destacar de forma única y memorable.
-              </p>
-            </div>
 
-            <div className="w-full lg:w-3/5 h-[500px] sm:h-[600px] md:h-[650px] lg:h-[700px] xl:h-[750px] 2xl:h-[800px] mt-12 lg:mt-0 flex justify-center items-center">
-              <Suspense fallback={null}>
-                {LanyardComponent && <LanyardComponent position={[0, 1.5, 20]} gravity={[0, -40, 0]} />}
-              </Suspense>
-            </div>
-          </motion.div>
-        )}
+          <div className="w-full lg:w-3/5 h-[700px] xl:h-[750px] 2xl:h-[800px] mt-12 lg:mt-0 flex justify-center items-center">
+            <Suspense fallback={null}>
+              {LanyardComponent && <LanyardComponent position={[0, 1.5, 20]} gravity={[0, -40, 0]} />}
+            </Suspense>
+          </div>
+        </motion.div>
       </section>
 
       <Suspense fallback={null}>
@@ -103,18 +93,16 @@ function Home() {
         <CarruselIconos />
       </Suspense>
 
-      {!isMobile && (
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-        >
-          <Suspense fallback={null}>
-            <BlogPreview />
-          </Suspense>
-        </motion.section>
-      )}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+      >
+        <Suspense fallback={null}>
+          <BlogPreview />
+        </Suspense>
+      </motion.section>
 
       <motion.section
         initial={{ opacity: 0 }}
@@ -129,10 +117,9 @@ function Home() {
       </motion.section>
 
       <Footer />
-      {!isMobile && <CustomCursor />}
+      <CustomCursor />
       <ScrollToTopButton />
     </div>
-    
   );
 }
 

@@ -77,7 +77,7 @@ export default function Cabecera({ setMenuOpen }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
-        <h1 className="text-white font-cinzel text-4xl sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
+        <h1 className="text-white font-cinzel text-6xl sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
           <span className="text-white">Be</span>{" "}
           <span className="text-white font-extrabold">Found</span>,{" "}
           <span className="bg-gradient-to-r from-yellow-400 via-yellow-400 to-blue-500 text-transparent bg-clip-text animate-text font-extrabold">
