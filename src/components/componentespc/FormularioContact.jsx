@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import logoContact from "/src/assets/logoBAheader.png";
+import logoContact from "/src/assets/logoBAheader.webp";
 import videoFondo from "/src/assets/fotospc/cabeceracontact.mp4";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";

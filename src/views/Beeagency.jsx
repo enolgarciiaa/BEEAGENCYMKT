@@ -23,6 +23,11 @@ const demoItems = [
 function Beeagency() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isInView, setIsInView] = useState(false);
+  const [isMobile, setIsMobile] = useState(null);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,8 +40,10 @@ function Beeagency() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  if (isMobile === null) return null;
+
   return (
-    <div className="w-full m-0 p-0 text-center overflow-x-hidden">
+    <div className="w-full m-0 p-0  overflow-x-hidden">
       <Cabecera setMenuOpen={setMenuOpen} />
 
       {menuOpen && (
@@ -56,35 +63,40 @@ function Beeagency() {
       <Suspense fallback={null}>
         <TextoCreativo />
         <SectoresFondoDoble />
-        <section className="relative w-full min-h-screen md:min-h-[120vh] xl:min-h-[140vh] overflow-hidden bg-black">
-          <Ribbons
-            baseThickness={30}
-            colors={['#FFD100']}
-            speedMultiplier={0.5}
-            maxAge={500}
-            enableFade={false}
-            enableShaderEffect={true}
-          />
 
-          <motion.div
-            id="section-cita"
-            className="absolute top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center px-4 py-8 z-10"
-            initial={{ opacity: 0, y: 100 }}
-            animate={{
-              opacity: isInView ? 1 : 0,
-              y: isInView ? 0 : 100,
-            }}
-            transition={{ duration: 1.5 }}
-          >
-            <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-blue-500 italic drop-shadow-[0_4px_6px_rgba(0,0,0,0.7)]">
-              "El marketing digital es la clave para conectar marcas con personas en la era moderna."
-            </p>
-            <p className="text-xl sm:text-2xl mt-4 font-light text-gray-400">
-              - Expertos en Marketing Digital
-            </p>
-          </motion.div>
-        </section>
+        {!isMobile && (
+          <section className="relative w-full min-h-screen md:min-h-[120vh] xl:min-h-[140vh] overflow-hidden bg-black">
+            <Ribbons
+              baseThickness={30}
+              colors={['#FFD100']}
+              speedMultiplier={0.5}
+              maxAge={500}
+              enableFade={false}
+              enableShaderEffect={true}
+            />
+
+            <motion.div
+              id="section-cita"
+              className="absolute top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center px-4 py-8 z-10"
+              initial={{ opacity: 0, y: 100 }}
+              animate={{
+                opacity: isInView ? 1 : 0,
+                y: isInView ? 0 : 100,
+              }}
+              transition={{ duration: 1.5 }}
+            >
+              <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-blue-500 italic drop-shadow-[0_4px_6px_rgba(0,0,0,0.7)]">
+                "El marketing digital es la clave para conectar marcas con personas en la era moderna."
+              </p>
+              <p className="text-xl sm:text-2xl mt-4 font-light text-gray-400">
+                - Expertos en Marketing Digital
+              </p>
+            </motion.div>
+          </section>
+        )}
+
         <Nuestrosvalores />
+
         <motion.section
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -97,8 +109,8 @@ function Beeagency() {
       </Suspense>
 
       <Footer />
+      {!isMobile && <CustomCursor />}
       <ScrollToTopButton />
-      <CustomCursor />
     </div>
   );
 }

@@ -1,11 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import videoBg from "/src/assets/fotosps/coverr-timelapse-using-social-media-1556-1080p.webm";
-import logoBA from "/src/assets/logoBAheader.png";
+import fallbackImg from "/src/assets/fotosps/captura-fondoservicios.png";
+import logoBA from "/src/assets/logoBAheader.webp";
 
 export default function CabeceraServices({ setMenuOpen }) {
   const [hasScrolled, setHasScrolled] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mobile = window.innerWidth < 768;
+    setIsMobile(mobile);
+  }, []);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -23,20 +30,28 @@ export default function CabeceraServices({ setMenuOpen }) {
 
   return (
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
-      {/* Fondo video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        controls={false}
-        className="absolute top-0 left-0 w-full h-full object-cover -z-10 pointer-events-none select-none"
-      >
-        <source src={videoBg} type="video/mp4" />
-        Tu navegador no soporta el video
-      </video>
+      {/* Fondo adaptativo: imagen en móvil, video en escritorio */}
+      {isMobile ? (
+        <img
+          src={fallbackImg}
+          alt="Fondo servicios móvil"
+          className="absolute top-0 left-0 w-full h-full object-cover -z-10 pointer-events-none select-none"
+        />
+      ) : (
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          controls={false}
+          className="absolute top-0 left-0 w-full h-full object-cover -z-10 pointer-events-none select-none"
+        >
+          <source src={videoBg} type="video/webm" />
+          Tu navegador no soporta el video
+        </video>
+      )}
 
-      {/* Header con comportamiento scroll */}
+      {/* Header con scroll dinámico */}
       <div className={`
         fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 z-50 transition-all duration-500
         ${hasScrolled ? 'bg-gradient-to-r from-[#0f0f0f]/80 to-[#1e1e1e]/80 backdrop-blur-md shadow-md' : ''}
@@ -55,7 +70,7 @@ export default function CabeceraServices({ setMenuOpen }) {
         </button>
       </div>
 
-      {/* Título principal actualizado */}
+      {/* Título principal animado */}
       <motion.div
         className="z-40 px-4 mt-16 sm:mt-24 md:mt-0 flex flex-col items-center gap-6 text-center"
         initial={{ opacity: 0, y: 30 }}
@@ -68,7 +83,6 @@ export default function CabeceraServices({ setMenuOpen }) {
           </span>{" "}
           que conectan,<br />convierten y construyen marca.
         </h1>
-
         <div className="w-20 h-1 bg-yellow-400 rounded-full"></div>
       </motion.div>
     </section>

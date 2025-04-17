@@ -1,4 +1,4 @@
-import { useState, lazy, Suspense } from "react";
+import { useState, lazy, Suspense, useEffect } from "react";
 import CabeceraServices from '/src/components/componentesps/CabeceraServices';
 import FlowingMenu from '/src/components/componentesph/FlowingMenu';
 import Footer from '/src/components/Footer';
@@ -20,6 +20,13 @@ const demoItems = [
 
 function Services() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(null);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
+  if (isMobile === null) return null;
 
   return (
     <>
@@ -56,8 +63,8 @@ function Services() {
       </Suspense>
 
       <Footer />
+      {!isMobile && <CustomCursor />}
       <ScrollToTopButton />
-      <CustomCursor />
     </>
   );
 }

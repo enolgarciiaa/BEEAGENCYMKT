@@ -1,21 +1,26 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import videoBg from "/src/assets/fotospb/bgvquienes_somos.webm";
-import logoBA from "/src/assets/logoBAheader.png";
+import fallbackImg from "/src/assets/fotospb/captura-fondobeeagency.png";
+import logoBA from "/src/assets/logoBAheader.webp";
 
 export default function Cabecera({ setMenuOpen }) {
   const [hasScrolled, setHasScrolled] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const isMobileDevice = window.innerWidth < 768;
+    setIsMobile(isMobileDevice);
+  }, []);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
       setHasScrolled(currentScrollY > 50);
       setShowHeader(currentScrollY < lastScrollY || currentScrollY < 50);
-
       lastScrollY = currentScrollY;
     };
 
@@ -25,20 +30,28 @@ export default function Cabecera({ setMenuOpen }) {
 
   return (
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
-      {/* Fondo video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        controls={false}
-        className="absolute top-0 left-0 w-full h-full object-cover -z-10 pointer-events-none select-none"
-      >
-        <source src={videoBg} type="video/mp4" />
-        Tu navegador no soporta el video
-      </video>
+      {/* Fondo: imagen en móviles, vídeo en escritorio */}
+      {isMobile ? (
+        <img
+          src={fallbackImg}
+          alt="Fondo BeeAgency móvil"
+          className="absolute top-0 left-0 w-full h-full object-cover -z-10 pointer-events-none select-none"
+        />
+      ) : (
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          controls={false}
+          className="absolute top-0 left-0 w-full h-full object-cover -z-10 pointer-events-none select-none"
+        >
+          <source src={videoBg} type="video/webm" />
+          Tu navegador no soporta el video
+        </video>
+      )}
 
-      {/* Header con comportamiento scroll */}
+      {/* Header */}
       <div className={`
         fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 z-50 transition-all duration-500
         ${hasScrolled ? 'bg-gradient-to-r from-[#0f0f0f]/80 to-[#1e1e1e]/80 backdrop-blur-md shadow-md' : ''}
@@ -57,7 +70,7 @@ export default function Cabecera({ setMenuOpen }) {
         </button>
       </div>
 
-      {/* Título principal */}
+      {/* Título */}
       <motion.div
         className="z-40 px-4 mt-16 sm:mt-24 md:mt-0 flex flex-col items-center gap-6 text-center"
         initial={{ opacity: 0, y: 30 }}

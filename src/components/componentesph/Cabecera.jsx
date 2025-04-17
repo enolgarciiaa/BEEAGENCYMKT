@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import videoBg from "/src/assets/fotosph/fondomain.webm";
+import fallbackImg from "/src/assets/fotosph/captura-fondomain.webp";
 import tarjetaImg from "/src/assets/fotosph/fondotarjeta.png";
-import logoBA from "/src/assets/logoBAheader.png";
+import logoBA from "/src/assets/logoBAheader.webp";
+import { Suspense, lazy } from "react";
+
+const Lanyard = lazy(() => import("/src/components/componentesph/Lanyard"));
 
 const palabras = [
   { texto: "cambio", clase: "text-yellow-400" },
@@ -16,63 +20,71 @@ export default function Cabecera({ setMenuOpen }) {
   const [borrando, setBorrando] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
+  useEffect(() => {
+    const palabra = palabras[palabraIndex].texto;
+    const delay = borrando ? 400 : (letraIndex === palabra.length ? 4000 : 450);
+
     const timeout = setTimeout(() => {
-      const palabra = palabras[palabraIndex].texto;
       if (!borrando) {
-        const nuevaPalabra = palabra.substring(0, letraIndex + 1);
-        setActualPalabra(nuevaPalabra);
+        const nueva = palabra.substring(0, letraIndex + 1);
+        setActualPalabra(nueva);
         setLetraIndex((prev) => prev + 1);
-
-        if (nuevaPalabra === palabra) {
-          setBorrando(true);
-        }
+        if (nueva === palabra) setBorrando(true);
       } else {
-        const nuevaPalabra = palabra.substring(0, letraIndex - 1);
-        setActualPalabra(nuevaPalabra);
+        const nueva = palabra.substring(0, letraIndex - 1);
+        setActualPalabra(nueva);
         setLetraIndex((prev) => prev - 1);
-
-        if (nuevaPalabra === "") {
+        if (nueva === "") {
           setBorrando(false);
           setPalabraIndex((prev) => (prev + 1) % palabras.length);
         }
       }
-    }, borrando ? 400 : (letraIndex === palabras[palabraIndex].texto.length ? 4000 : 450));
+    }, delay);
 
     return () => clearTimeout(timeout);
   }, [letraIndex, borrando, palabraIndex]);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
-
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
       setHasScrolled(currentScrollY > 50);
       setShowHeader(currentScrollY < lastScrollY || currentScrollY < 50);
-
       lastScrollY = currentScrollY;
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center overflow-visible pt-24 pb-[300px]">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        controls={false}
-        className="absolute top-0 left-0 w-full h-full object-cover -z-10 pointer-events-none select-none"
-      >
-        <source src={videoBg} type="video/mp4" />
-        Tu navegador no soporta el video
-      </video>
+      {/* Video o imagen de fondo */}
+      {isMobile ? (
+        <img
+          src={fallbackImg}
+          alt="Fondo BeeAgency móvil"
+          className="absolute top-0 left-0 w-full h-full object-cover -z-10 pointer-events-none select-none"
+        />
+      ) : (
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          controls={false}
+          className="absolute top-0 left-0 w-full h-full object-cover -z-10 pointer-events-none select-none"
+        >
+          <source src={videoBg} type="video/webm" />
+          Tu navegador no soporta el video
+        </video>
+      )}
 
       {/* Header con visibilidad dinámica */}
       <div className={`
@@ -80,11 +92,7 @@ export default function Cabecera({ setMenuOpen }) {
         ${hasScrolled ? 'bg-gradient-to-r from-[#0f0f0f]/80 to-[#1e1e1e]/80 backdrop-blur-md shadow-md' : ''}
         ${showHeader ? 'translate-y-0' : '-translate-y-full'}
       `}>
-        <img
-          src={logoBA}
-          alt="Logo BeeAgency"
-          className="w-12 sm:w-16 md:w-20 lg:w-24"
-        />
+        <img src={logoBA} alt="Logo BeeAgency" className="w-12 sm:w-16 md:w-20 lg:w-24" />
         <button
           className="text-white text-3xl sm:text-4xl"
           onClick={() => setMenuOpen(true)}
@@ -106,39 +114,35 @@ export default function Cabecera({ setMenuOpen }) {
         </p>
       </div>
 
-      {/* Tarjeta */}
-      <div className="hidden md:flex absolute bottom-[-270px] left-1/2 transform -translate-x-1/2 w-[90%] max-w-[1050px] h-auto bg-white  shadow-xl flex-col md:flex-row items-center gap-6 p-6 z-30">
-        <div
-          className="flex flex-col justify-center items-center text-center w-full md:w-2/3 h-full gap-4"
-          data-aos="fade-up"
-          data-aos-anchor-placement="top-bottom"
-          data-aos-duration="3000"
-        >
-          <h1 className="text-2xl sm:text-3xl md:text-5xl font-cinzel font-semibold text-black leading-snug">
-           <span className="text-yellow-500">Agencia</span> de <span className="text-blue-500">Marketing</span> Digital
-          </h1>
-          <p className="text-black font-light text-sm sm:text-base md:text-lg max-w-xl leading-relaxed">
-            Descubre la revolución del Marketing Digital con nosotros integrando las últimas
-            tendencias de Inteligencia Artificial, Procesos Automatizados y el lado más humano con
-            la creatividad que nos representa.
-          </p>
-          <button
-            onClick={() => navigate("/contact")}
-            className="px-4 py-2 text-sm sm:text-base md:text-lg font-ubuntu italic font-light rounded-full bg-yellow-400 text-black hover:bg-blue-500 hover:text-white transition-all duration-700"
+      {/* Tarjeta solo visible en escritorio */}
+      {!isMobile && (
+        <div className="absolute bottom-[-270px] left-1/2 transform -translate-x-1/2 w-[90%] max-w-[1050px] h-auto bg-white shadow-xl flex-col md:flex-row items-center gap-6 p-6 z-30 hidden md:flex">
+          <div className="flex flex-col justify-center items-center text-center w-full md:w-2/3 h-full gap-4">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-cinzel font-semibold text-black leading-snug">
+              <span className="text-yellow-500">Agencia</span> de <span className="text-blue-500">Marketing</span> Digital
+            </h1>
+            <p className="text-black font-light text-sm sm:text-base md:text-lg max-w-xl leading-relaxed">
+              Descubre la revolución del Marketing Digital con nosotros integrando las últimas tendencias de Inteligencia Artificial, procesos automatizados y el lado más humano con la creatividad que nos representa.
+            </p>
+            <button
+              onClick={() => navigate("/contact")}
+              className="px-4 py-2 text-sm sm:text-base md:text-lg font-ubuntu italic font-light rounded-full bg-yellow-400 text-black hover:bg-blue-500 hover:text-white transition-all duration-700"
             >
-            Únete al cambio
-          </button>
+              Únete al cambio
+            </button>
+          </div>
 
+          <div className="w-full md:w-1/3 flex justify-center">
+            <img
+              src={tarjetaImg}
+              alt="movil beeagency"
+              className="w-[100px] sm:w-[130px] md:w-[150px] lg:w-[180px] xl:w-[200px] 2xl:w-[220px] object-contain"
+            />
+          </div>
         </div>
+      )}
 
-        <div className="w-full md:w-1/3 flex justify-center md:justify-center">
-          <img
-            src={tarjetaImg}
-            alt="movil beeagency"
-            className="w-[100px] sm:w-[130px] md:w-[150px] lg:w-[180px] xl:w-[200px] 2xl:w-[220px] object-contain"
-          />
-        </div>
-      </div>
+     
     </section>
   );
 }

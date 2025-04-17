@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // ✅ Importa useNavigate
+import { useNavigate } from "react-router-dom"; 
 import AOS from "aos";
 import "aos/dist/aos.css";
-import bombilla from "/src/assets/fotosph/bombillacards.png";
+import bombilla from "/src/assets/fotosph/bombillacards.webp";
 import fondoVideo from "/src/assets/fondoblanco.mp4";
 
 const cardsData = [
