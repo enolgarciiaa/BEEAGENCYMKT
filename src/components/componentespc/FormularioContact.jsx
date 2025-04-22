@@ -68,7 +68,7 @@ export default function ContactoCompleto() {
       </style>
 
       {/* Contenido principal */}
-      <div className="relative z-20 flex flex-col items-center px-6 mt-28 md:mt-6 pb-20 min-h-screen">
+      <div className="relative z-20 flex flex-col items-center px-6 mt-28  pb-20 min-h-screen">
         {/* Cabecera + tarjeta con animación compartida */}
         <div className="animate-[float_10s_ease-in-out_infinite] w-full max-w-7xl">
           {/* Cabecera */}
@@ -83,7 +83,7 @@ export default function ContactoCompleto() {
               <img
                 src={logoContact}
                 alt="Logo Bee Agency"
-                className="max-w-xs sm:max-w-sm lg:max-w-md drop-shadow-xl"
+                className="w-40 sm:w-52 lg:w-64 drop-shadow-xl"
               />
             </div>
           </div>

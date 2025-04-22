@@ -29,7 +29,7 @@ export default function Cabecera({ setMenuOpen }) {
 
   useEffect(() => {
     const palabra = palabras[palabraIndex].texto;
-    const delay = borrando ? 400 : (letraIndex === palabra.length ? 4000 : 450);
+    const delay = borrando ? 400 : (letraIndex === palabra.length ? 4000 : 250);
 
     const timeout = setTimeout(() => {
       if (!borrando) {

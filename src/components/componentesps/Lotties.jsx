@@ -49,7 +49,7 @@ export default function LottiesSection() {
       </div>
 
       {/* Servicios */}
-      <div className="relative z-10 space-y-32">
+      <div className="relative z-10 space-y-16 sm:space-y-24 lg:space-y-32">
         {servicios.map((servicio, index) => (
           <motion.div
             key={index}
