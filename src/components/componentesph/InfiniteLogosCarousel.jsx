@@ -53,7 +53,7 @@ const logos = [
 
 export default function InfiniteLogosCarousel() {
   return (
-    <div className="relative bg-black h-[150px] flex items-center w-full px-4 sm:px-6 md:px-12 lg:px-64">
+    <div className="relative bg-black h-[200px] flex items-center w-full px-4 sm:px-6 md:px-12 lg:px-32">
       {/* Texto solo visible desde md hacia arriba */}
       <div className="hidden md:flex items-center gap-4 z-20">
         <p className="text-sm text-white opacity-70 whitespace-nowrap">
@@ -70,7 +70,7 @@ export default function InfiniteLogosCarousel() {
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className="h-10 sm:h-12 w-auto opacity-80 hover:opacity-100 transition duration-300"
+                className="h-10  sm:h-16 w-auto opacity-80 hover:opacity-100 transition duration-300"
               />
               <span className="mt-1 text-[9px] sm:text-[10px] tracking-widest text-white font-semibold uppercase opacity-70 hover:opacity-100 transition">
                 {logo.alt}

@@ -5,6 +5,7 @@ import LampDemo from "/src/components/componentesph/Lamp";
 import InfiniteLogosCarousel from "/src/components/componentesph/InfiniteLogosCarousel";
 import { ContainerScroll } from "/src/components/componentesph/Container-scroll-animation";
 import GlobeReal from "/src/components/componentesph/GlobeReal";
+import TrueFocus from '/src/components/componentesph/TrueFocus';
 import Footer from '/src/components/Footer';
 import ScrollToTopButton from '/src/components/ScrollToTopButton';
 import CustomCursor from "/src/components/CustomCursor";
@@ -15,6 +16,7 @@ const ImpulsaMarca = lazy(() => import('/src/components/componentesph/ImpulsaMar
 const Metodologia = lazy(() => import('/src/components/componentesph/Metodologia'));
 const BlogPreview = lazy(() => import('/src/components/componentesph/BlogPreview'));
 const Contacto = lazy(() => import('/src/components/componentesph/Contacto'));
+
 
 
 
@@ -31,7 +33,7 @@ function Home() {
       <ContainerScroll
         titleComponent={
           <h2 className="text-4xl md:text-6xl lg:text-7xl mb-10 font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-300 to-slate-400">
-            Conoce nuestra marca
+            Conoce <span className='neon-blue'>nuestra marca</span>
           </h2>
         }
         >
@@ -55,7 +57,14 @@ function Home() {
         <Metodologia />
       </Suspense>
 
-     
+      <TrueFocus 
+        sentence="True Focus"
+        manualMode={false}
+        blurAmount={5}
+        borderColor="#0099ff"
+        animationDuration={2}
+        pauseBetweenAnimations={1}
+      />
 
       <motion.section
         initial={{ opacity: 0 }}

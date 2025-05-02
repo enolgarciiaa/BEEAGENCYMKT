@@ -45,7 +45,7 @@ export default function Metodologia() {
         {/* Texto */}
         <div className="w-full text-center space-y-6">
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-300 to-slate-400">
-            Metodología <span className="text-blue-400">Beeagency</span>
+            Metodología <span className="neon-blue">Beeagency</span>
           </h2>
           <hr className="neon-button-cyan w-3/4 mx-auto" />
           <p className="text-base text-gray-300 font-light max-w-2xl mx-auto">
@@ -53,7 +53,7 @@ export default function Metodologia() {
           </p>
           <button
             onClick={() => navigate("/contact")}
-            className="neon-button-cyan bg-black text-white px-6 py-4 rounded-full text-sm md:text-base tracking-widest uppercase font-semibold"
+            className="neon-button-cyan bg-black text-white px-6 py-4 rounded-full text-sm md:text-base tracking-widest uppercase font-semibold transition-all hover:scale-105 hover:shadow-[0_0_10px_rgba(255,255,255,0.7)]"
           >
             Únete al cambio
           </button>

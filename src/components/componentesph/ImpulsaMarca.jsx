@@ -22,7 +22,7 @@ export default function ImpulsaMarca() {
   ];
 
   return (
-    <section className="relative w-full min-h-screen text-white py-10    overflow-hidden">
+    <section className="relative w-full min-h-screen text-white  overflow-hidden">
       
       {/* Título y texto */}
       <div
@@ -30,7 +30,7 @@ export default function ImpulsaMarca() {
         data-aos="fade-up"
         data-aos-duration="2000"
       >
-        <h2 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-300 to-slate-400">
+        <h2 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight bg-clip-text mt-10 text-transparent bg-gradient-to-br from-slate-300 to-slate-400">
           Impulsa tu marca en un{" "}
           <span className="neon-blue">
             entorno inteligente

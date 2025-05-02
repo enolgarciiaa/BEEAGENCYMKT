@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react"; // Puedes instalar lucide-react o usar cualquier otro icono
+import { Menu, X } from "lucide-react"; 
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +18,7 @@ export default function NavBar() {
       <nav className="w-full max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Izquierda: Logo y nombre */}
         <div className="flex items-center gap-2">
-          <img src="/logoBA.png" alt="Logo BeeAgency" className="h-8 sm:h-10" />
+          <img src="/src/assets/logoBAheader.png" alt="Logo BeeAgency" className="h-8 sm:h-14" />
           <span className="text-white text-lg sm:text-xl font-semibold tracking-widest">
             BEEAGENCY
           </span>
@@ -41,7 +41,7 @@ export default function NavBar() {
         <div className="flex items-center gap-4">
           <Link
             to="/contact"
-            className="hidden md:inline-block px-6 py-2 text-sm sm:text-base font-semibold text-black bg-white rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_10px_rgba(255,255,255,0.7)]"
+            className="hidden md:inline-block px-6 py-2 text-sm sm:text-base font-semibold text-white bg-black neon-button-cyan rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_10px_rgba(255,255,255,0.7)]"
           >
             Impulsa hoy
           </Link>
