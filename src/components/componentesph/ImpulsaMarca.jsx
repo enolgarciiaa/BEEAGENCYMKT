@@ -22,19 +22,17 @@ export default function ImpulsaMarca() {
   ];
 
   return (
-    <section className="relative w-full min-h-screen text-white py-20 md:py-32   overflow-hidden">
-      {/* Fondo IA futurista */}
+    <section className="relative w-full min-h-screen text-white py-10    overflow-hidden">
       
-
       {/* Título y texto */}
       <div
         className="relative z-10 text-center mx-auto w-full max-w-8xl px-4 sm:px-6 lg:px-10"
         data-aos="fade-up"
         data-aos-duration="2000"
       >
-        <h2 className="text-4xl md:text-6xl font-extrabold mb-4 md:mt-80 xl:mt-96 leading-tight tracking-tight">
+        <h2 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-300 to-slate-400">
           Impulsa tu marca en un{" "}
-          <span className="text-yellow-400 ">
+          <span className="neon-blue">
             entorno inteligente
           </span>
         </h2>
@@ -46,7 +44,7 @@ export default function ImpulsaMarca() {
       {/* Carruseles */}
       <div className="relative z-10 mt-20 space-y-6">
         {filas.map((fila, i) => (
-          <div key={i} className="w-full overflow-hidden border-t border-b border-white/10">
+          <div key={i} className="w-full overflow-hidden ">
             <div
               className={`flex whitespace-nowrap w-[200%] py-4 px-2 animate-scroll-${fila.direction}`}
             >
@@ -58,7 +56,7 @@ export default function ImpulsaMarca() {
                     key={idx}
                     className={`mx-2 px-4 py-2 rounded-full text-sm sm:text-base font-semibold transition-all duration-300 whitespace-nowrap 
                     ${isHighlight
-                      ? "bg-white text-black border border-white shadow-xl hover:scale-105"
+                      ? "neon-button-cyan text-white  hover:scale-105"
                       : "bg-white/10 border border-white/10 text-white hover:bg-white/20"}`}
                   >
                     {item}

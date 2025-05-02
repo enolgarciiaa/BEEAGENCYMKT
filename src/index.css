@@ -9,7 +9,7 @@
 /* ----------------------------- */
 /* 🌍 Estilos base personalizados */
 /* ----------------------------- */
-@layer base {
+
   *, *::before, *::after {
     margin: 0;
     padding: 0;    
@@ -19,13 +19,77 @@
   body {
     height: 100%;
     width: 100%;
-    background: linear-gradient(to bottom right, #121212, #0b0b0b, #050505);
+    background-color: black ;
     font-family: 'Ubuntu', sans-serif;
     cursor: none;
   }
-}
 
+  .roboto-flex {
+    font-family: "Roboto Flex", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500; /* O el peso que necesites */
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0,
+      "wdth" 100,
+      "GRAD" 0,
+      "XOPQ" 96,
+      "XTRA" 468,
+      "YOPQ" 79,
+      "YTAS" 750,
+      "YTDE" -203,
+      "YTFI" 738,
+      "YTLC" 514,
+      "YTUC" 712;
+  }
 
+  .neon-yellow {
+    text-shadow:
+      0 0 5px #ffff00,
+      0 0 10px #ffff00,
+      0 0 20px #ffcc00,
+      0 0 40px #ffcc00,
+      0 0 80px #ff9900;
+  }
+
+  .neon-blue {
+    text-shadow:
+      0 0 2px #00e0ff,
+      0 0 6px #00e0ff,
+      0 0 20px #0099ff,
+      0 0 40px #0099ff,
+      0 0 80px #0066ff;
+  }
+
+  .neon-button-cyan {
+    box-shadow:
+      0 0 5px #00ffff,
+      0 0 10px #00ffff,
+      0 0 20px #00ffff,
+      0 0 40px #00ffff,
+      0 0 80px #00ffff; /* sombra grande para efecto glow exterior */
+  }
+  
+  .neon-button-yellow {
+    box-shadow:
+      0 0 5px #ffff00,
+      0 0 10px #ffff00,
+      0 0 20px #ffcc00,
+      0 0 40px #ffcc00,
+      0 0 80px #ff9900;
+  }
+  
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
+  
+ 
 
 @keyframes scroll-left {
   0% { transform: translateX(0); }
@@ -109,4 +173,25 @@
 }
 .group:hover .group-hover\\:rotate-y-180 {
   transform: rotateY(180deg);
+}
+
+
+
+@keyframes flare {
+  0% {
+    transform: scaleY(0.2);
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+.animate-flare {
+  animation: flare 0.6s ease-out forwards;
+  transform-origin: bottom center;
+  filter: blur(16px);
 }

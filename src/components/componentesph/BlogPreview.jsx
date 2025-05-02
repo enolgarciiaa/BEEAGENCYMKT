@@ -1,24 +1,11 @@
 import { Link } from "react-router-dom";
 import blogPosts from '/src/data/blogData.js';
-import fondoVideo from "/src/assets/fondoblanco.mp4";
+
 
 const BlogPreview = () => {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-12 text-white relative overflow-hidden">
 
-      {/* Fondo de video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0"
-      >
-        <source src={fondoVideo} type="video/mp4" />
-        Tu navegador no soporta video HTML5.
-      </video>
-
-      
 
       {/* Título y subtítulo */}
       <div className="max-w-7xl mx-auto text-center mb-16 z-10 relative">

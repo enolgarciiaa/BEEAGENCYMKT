@@ -1,0 +1,56 @@
+"use client";
+import React from "react";
+import { motion } from "motion/react";
+
+export default function LampDemo() {
+  return (
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden w-full px-4 mt-10 text-center">
+      {/* 🎥 Video de fondo */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-[-2]"
+      >
+        <source src="/src/assets/fotosph/159053-818026314.mp4" type="video/mp4" />
+        Tu navegador no soporta vídeos HTML5.
+      </video>
+
+      {/* 🔲 Capa oscura opcional */}
+      <div className="absolute inset-0 bg-black/60 z-[-1]" />
+
+      {/* 🔻 Degradado inferior para disimular el corte */}
+      <div className="absolute bottom-0 w-full h-40 bg-gradient-to-t from-black to-transparent z-[-1]" />
+
+      {/* 🧠 Contenido principal */}
+      <motion.div
+        initial={{ opacity: 0.5, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className="max-w-4xl"
+      >
+        <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-300 to-slate-400">
+          Descubre el futuro
+        </h1>
+
+        <p className="mt-6 text-sm md:text-lg lg:text-xl text-neutral-100 tracking-widest font-light">
+          "El futuro ya está aquí. Y piensa por sí mismo."
+        </p>
+
+        <div className="mt-10 flex justify-center gap-6 flex-wrap">
+          <button className="neon-button-cyan bg-black text-white px-10 py-4 rounded-full text-sm md:text-base tracking-widest uppercase font-semibold">
+            Descubre más
+          </button>
+          <button className="neon-button-cyan bg-black text-white px-10 py-4 rounded-full text-sm md:text-base tracking-widest uppercase font-semibold">
+            Servicios
+          </button>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
