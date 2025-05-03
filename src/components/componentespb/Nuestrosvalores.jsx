@@ -39,14 +39,14 @@ export default function TextoCreativo() {
         viewport={{ once: true }}
         className="relative max-w-7xl mt-40 text-left z-10 ml-10  "
       >
-        <div className="font-cinzel uppercase text-3xl md:text-6xl lg:text-6x1 xl:text-8xl leading-tight relative">
-          <h2 className="text-blue-600">¿COMO</h2>
-          <h2 className="text-blue-600">SON</h2>
-          <h2 className="text-blue-600">NUESTROS VALORES?</h2>
+       <div className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-300 to-slate-200">
+          <h2 className="">¿COMO</h2>
+          <h2 className="">SON</h2>
+          <h2 className="neon-blue">NUESTROS VALORES?</h2>
         </div>
-        <div className="absolute top-2 sm:top-3 lg:top-2 xl:top-3 left-32 sm:left-72 md:left-60 lg:left-64 xl:left-96  h-[20px] sm:h-[30px] lg:h-[50px] w-[40%] bg-blue-600 z-0" />
-        <div className="absolute bottom-[-20px] sm:bottom-[-30px] lg:bottom-[-55px]  w-[85%] h-[20px] sm:h-[30px] lg:h-[50px] bg-blue-600 z-0" />
-        <div className="font-inspiration text-[4rem] sm:text-[8rem] md:text-[8rem] lg:text-[13rem] text-color-secundario-amarillo absolute bottom-[-60px] md:bottom-[-120px] lg:bottom-[-200px] ml-40 sm:ml-72 xl:ml-96  z-20">
+        <div className="absolute top-2 sm:top-3 lg:top-2 xl:top-3 left-32 sm:left-72 md:left-60 lg:left-64 xl:left-96  h-[20px] sm:h-[30px] lg:h-[50px] w-[40%] neon-button-cyan z-0" />
+        <div className="absolute bottom-[-20px] sm:bottom-[-30px] lg:bottom-[-55px]  w-[85%] h-[20px] sm:h-[30px] lg:h-[50px] neon-button-cyan z-0" />
+        <div className="font-inspiration text-[4rem] sm:text-[8rem] md:text-[8rem] lg:text-[13rem] neon-blue absolute bottom-[-60px] md:bottom-[-120px] lg:bottom-[-200px] ml-40 sm:ml-72 xl:ml-96  z-20">
           Valores
         </div>
       </motion.div>
@@ -62,7 +62,7 @@ export default function TextoCreativo() {
         <p className="text-white text-2xl sm:text-[2rem] md:text-[2.3rem] lg:text-[2.5rem] font-roboto-slab font-light leading-relaxed max-w-[1000px] text-center">
           Las mejores ideas no se planifican, se descubren. A veces aparecen bailando en una{" "}
           <span
-            className="text-color-secundario-amarillo font-inspiration text-[2.6rem] cursor-pointer"
+            className="neon-blue font-inspiration text-[2.6rem] cursor-pointer"
             onMouseEnter={() => handleHover([imagenB1])}
             onMouseLeave={clearImages}
           >
@@ -73,7 +73,7 @@ export default function TextoCreativo() {
 
           La{" "}
           <span
-            className="text-color-secundario-amarillo font-inspiration text-[2.6rem] cursor-pointer"
+            className="neon-blue font-inspiration text-[2.6rem] cursor-pointer"
             onMouseEnter={() => handleHover([imagenB2])}
             onMouseLeave={clearImages}
           >

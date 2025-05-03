@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import CookieConsent from '/src/components/CookieConsent'; 
+import ScrollToTop from '/src/components/ScrollToTop';
 
 
 const Home = lazy(() => import('/src/views/Home'));
@@ -16,6 +17,7 @@ function App() {
   return (
     <>
       <CookieConsent />
+      <ScrollToTop />
       <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<Home />} /> {/* 👈 actualizamos esto */}

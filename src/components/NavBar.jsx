@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react"; 
+import { Menu, X } from "lucide-react";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +18,11 @@ export default function NavBar() {
       <nav className="w-full max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Izquierda: Logo y nombre */}
         <div className="flex items-center gap-2">
-          <img src="/src/assets/logoBAheader.png" alt="Logo BeeAgency" className="h-8 sm:h-14" />
+          <img
+            src="/src/assets/logoBAheader.png"
+            alt="Logo BeeAgency"
+            className="h-8 sm:h-14"
+          />
           <span className="text-white text-lg sm:text-xl font-semibold tracking-widest">
             BEEAGENCY
           </span>
@@ -30,9 +34,10 @@ export default function NavBar() {
             <Link
               key={idx}
               to={link.to}
-              className="text-white text-sm sm:text-base hover:underline hover:text-cyan-300 transition-all"
+              className="group relative text-white text-sm sm:text-base font-medium tracking-wide uppercase transition-all duration-300 hover:text-cyan-300 drop-shadow hover:scale-105"
             >
               {link.text}
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-cyan-300 transition-all group-hover:w-full"></span>
             </Link>
           ))}
         </div>
@@ -64,7 +69,7 @@ export default function NavBar() {
                 key={idx}
                 to={link.to}
                 onClick={() => setIsOpen(false)}
-                className="text-white text-sm hover:underline hover:text-cyan-300 transition-all"
+                className="text-white text-base font-medium tracking-wide uppercase transform transition-all duration-300 hover:translate-x-2 hover:text-cyan-300"
               >
                 {link.text}
               </Link>

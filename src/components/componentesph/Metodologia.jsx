@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -27,7 +27,6 @@ const cardsData = [
 ];
 
 export default function Metodologia() {
-  const [activeIndex, setActiveIndex] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -61,40 +60,30 @@ export default function Metodologia() {
 
         {/* Cards */}
         <div className="w-full flex flex-wrap justify-center gap-5 px-2 md:px-6">
-          {cardsData.map((card, index) => {
-            const isActive = activeIndex === index;
-            return (
-              <div
-                key={index}
-                className={`relative flex flex-col p-8 sm:p-10 lg:px-4 w-full sm:w-[48%] lg:w-[23%] h-[460px] sm:h-[520px] lg:h-[480px] transition-all duration-300 cursor-pointer bg-black/30 backdrop-blur-md border border-blue-400 hover:scale-105 ${
-                  isActive ? "shadow-[0_0_30px_rgba(0,174,255,0.6)]" : ""
-                }`}
-                onClick={() => setActiveIndex(index)}
+          {cardsData.map((card, index) => (
+            <div
+              key={index}
+              className="relative group flex flex-col p-8 sm:p-10 lg:px-4 w-full sm:w-[48%] lg:w-[23%] h-[460px] sm:h-[520px] lg:h-[480px] transition-all duration-300 cursor-pointer bg-black/30 backdrop-blur-md border border-blue-400 hover:scale-105"
+            >
+              <p className="text-xl font-bold text-blue-400">{card.number}</p>
+              <h3 className="mt-4 text-lg font-semibold text-blue-300">{card.title}</h3>
+              <p
+                className="mt-2 text-sm text-gray-100 opacity-20 group-hover:opacity-100 transition-opacity duration-300"
               >
-                <p className="text-xl font-bold text-blue-400">{card.number}</p>
-                <h3 className="mt-4 text-lg font-semibold text-blue-300">{card.title}</h3>
-                <p
-                  className={`mt-2 text-sm text-gray-100 transition-opacity duration-300 ${
-                    isActive ? "opacity-100" : "opacity-20"
-                  }`}
-                >
-                  {card.text}
-                </p>
+                {card.text}
+              </p>
 
-                {/* Luz tipo linterna */}
-                {isActive && (
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-40 sm:w-48 md:w-56 h-36 sm:h-44 md:h-48 pointer-events-none z-0 overflow-hidden">
-                    <div
-                      className="w-full h-full animate-flare bg-gradient-to-t from-cyan-400/80 via-cyan-300/20 to-transparent"
-                      style={{
-                        clipPath: "polygon(50% 100%, 0% 0%, 100% 0%)"
-                      }}
-                    />
-                  </div>
-                )}
+              {/* Luz tipo linterna */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-40 sm:w-48 md:w-56 h-36 sm:h-44 md:h-48 pointer-events-none z-0 overflow-hidden opacity-0 group-hover:opacity-100 transition duration-500">
+                <div
+                  className="w-full h-full animate-flare bg-gradient-to-t from-cyan-400/80 via-cyan-300/20 to-transparent"
+                  style={{
+                    clipPath: "polygon(50% 100%, 0% 0%, 100% 0%)"
+                  }}
+                />
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>

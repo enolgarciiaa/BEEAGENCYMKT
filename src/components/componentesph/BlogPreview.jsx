@@ -38,22 +38,22 @@ const BlogPreview = () => {
 };
 
 const ArticleCard = ({ post }) => (
-  <article className="bg-black/30 backdrop-blur-md border border-blue-400 rounded-xl overflow-hidden shadow-md hover:shadow-yellow-400/10 transition-all duration-300 group relative">
+  <article className="bg-black/30 backdrop-blur-md border border-blue-400 rounded-xl overflow-hidden shadow-md transition-all duration-500 hover:scale-105 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(0,255,255,0.25)] cursor-pointer">
     <div className="h-48 overflow-hidden">
       <img
         src={post.image}
         alt={post.title}
-        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        className="w-full h-full object-cover transition-transform duration-500"
       />
     </div>
     <div className="p-6">
       <div className="flex justify-between items-center mb-3">
-        <span className="text-xs font-semibold px-3 py-1 neon-button-cyan  text-white rounded-full">
+        <span className="text-xs font-semibold px-3 py-1 neon-button-cyan text-white rounded-full">
           {post.category}
         </span>
         <span className="text-xs text-gray-400">{post.readingTime}</span>
       </div>
-      <h3 className="text-xl font-bold mb-2 text-blue-300 group-hover:text-blue-400 transition-colors">
+      <h3 className="text-xl font-bold mb-2 text-blue-300 transition-colors group-hover:text-blue-400">
         {post.title}
       </h3>
       <p className="text-gray-200 mb-4">{post.excerpt}</p>

@@ -1,6 +1,6 @@
 import { useState, Suspense, useEffect, lazy } from 'react';
 import { motion } from "framer-motion";
-import NavBar from "/src/components/componentesph/NavBar";
+import NavBar from "/src/components/NavBar";
 import LampDemo from "/src/components/componentesph/Lamp";
 import InfiniteLogosCarousel from "/src/components/componentesph/InfiniteLogosCarousel";
 import { ContainerScroll } from "/src/components/componentesph/Container-scroll-animation";
