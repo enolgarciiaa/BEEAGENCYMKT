@@ -27,7 +27,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]">
+      className="h-[300vh] md:h-[200vh]  xl:h-[500vh] 2xl:h-[300vh]  py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]">
       <Header />
       <motion.div
         style={{
@@ -68,43 +68,38 @@ export const Header = () => {
       </p>
 
       <div className="mt-10">
-      <button className="neon-button-cyan bg-black text-white px-10 py-4 rounded-full text-sm       md:text-base tracking-widest uppercase font-semibold transition-all hover:scale-105 hover:shadow-[0_0_10px_rgba(255,255,255,0.7)]">
-          Descubre más
-        </button>
+      <a
+        href="/contact"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative z-10 neon-button-cyan bg-black text-white px-10 py-4 rounded-full text-sm md:text-base tracking-widest uppercase font-semibold transition-all hover:scale-105 hover:shadow-[0_0_10px_rgba(255,255,255,0.7)]"
+        >
+        Descubre más
+      </a>
       </div>
     </div>
 
   );
 };
 
-export const ProductCard = ({
-  product,
-  translate
-}) => {
+export const ProductCard = ({ product, translate }) => {
   return (
     <motion.div
-      style={{
-        x: translate,
-      }}
-      whileHover={{
-        y: -20,
-      }}
-      key={product.title}
-      className="group/product h-96 w-[30rem] relative shrink-0">
-      <a href={product.link} className="block group-hover/product:shadow-2xl ">
+      style={{ x: translate }}
+      className="h-96 w-[30rem] relative shrink-0"
+    >
+      <a href={product.link} className="block">
         <img
           src={product.thumbnail}
           height="600"
           width="600"
           className="object-cover object-left-top absolute h-full w-full inset-0"
-          alt={product.title} />
+          alt={product.title}
+        />
       </a>
-      <div
-        className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <h2
-        className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
-        {product.title}
-      </h2>
+      {/* (opcional) eliminar esta capa si no quieres overlay oscuro */}
+      <div className="absolute inset-0 h-full w-full bg-black opacity-50 pointer-events-none"></div>
+      <h2 className="absolute bottom-4 left-4 text-white">{product.title}</h2>
     </motion.div>
   );
 };

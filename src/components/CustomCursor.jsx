@@ -11,38 +11,38 @@ const CustomCursor = () => {
       const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
       return isMobileWidth || isTouchDevice;
     };
-
-    // Inicial
+  
     if (checkIsMobile()) {
       setShowCursor(false);
       return;
     }
-
-    // Escuchar cambios en tamaño de ventana
+  
     const handleResize = () => {
       setShowCursor(!checkIsMobile());
     };
-
+  
     window.addEventListener("resize", handleResize);
-
+  
+    let animationFrameId;
+  
     const moveCursor = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-
-      const elementUnderCursor = document.elementFromPoint(e.clientX, e.clientY);
-      if (elementUnderCursor?.tagName.toLowerCase() === "button") {
-        setHoveringButton(true);
-      } else {
-        setHoveringButton(false);
-      }
+      animationFrameId = requestAnimationFrame(() => {
+        setPosition({ x: e.clientX, y: e.clientY });
+  
+        const elementUnderCursor = document.elementFromPoint(e.clientX, e.clientY);
+        setHoveringButton(elementUnderCursor?.tagName.toLowerCase() === "button");
+      });
     };
-
+  
     window.addEventListener("mousemove", moveCursor);
-
+  
     return () => {
       window.removeEventListener("mousemove", moveCursor);
       window.removeEventListener("resize", handleResize);
+      cancelAnimationFrame(animationFrameId);
     };
   }, []);
+  
 
   if (!showCursor) return null;
 
@@ -62,7 +62,7 @@ const CustomCursor = () => {
             left: position.x + 20,
           }}
         >
-          Saber más
+          DESCUBRE MÁS
         </div>
       )}
     </>

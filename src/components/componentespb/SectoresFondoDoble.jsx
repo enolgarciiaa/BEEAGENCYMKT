@@ -46,15 +46,15 @@ export default function SectoresFondoDoble() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="relative text-center w-full flex flex-col items-center mb-32 mt-20 px-4 z-10"
+        className="relative text-center w-full flex flex-col items-center mb-32  px-2 z-10"
       >
-        <div className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-300 to-slate-200">
+        <div className="whitespace-nowrap text-2xl md:text-5xl lg:text-6xl 2xl:text-7xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-300 to-slate-200">
           <h2>SOMOS NUESTROS <span className="neon-blue">CLIENTES</span></h2>
         </div>
 
         <div className="w-full max-w-7xl relative">
-          <div className="absolute bottom-[-20px] sm:bottom-[-40px] left-24 xl:w-[85%] h-[20px] sm:h-[40px] neon-button-cyan" />
-          <div className="font-[Inspiration,cursive] neon-blue font-medium text-[3rem] xs:text-[4rem] sm:text-[6rem] md:text-[6rem] lg:text-[7rem] xl:text-[9rem] text-black absolute bottom-[-50px] sm:bottom-[-140px] md:bottom-[-100px] xl:bottom-[-130px] left-16 sm:left-44 md:left-32 lg:left-36 xl:left-48 transform -translate-x-1/2 z-[3]">
+          <div className="bottom-[-20px] sm:bottom-[-40px] left-24 xl:ml-32  xl:w-[80%] h-[20px] sm:h-[40px] neon-button-cyan" />
+          <div className="font-[Inspiration,cursive] neon-blue font-medium text-[3rem] md:text-[6rem] lg:text-[7rem] xl:text-[8rem] text-black absolute bottom-[-50px] sm:bottom-[-140px] md:bottom-[-100px] xl:bottom-[-90px] left-16 sm:left-44 md:left-32 lg:left-36 xl:left-72 transform -translate-x-1/2 z-[3]">
             Sectores
           </div>
         </div>

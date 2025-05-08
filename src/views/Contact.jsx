@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
 import Footer from '/src/components/Footer';
-import CustomCursor from "/src/components/CustomCursor";
+
 
 const FormularioContact = lazy(() => import('/src/components/componentespc/FormularioContact'));
 
@@ -12,7 +12,7 @@ function Contact() {
       </Suspense>
 
       <Footer />
-      <CustomCursor />
+      
     </div>
   );
 }

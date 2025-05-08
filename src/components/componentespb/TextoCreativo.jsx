@@ -30,7 +30,7 @@ export default function TextoCreativo() {
       initial={{ opacity: 0, y: 100 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 1 }}
-      className="w-full  relative overflow-hidden"
+      className="w-full relative overflow-hidden"
     >
       {/* TÍTULO */}
       <motion.div
@@ -38,15 +38,15 @@ export default function TextoCreativo() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="relative max-w-5xl mx-6 mt-32 text-left z-10 lg:ml-20"
+        className="relative max-w-5xl mx-6  text-left z-10 lg:ml-20"
       >
-        <div className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-300 to-slate-200">
+        <div className="text-3xl mt-10 md:text-6xl lg:text-7xl xl:text-7xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-300 to-slate-200">
           <h2 className="">¿QUIERES</h2>
           <h2 className="">UNIRTE A</h2>
           <h2 className="neon-blue">NUESTRO EQUIPO?</h2>
         </div>
-        <div className="absolute top-2 lg:top-4 left-[150px] sm:left-[290px] lg:left-[480px] h-[20px] sm:h-[30px] lg:h-[50px] w-[40%] neon-button-cyan z-0" />
-        <div className="absolute bottom-[-20px] sm:bottom-[-30px] lg:bottom-[-55px] left-0 w-[90%] lg:w-[100%] h-[20px] sm:h-[30px] lg:h-[50px] neon-button-cyan z-0" />
+        <div className="absolute top-2 lg:top-4 xl:top-3 left-[150px] sm:left-[290px] lg:left-[370px] h-[20px] sm:h-[30px] lg:h-[50px] w-[40%] neon-button-cyan z-0" />
+        <div className="absolute bottom-[-20px] sm:bottom-[-30px] lg:bottom-[-55px] left-0 w-[90%] lg:w-[80%] h-[20px] sm:h-[30px] lg:h-[50px] neon-button-cyan z-0" />
         <div className="font-inspiration text-[4rem] sm:text-[8rem] md:text-[8rem] lg:text-[13rem] neon-blue absolute bottom-[-60px] md:bottom-[-120px] lg:bottom-[-200px] left-10 z-20">
           Equipo
         </div>
@@ -60,7 +60,7 @@ export default function TextoCreativo() {
         viewport={{ once: true }}
         className="relative flex sm:justify-center mb-36 mt-[100px] sm:mt-[250px] md:mt-[200px] px-10 z-10"
       >
-        <p className="text-white text-2xl sm:text-[2rem] md:text-[2.3rem] lg:text-[2.5rem] font-roboto-slab font-light leading-relaxed max-w-[1000px] text-center md:text-center lg:text-center lg:mt-10 lg:ml-auto lg:mr-20">
+        <p className="text-white text-2xl sm:text-[2rem] md:text-[2.3rem] lg:text-[2.5rem] font-roboto-slab font-light leading-relaxed max-w-[1000px] text-center md:text-center lg:text-center lg:mt-10 xl:text-center 2xl:ml-[800px] ">
           Las mejores ideas no se planifican, se descubren. A veces aparecen bailando en una {" "}
           <span
             className="neon-blue font-inspiration text-[2.6rem] cursor-pointer"

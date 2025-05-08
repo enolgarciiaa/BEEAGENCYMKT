@@ -18,7 +18,7 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold mb-6">
-              <span className="text-blue-400">BEE</span>AGENCY
+              <span className="neon-blue">BEE</span>AGENCY
             </h3>
             <p className="text-gray-300 mb-4">
               Somos una agencia de marketing digital especializada en crear estrategias innovadoras que conectan marcas con su audiencia.

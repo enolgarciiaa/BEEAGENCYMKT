@@ -5,7 +5,7 @@ import { HeroParallax } from "/src/components/componentespb/HeroParallax";
 import SectoresFondoDoble from '/src/components/componentespb/SectoresFondoDoble';
 import Footer from "/src/components/Footer";
 import ScrollToTopButton from "/src/components/ScrollToTopButton";
-import CustomCursor from "/src/components/CustomCursor";
+
 
 
 // Lazy-loaded componentes
@@ -105,7 +105,6 @@ function Beeagency() {
       </motion.section>
 
       <Footer />
-      <CustomCursor />
       <ScrollToTopButton />
     </div>
   );

@@ -22,7 +22,7 @@ export default function ImpulsaMarca() {
   ];
 
   return (
-    <section className="relative w-full min-h-screen text-white  overflow-hidden">
+    <section className="relative w-full min-h-[100vh] md:min-h-[80vh] lg:min-h-[70vh] xl:min-h-screen text-white overflow-hidden">
       
       {/* Título y texto */}
       <div

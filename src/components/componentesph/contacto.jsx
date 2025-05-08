@@ -12,14 +12,14 @@ const Contacto = () => {
           <span className='neon-blue'>Te solucionamos </span>tus dudas.
         </h2>
 
-        
-
-        <button
-          onClick={() => navigate("/contact")}
-          className="neon-button-cyan bg-black text-white border  px-8 py-4 text-lg sm:text-xl rounded-full font-semibold uppercase tracking-wider transition-all duration-300 hover:scale-105 hover:shadow-[0_0_10px_rgba(255,255,255,0.7)]"
-        >
+        <a
+          href="/contact"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-8 inline-block neon-button-cyan bg-black text-white border px-8 py-4 text-lg sm:text-xl rounded-full font-semibold uppercase tracking-wider transition-all duration-300 hover:scale-105 hover:shadow-[0_0_10px_rgba(255,255,255,0.7)]"
+          >
           Contáctanos
-        </button>
+        </a>
       </div>
     </section>
   );

@@ -1,86 +1,138 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const links = [
     { to: "/", text: "Home" },
     { to: "/Beeagency", text: "Beeagency" },
     { to: "/services", text: "Servicios" },
     { to: "/blog", text: "Blog" },
-    { to: "/contact", text: "Contacto" },
+    { to: "/contact", text: "Contacto", external: true }, // marcar como externa
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-white/10">
-      <nav className="w-full max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Izquierda: Logo y nombre */}
-        <div className="flex items-center gap-2">
-          <img
-            src="/src/assets/logoBAheader.png"
-            alt="Logo BeeAgency"
-            className="h-8 sm:h-14"
-          />
-          <span className="text-white text-lg sm:text-xl font-semibold tracking-widest">
-            BEEAGENCY
-          </span>
+    <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-6xl px-4">
+      <nav
+        className={`w-full transition-all duration-300 rounded-2xl px-6 flex items-center justify-between ${
+          scrolled ? "py-2" : "py-4"
+        } bg-white/10 backdrop-blur-md shadow-md border border-white/10`}
+      >
+        {/* Logo y nombre (solo si no ha hecho scroll) */}
+        {!scrolled && (
+          <div className="flex items-center gap-2">
+            <img
+              src="/src/assets/logoBAheader.png"
+              alt="Logo BeeAgency"
+              className="h-8 sm:h-10"
+            />
+            <span className="text-white font-semibold text-base sm:text-lg tracking-widest">
+              BEEAGENCY
+            </span>
+          </div>
+        )}
+
+        {/* Enlaces centrados en pantallas grandes */}
+        <div className="hidden lg:flex flex-1 justify-center gap-6">
+          {links.map((link, idx) =>
+            link.external ? (
+              <a
+                key={idx}
+                href={link.to}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative text-white text-sm font-medium tracking-wide uppercase transition
+                          after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px]
+                          after:w-0 after:bg-cyan-300 after:transition-all after:duration-500 hover:after:w-full hover:text-cyan-300"
+                >
+                {link.text}
+              </a>
+            ) : (
+              <Link
+                key={idx}
+                to={link.to}
+                className="relative text-white text-sm font-medium tracking-wide uppercase transition
+                          after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px]
+                          after:w-0 after:bg-cyan-300 after:transition-all after:duration-500 hover:after:w-full hover:text-cyan-300"
+                >
+                {link.text}
+              </Link>
+            )
+          )}
         </div>
 
-        {/* Centro: Enlaces grandes pantallas */}
-        <div className="hidden md:flex flex-1 justify-center gap-6">
-          {links.map((link, idx) => (
-            <Link
-              key={idx}
-              to={link.to}
-              className="group relative text-white text-sm sm:text-base font-medium tracking-wide uppercase transition-all duration-300 hover:text-cyan-300 drop-shadow hover:scale-105"
+        {/* Botón derecho (solo visible en pantallas grandes y sin scroll) */}
+        {!scrolled && (
+          <div className="hidden lg:flex items-center">
+            <a
+              href="/contact"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2 bg-black text-white rounded-full shadow-[0_0_10px_rgba(0,255,255,0.3)] hover:scale-105 transition"
             >
-              {link.text}
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-cyan-300 transition-all group-hover:w-full"></span>
-            </Link>
-          ))}
-        </div>
+              Impulsa hoy
+            </a>
+          </div>
+        )}
 
-        {/* Derecha: Botón + Hamburguesa */}
-        <div className="flex items-center gap-4">
-          <Link
-            to="/contact"
-            className="hidden md:inline-block px-6 py-2 text-sm sm:text-base font-semibold text-white bg-black neon-button-cyan rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_10px_rgba(255,255,255,0.7)]"
-          >
-            Impulsa hoy
-          </Link>
-
+        {/* Botón hamburguesa visible en móviles y tablets */}
+        <div className="lg:hidden flex items-center">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white focus:outline-none"
+            className="text-white"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </nav>
 
-      {/* Menú móvil desplegable */}
+      {/* Menú móvil y tablet desplegable */}
       {isOpen && (
-        <div className="md:hidden bg-black/90 backdrop-blur-md px-6 pb-6">
-          <div className="flex flex-col gap-4 mt-4">
-            {links.map((link, idx) => (
-              <Link
-                key={idx}
-                to={link.to}
-                onClick={() => setIsOpen(false)}
-                className="text-white text-base font-medium tracking-wide uppercase transform transition-all duration-300 hover:translate-x-2 hover:text-cyan-300"
-              >
-                {link.text}
-              </Link>
-            ))}
-            <Link
-              to="/contact"
-              className="mt-4 px-6 py-2 text-sm font-semibold text-black bg-white rounded-full text-center transition hover:scale-105"
+        <div className="mt-2 lg:hidden bg-white/10 backdrop-blur-md rounded-xl border border-white/10 px-6 py-4 shadow-md">
+          <div className="flex flex-col gap-4">
+            {links.map((link, idx) =>
+              link.external ? (
+                <a
+                  key={idx}
+                  href={link.to}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsOpen(false)}
+                  className="text-white text-sm  font-medium tracking-wide hover:text-cyan-300 transition"
+                >
+                  {link.text}
+                </a>
+              ) : (
+                <Link
+                  key={idx}
+                  to={link.to}
+                  onClick={() => setIsOpen(false)}
+                  className="text-white text-sm font-medium  tracking-wide hover:text-cyan-300 transition"
+                >
+                  {link.text}
+                </Link>
+              )
+            )}
+            <a
+              href="/contact"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
+              className="mt-2 px-5 py-2 bg-black text-white rounded-full text-center shadow hover:scale-105 transition"
             >
               Impulsa hoy
-            </Link>
+            </a>
           </div>
         </div>
       )}

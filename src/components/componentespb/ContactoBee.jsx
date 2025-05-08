@@ -13,13 +13,14 @@ const ContactoBee = () => {
           al <span className="neon-blue"> siguiente nivel</span>?
         </h2>
 
-        
-        <button
-          onClick={() => navigate("/contact")} // 👈 Cambia la ruta a la que necesites
-          className="neon-button-cyan bg-black text-white px-10 py-4 rounded-full text-sm md:text-base tracking-widest uppercase font-semibold transition-all hover:scale-105 hover:shadow-[0_0_10px_rgba(255,255,255,0.7)]"
+        <a
+          href="/contact"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-8 inline-block neon-button-cyan bg-black text-white border px-8 py-4 text-lg sm:text-xl rounded-full font-semibold uppercase tracking-wider transition-all duration-300 hover:scale-105 hover:shadow-[0_0_10px_rgba(255,255,255,0.7)]"
           >
           Contáctanos
-        </button>
+        </a>
       </div>
     </section>
   );

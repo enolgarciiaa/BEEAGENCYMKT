@@ -1,10 +1,12 @@
 import { useState, lazy, Suspense, useEffect } from "react";
-import CabeceraServices from '/src/components/componentesps/CabeceraServices';
-import FlowingMenu from '/src/components/componentesph/FlowingMenu';
+import Particles from "/src/components/componentesps/Particles";
 import Footer from '/src/components/Footer';
 import ScrollToTopButton from '/src/components/ScrollToTopButton';
-import CustomCursor from "/src/components/CustomCursor";
 
+
+
+
+const NavBar = lazy(() => import("/src/components/NavBar"));
 const Lotties = lazy(() => import("/src/components/componentesps/Lotties"));
 const ImpulsaMarcaservices = lazy(() => import("/src/components/componentesps/ImpulsaMarcaservices"));
 const MetodologiaServices = lazy(() => import("/src/components/componentesps/MetodologiaServices"));
@@ -19,33 +21,51 @@ const demoItems = [
 ];
 
 function Services() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(null);
-
-  useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
-  }, []);
-
-  if (isMobile === null) return null;
+  
 
   return (
     <>
-      <CabeceraServices setMenuOpen={setMenuOpen} />
+      <Suspense fallback={null}>
+       <NavBar />
+      </Suspense>
 
-      {menuOpen && (
-        <div className="fixed inset-0 z-50 bg-black text-white flex flex-col items-center justify-center">
-          <button
-            className="absolute top-6 right-6 text-4xl sm:text-5xl z-50"
-            onClick={() => setMenuOpen(false)}
-          >
-            ✕
-          </button>
-          <div className="w-full h-full flex items-center justify-center px-4">
-            <FlowingMenu items={demoItems} />
-          </div>
+      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+        {/* Fondo de partículas */}
+        <div className="absolute inset-0 z-0">
+          <Particles
+            particleColors={['#ffffff', '#ffffff']}
+            particleCount={200}
+            particleSpread={10}
+            speed={0.1}
+            particleBaseSize={100}
+            moveParticlesOnHover={true}
+            alphaParticles={false}
+            disableRotation={false}
+            className="w-full h-full"
+          />
         </div>
-      )}
 
+        {/* Contenido encima del fondo */}
+        <div className="relative z-10 text-center px-6 max-w-6xl">
+           <h1 className="text-4xl md:text-6xl lg:text-7xl py-10 xl:text-8xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-300 to-slate-200">
+            Servicios que transforman tu negocio
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl text-gray-300">
+            Soluciones inteligentes que conectan innovación y estrategia.
+          </p>
+          <a
+            href="/contact"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-block neon-button-cyan bg-black text-white border px-8 py-4 text-lg sm:text-xl rounded-full font-semibold uppercase tracking-wider transition-all duration-300 hover:scale-105 hover:shadow-[0_0_10px_rgba(255,255,255,0.7)]"
+            >
+            DESCUBRE MÁS
+          </a>
+        </div>
+      </section>
+
+
+      
       <Suspense fallback={null}>
         <Lotties />
       </Suspense>
@@ -63,7 +83,6 @@ function Services() {
       </Suspense>
 
       <Footer />
-      {!isMobile && <CustomCursor />}
       <ScrollToTopButton />
     </>
   );

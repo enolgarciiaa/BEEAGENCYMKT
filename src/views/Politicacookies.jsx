@@ -1,5 +1,4 @@
 import React from "react";
-import CustomCursor from "/src/components/CustomCursor";
 import { motion } from "framer-motion";
 
 export default function PoliticaCookies() {
@@ -160,8 +159,6 @@ export default function PoliticaCookies() {
           Última actualización: abril 2025 · BeeAgency
         </motion.div>
       </div>
-
-      <CustomCursor />
     </section>
   );
 }

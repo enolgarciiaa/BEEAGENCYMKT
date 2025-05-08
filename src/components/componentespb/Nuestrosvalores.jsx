@@ -39,13 +39,13 @@ export default function TextoCreativo() {
         viewport={{ once: true }}
         className="relative max-w-7xl mt-40 text-left z-10 ml-10  "
       >
-       <div className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-300 to-slate-200">
+       <div className="text-3xl md:text-6xl lg:text-7xl xl:text-7xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-300 to-slate-200">
           <h2 className="">¿COMO</h2>
           <h2 className="">SON</h2>
           <h2 className="neon-blue">NUESTROS VALORES?</h2>
         </div>
-        <div className="absolute top-2 sm:top-3 lg:top-2 xl:top-3 left-32 sm:left-72 md:left-60 lg:left-64 xl:left-96  h-[20px] sm:h-[30px] lg:h-[50px] w-[40%] neon-button-cyan z-0" />
-        <div className="absolute bottom-[-20px] sm:bottom-[-30px] lg:bottom-[-55px]  w-[85%] h-[20px] sm:h-[30px] lg:h-[50px] neon-button-cyan z-0" />
+        <div className="absolute top-2 sm:top-3 lg:top-2 xl:top-3 left-28 sm:left-72 md:left-60 lg:left-72 xl:left-72  h-[20px] sm:h-[30px] lg:h-[50px] w-[40%] neon-button-cyan z-0" />
+        <div className="absolute bottom-[-20px] sm:bottom-[-30px] lg:bottom-[-55px]  w-[85%] xl:w-[70%] h-[20px] sm:h-[30px] lg:h-[50px] neon-button-cyan z-0" />
         <div className="font-inspiration text-[4rem] sm:text-[8rem] md:text-[8rem] lg:text-[13rem] neon-blue absolute bottom-[-60px] md:bottom-[-120px] lg:bottom-[-200px] ml-40 sm:ml-72 xl:ml-96  z-20">
           Valores
         </div>
@@ -57,9 +57,9 @@ export default function TextoCreativo() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
         viewport={{ once: true }}
-        className="relative flex justify-end mb-32 mt-[100px] sm:mt-[250px] md:mt-[200px] px-10 md:mr-24 sm:px-10 z-10"
+        className="relative flex justify-center 2xl:ml-[800px] mb-32 mt-[100px] sm:mt-[250px] md:mt-[200px] px-10 z-10"
       >
-        <p className="text-white text-2xl sm:text-[2rem] md:text-[2.3rem] lg:text-[2.5rem] font-roboto-slab font-light leading-relaxed max-w-[1000px] text-center">
+        <p className="text-white text-2xl  sm:text-[2rem] md:text-[2.3rem] lg:text-[2.5rem] font-roboto-slab font-light leading-relaxed max-w-[1000px] text-center">
           Las mejores ideas no se planifican, se descubren. A veces aparecen bailando en una{" "}
           <span
             className="neon-blue font-inspiration text-[2.6rem] cursor-pointer"

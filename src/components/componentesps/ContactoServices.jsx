@@ -4,87 +4,74 @@ export default function ContactoServices() {
   const [acepta, setAcepta] = useState(false);
 
   return (
-    <section className="w-full  text-white py-24 px-6 sm:px-10 md:px-20 lg:px-32">
-      <div className="max-w-7xl mx-auto">
-        {/* Título principal */}
-        <div className="text-left mb-16">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight uppercase tracking-tight text-blue-500">
-            PONTE <span className="block">EN CONTACTO</span>{" "}
-            <span className="block text-yellow-400">CON NOSOTROS.</span>
+    <section className="relative w-full min-h-screen px-6 sm:px-10 py-24 flex items-center justify-center text-white bg-gradient-to-b from-black via-black/80 to-black">
+      <div className="w-full max-w-6xl">
+        {/* Título */}
+        <div className="mb-12 ">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight bg-clip-text  text-transparent bg-gradient-to-br from-slate-300 to-slate-400 uppercase">
+            Ponte en <span className="neon-blue">contacto</span> 
           </h2>
+          <p className="mt-4 text-gray-300 font-light">
+            No creemos en las casualidades. Si estás aquí, es porque algo grande nos espera juntos.
+          </p>
+          <div className="mt-4 w-24 h-1 mx-auto neon-button-cyan rounded-full" />
         </div>
 
-        <hr className="border-white mb-10" />
-
-        <p className="mb-10 font-bold">
-          No creemos en las casualidades. Si estás aquí, es porque algo grande nos espera juntos.
-        </p>
-
         {/* Formulario */}
-        <form className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <form className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {/* Columna 1 */}
           <div className="space-y-6">
             <div>
-              <label htmlFor="nombre" className="block font-bold">
-                Nombre *
-              </label>
+              <label htmlFor="nombre" className="block text-sm font-semibold text-cyan-300">Nombre *</label>
               <input
                 type="text"
                 id="nombre"
                 required
-                className="w-full bg-transparent border-b border-white py-2 outline-none placeholder-white"
+                className="w-full border-b border-white bg-transparent py-2 outline-none placeholder-white text-white"
                 placeholder="Tu nombre"
               />
             </div>
             <div>
-              <label htmlFor="email" className="block font-bold">
-                Email *
-              </label>
+              <label htmlFor="email" className="block text-sm font-semibold text-cyan-300">Email *</label>
               <input
                 type="email"
                 id="email"
                 required
-                className="w-full bg-transparent border-b border-white py-2 outline-none placeholder-white"
+                className="w-full border-b border-white bg-transparent py-2 outline-none placeholder-white text-white"
                 placeholder="tu@email.com"
               />
             </div>
-        
-
-            {/* Campo nuevo: selección de servicio */}
             <div>
-              <label htmlFor="servicio" className="block font-bold">
-                Servicio que necesitas *
-              </label>
+              <label htmlFor="servicio" className="block text-sm font-semibold text-cyan-300">Servicio que necesitas *</label>
               <select
                 id="servicio"
                 required
-                className="w-full bg-blue-500 text-white   border-white py-2 outline-none"
-                >
+                className="w-full bg-cyan-600/90 text-white border border-white py-2 px-2 rounded-md outline-none"
+              >
                 <option value="">Selecciona una opción</option>
                 <option value="desarrollo-web">Desarrollo Web</option>
                 <option value="negocio">Desarrollo de Negocio</option>
                 <option value="branding">Branding</option>
-                <option value="otros">Otros</option>
+                <option value="otros">Otros...</option>
               </select>
             </div>
           </div>
 
-          <div className="flex flex-col justify-between h-full">
+          {/* Columna 2 */}
+          <div className="flex flex-col justify-between space-y-6">
             <div>
-              <label htmlFor="mensaje" className="block font-bold mb-2">
-                Escribe tu mensaje aquí.
-              </label>
+              <label htmlFor="mensaje" className="block text-sm font-semibold text-cyan-300">Mensaje *</label>
               <textarea
                 id="mensaje"
                 required
                 rows="8"
-                className="w-full bg-transparent border border-white p-4 outline-none placeholder-white resize-none"
+                className="w-full border border-white bg-transparent p-4 outline-none placeholder-white text-white resize-none rounded-lg"
                 placeholder="Tu mensaje"
               ></textarea>
             </div>
 
-            {/* Privacidad + botón */}
-            <div className="mt-6 space-y-4">
-              <div className="flex items-center gap-2 text-sm">
+            <div className="space-y-4">
+              <div className="flex items-start gap-2 text-sm text-white">
                 <input
                   type="checkbox"
                   id="privacidad"
@@ -92,9 +79,9 @@ export default function ContactoServices() {
                   onChange={() => setAcepta(!acepta)}
                   required
                 />
-                <label htmlFor="privacidad">
+                <label htmlFor="privacidad" className="leading-snug">
                   Acepto la{" "}
-                  <a href="/politica_privacidad" className="underline hover:text-blue-300">
+                  <a href="/politica_privacidad" className="underline text-cyan-300 hover:text-cyan-100">
                     política de privacidad
                   </a>
                 </label>
@@ -102,7 +89,7 @@ export default function ContactoServices() {
 
               <button
                 type="submit"
-                className="bg-blue-500 hover:bg-yellow-400 hover:text-blue-400 transition-all text-white font-bold py-3 px-8 text-lg uppercase w-full sm:w-auto"
+                className="w-full md:w-auto px-8 py-3 bg-black text-white rounded-full neon-button-cyan text-sm md:text-base tracking-widest uppercase font-semibold transition-all hover:scale-105 hover:shadow-[0_0_10px_rgba(255,255,255,0.7)]"
               >
                 Enviar
               </button>

@@ -1,5 +1,4 @@
 import React from "react";
-import CustomCursor from "/src/components/CustomCursor";
 import { motion } from "framer-motion";
 
 export default function TerminosCondiciones() {
@@ -119,8 +118,6 @@ export default function TerminosCondiciones() {
           Última actualización: abril 2025 · BeeAgency
         </motion.div>
       </div>
-
-      <CustomCursor />
     </section>
   );
 }

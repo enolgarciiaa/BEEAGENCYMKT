@@ -8,7 +8,7 @@ import GlobeReal from "/src/components/componentesph/GlobeReal";
 import TrueFocus from '/src/components/componentesph/TrueFocus';
 import Footer from '/src/components/Footer';
 import ScrollToTopButton from '/src/components/ScrollToTopButton';
-import CustomCursor from "/src/components/CustomCursor";
+
 
 
 
@@ -50,27 +50,31 @@ function Home() {
       <Suspense fallback={null}>
         <ImpulsaMarca />
       </Suspense>
-
+        
       <GlobeReal />
 
       <Suspense fallback={null}>
         <Metodologia />
       </Suspense>
 
-      <TrueFocus 
-        sentence="True Focus"
-        manualMode={false}
-        blurAmount={5}
-        borderColor="#0099ff"
-        animationDuration={2}
-        pauseBetweenAnimations={1}
-      />
+      <div className="hidden xl:block">
+        <TrueFocus
+          sentence="True Focus"
+          manualMode={false}
+          blurAmount={5}
+          borderColor="#0099ff"
+          animationDuration={2}
+          pauseBetweenAnimations={1}
+        />
+      </div>
+
 
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
+        className='relative'
       >
         <Suspense fallback={null}>
           <BlogPreview />
@@ -90,7 +94,7 @@ function Home() {
       </motion.section>
 
       <Footer />
-      <CustomCursor />
+      
       <ScrollToTopButton />
     </div>
   );

@@ -61,6 +61,15 @@
       0 0 80px #0066ff;
   }
 
+  .neon-blue2 {
+    text-shadow:
+      0 0 1px #00e0ff,
+      0 0 20px #00e0ff,
+      0 0 20px #0099ff,
+      0 0 70px #0099ff,
+      0 0 80px #0066ff;
+  }
+
   .neon-button-cyan {
     box-shadow:
       0 0 5px #00ffff,
@@ -231,6 +240,8 @@
   box-sizing: content-box;
   border: none;
 }
+
+
 
 .corner {
   position: absolute;
