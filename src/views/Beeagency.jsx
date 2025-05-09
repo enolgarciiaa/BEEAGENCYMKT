@@ -6,7 +6,9 @@ import SectoresFondoDoble from '/src/components/componentespb/SectoresFondoDoble
 import Footer from "/src/components/Footer";
 import ScrollToTopButton from "/src/components/ScrollToTopButton";
 
-
+// ✅ Importa las imágenes correctamente para producción
+import white1 from '/src/assets/fotospb/BA_Version_White.png';
+import black1 from '/src/assets/fotospb/BA_Version_Black.png';
 
 // Lazy-loaded componentes
 const TextoCreativo = lazy(() => import('/src/components/componentespb/TextoCreativo'));
@@ -15,79 +17,35 @@ const ContactoBee = lazy(() => import('/src/components/componentespb/ContactoBee
 
 // Lista de productos para HeroParallax
 const products = [
-  {
-    title: "Poner imagen 1",
-    thumbnail: "/src/assets/fotospb/BA_Version_White.png",
-  },
-  {
-    title: "Poner imagen 2",
-    thumbnail: "/src/assets/fotospb/BA_Version_Black.png",
-  },
-  {
-    title: "Poner imagen 3",
-    thumbnail: "/src/assets/fotospb/BA_Version_White.png",
-  },
-  {
-    title: "Poner imagen 4",
-    thumbnail: "/src/assets/fotospb/BA_Version_Black.png",
-  },
-  {
-    title: "Poner imagen 5",
-    thumbnail: "/src/assets/fotospb/BA_Version_White.png",
-  },
-  {
-    title: "Poner imagen 6",
-    thumbnail: "/src/assets/fotospb/BA_Version_Black.png",
-  },
-  {
-    title: "Poner imagen 7",
-    thumbnail: "/src/assets/fotospb/BA_Version_White.png",
-  },
-  {
-    title: "Poner imagen 8",
-    thumbnail: "/src/assets/fotospb/BA_Version_Black.png",
-  },
-  {
-    title: "Poner imagen 9",
-    thumbnail: "/src/assets/fotospb/BA_Version_White.png",
-  },
-  {
-    title: "Poner imagen 10",
-    thumbnail: "/src/assets/fotospb/BA_Version_Black.png",
-  },
-  {
-    title: "Poner imagen 11",
-    thumbnail: "/src/assets/fotospb/BA_Version_White.png",
-  },
-  {
-    title: "Poner imagen 12",
-    thumbnail: "/src/assets/fotospb/BA_Version_Black.png",
-  },
-  {
-    title: "Poner imagen 13",
-    thumbnail: "/src/assets/fotospb/BA_Version_White.png",
-  },
-  {
-    title: "Poner imagen 14",
-    thumbnail: "/src/assets/fotospb/BA_Version_Black.png",
-  },
-  {
-    title: "Poner imagen 15",
-    thumbnail: "/src/assets/fotospb/BA_Version_White.png",
-  },
+  { title: "Imagen 1", thumbnail: white1 },
+  { title: "Imagen 2", thumbnail: black1 },
+  { title: "Imagen 3", thumbnail: white1 },
+  { title: "Imagen 4", thumbnail: black1 },
+  { title: "Imagen 5", thumbnail: white1 },
+  { title: "Imagen 6", thumbnail: black1 },
+  { title: "Imagen 7", thumbnail: white1 },
+  { title: "Imagen 8", thumbnail: black1 },
+  { title: "Imagen 9", thumbnail: white1 },
+  { title: "Imagen 10", thumbnail: black1 },
+  { title: "Imagen 11", thumbnail: white1 },
+  { title: "Imagen 12", thumbnail: black1 },
+  { title: "Imagen 13", thumbnail: white1 },
+  { title: "Imagen 14", thumbnail: black1 },
+  { title: "Imagen 15", thumbnail: white1 },
 ];
 
 function Beeagency() {
   return (
     <div className="w-full overflow-x-hidden relative">
       <NavBar />
-      
       <HeroParallax products={products} />
-      
+
       <Suspense fallback={null}>
         <TextoCreativo />
       </Suspense>
+
       <SectoresFondoDoble />
+
       <Suspense fallback={null}>
         <Nuestrosvalores />
       </Suspense>

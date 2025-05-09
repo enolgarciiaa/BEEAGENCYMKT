@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import logoBA from "/src/assets/logoBAheader.png"; // ✅ Import correcto para Vite build
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +34,7 @@ export default function NavBar() {
         {!scrolled && (
           <div className="flex items-center gap-2">
             <img
-              src="/src/assets/logoBAheader.png"
+              src={logoBA} // ✅ aquí usamos el import
               alt="Logo BeeAgency"
               className="h-8 sm:h-10"
             />
@@ -56,8 +57,8 @@ export default function NavBar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative text-white text-sm font-medium tracking-wide uppercase transition
-                          after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px]
-                          after:w-0 after:bg-cyan-300 after:transition-all after:duration-500 hover:after:w-full hover:text-cyan-300"
+                  after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px]
+                  after:w-0 after:bg-cyan-300 after:transition-all after:duration-500 hover:after:w-full hover:text-cyan-300"
               >
                 {link.text}
               </a>
@@ -66,8 +67,8 @@ export default function NavBar() {
                 key={idx}
                 to={link.to}
                 className="relative text-white text-sm font-medium tracking-wide uppercase transition
-                          after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px]
-                          after:w-0 after:bg-cyan-300 after:transition-all after:duration-500 hover:after:w-full hover:text-cyan-300"
+                  after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px]
+                  after:w-0 after:bg-cyan-300 after:transition-all after:duration-500 hover:after:w-full hover:text-cyan-300"
               >
                 {link.text}
               </Link>
@@ -75,7 +76,6 @@ export default function NavBar() {
           )}
         </div>
 
-        {/* Botón derecho solo visible sin scroll y en pantallas grandes */}
         {!scrolled && (
           <div className="hidden lg:flex items-center">
             <a
@@ -89,18 +89,13 @@ export default function NavBar() {
           </div>
         )}
 
-        {/* Botón hamburguesa para móviles */}
         <div className="lg:hidden flex items-center">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-white"
-          >
+          <button onClick={() => setIsOpen(!isOpen)} className="text-white">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </nav>
 
-      {/* Menú móvil desplegable */}
       {isOpen && (
         <div className="mt-2 lg:hidden bg-white/10 backdrop-blur-md rounded-xl border border-white/10 px-6 py-4 shadow-md">
           <div className="flex flex-col gap-4">

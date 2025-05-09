@@ -2,17 +2,17 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// Importamos los iconos directamente desde src/assets
-import wordpress from "/src/assets/fotosph/wordpress-icon.svg";
-import woocommerce from "/src/assets/fotosph/VectorWiki-yAnVI__woocommerce.svg";
-import notion from "/src/assets/fotosph/notion-icon.svg";
-import photoshop from "/src/assets/fotosph/photoshop.svg";
-import slack from "/src/assets/fotosph/slack.svg";
-import github from "/src/assets/fotosph/github-icon.svg";
-import pinterest from "/src/assets/fotosph/pinterest.svg";
-import tiktok from "/src/assets/fotosph/TikTok.svg";
-import shopify from "/src/assets/fotosph/shopify-icon.svg";
-import figma from "/src/assets/fotosph/figma-icon.svg";
+// ✅ IMPORTA SIN RUTA ABSOLUTA
+import wordpress from "../assets/fotosph/wordpress-icon.svg";
+import woocommerce from "../assets/fotosph/VectorWiki-yAnVI__woocommerce.svg";
+import notion from "../assets/fotosph/notion-icon.svg";
+import photoshop from "../assets/fotosph/photoshop.svg";
+import slack from "../assets/fotosph/slack.svg";
+import github from "../assets/fotosph/github-icon.svg";
+import pinterest from "../assets/fotosph/pinterest.svg";
+import tiktok from "../assets/fotosph/TikTok.svg";
+import shopify from "../assets/fotosph/shopify-icon.svg";
+import figma from "../assets/fotosph/figma-icon.svg";
 
 const icons = [
   wordpress,
@@ -41,8 +41,7 @@ export default function CarruselIconos() {
   ];
 
   return (
-    <section className="w-full  text-white py-40 md:py-52 lg:py-64 px-4 overflow-hidden">
-      {/* Texto superior */}
+    <section className="w-full text-white py-40 md:py-52 lg:py-64 px-4 overflow-hidden">
       <div
         className="text-center max-w-8xl mx-auto"
         data-aos="fade-up"
@@ -57,7 +56,6 @@ export default function CarruselIconos() {
         </p>
       </div>
 
-      {/* Carrusel con contenedor más grande */}
       <div className="mt-16 w-full max-w-7xl mx-auto">
         {rows.map((row, i) => (
           <div key={i} className="w-full overflow-hidden">
@@ -70,7 +68,7 @@ export default function CarruselIconos() {
             >
               {row.content.map((src, idx) => (
                 <span
-                  key={idx}
+                  key={`${i}-${idx}`} // 🔐 clave única combinada
                   className="shrink-0 w-16 h-16 md:w-16 md:h-16 flex items-center justify-center"
                 >
                   <img

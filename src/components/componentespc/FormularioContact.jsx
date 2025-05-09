@@ -3,10 +3,12 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 import { motion } from "framer-motion";
-import earthTexture from "/src/assets/World.png";
 import Particles from "/src/components/componentesps/Particles";
 
-// Bola del mundo 3D
+// ✅ Importaciones correctas
+import logo from "/src/assets/logoBAheader.png";
+import earthTexture from "/src/assets/World.png";
+
 function Earth() {
   const meshRef = useRef();
   const texture = new THREE.TextureLoader().load(earthTexture);
@@ -25,7 +27,6 @@ function Earth() {
   );
 }
 
-// Componente principal
 export default function ContactFormWithGlobe() {
   const [acepta, setAcepta] = useState(false);
 
@@ -47,26 +48,27 @@ export default function ContactFormWithGlobe() {
         />
       </div>
 
-      {/* Contenido completo con misma animación de flotación */}
+      {/* Contenido principal con animación de flotación */}
       <motion.div
         animate={{ y: [0, -20, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         className="relative z-10 w-full max-w-6xl flex flex-col items-center justify-center gap-10"
       >
-        {/* Título + Logo */}
+        {/* Título y logo */}
         <div className="w-full flex justify-between items-center px-4">
-        <h2 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight bg-clip-text  text-transparent bg-gradient-to-br from-slate-300 to-slate-400 uppercase">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-300 to-slate-400 uppercase">
             Ponte en <span className="neon-blue">contacto</span>
           </h2>
           <img
-            src="/src/assets/logoBAheader.png"
+            src={logo}
             alt="Logo BeeAgency"
             className="h-14 md:h-24"
           />
         </div>
 
-        {/* Tarjeta de formulario con globo */}
-        <div className="w-full bg-white/5 backdrop-blur-md border border-cyan-500 rounded-3xl shadow-[0_0_60px_#00ffff30] p-4 sm:p-6 md:p-10 lg:p-16 flex flex-col lg:flex-row gap-10 max-h-full overflow-visible">
+        {/* Contenedor del formulario y globo */}
+        <div className="w-full bg-white/5 backdrop-blur-md border border-cyan-500 rounded-3xl shadow-[0_0_60px_#00ffff30] p-4 sm:p-6 md:p-10 lg:p-16 flex flex-col lg:flex-row gap-10">
+          
           {/* Formulario */}
           <form className="w-full lg:w-1/2 grid grid-cols-1 gap-4">
             <input type="text" placeholder="Tu nombre" required className="bg-transparent border-b border-white py-2 outline-none placeholder-white text-sm sm:text-base" />
@@ -95,7 +97,7 @@ export default function ContactFormWithGlobe() {
             </button>
           </form>
 
-          {/* Bola del mundo */}
+          {/* Bola del mundo 3D */}
           <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] max-w-full lg:max-w-[500px]">
             <Canvas camera={{ position: [0, 0, 7] }}>
               <ambientLight intensity={0.4} />

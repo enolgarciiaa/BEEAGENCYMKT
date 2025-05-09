@@ -1,6 +1,6 @@
 import { useState, Suspense, useEffect, lazy } from 'react';
 import { motion } from "framer-motion";
-import SplashScreen from '/src/components/SplashScreen'; 
+import SplashScreen from '/src/components/SplashScreen';
 import NavBar from "/src/components/NavBar";
 import LampDemo from "/src/components/componentesph/Lamp";
 import InfiniteLogosCarousel from "/src/components/componentesph/InfiniteLogosCarousel";
@@ -9,6 +9,7 @@ import GlobeReal from "/src/components/componentesph/GlobeReal";
 import TrueFocus from '/src/components/componentesph/TrueFocus';
 import Footer from '/src/components/Footer';
 import ScrollToTopButton from '/src/components/ScrollToTopButton';
+import logoMarca from "/src/assets/fotosph/logo-marcaBA.jpg"; // ✅ Import correcta
 
 const ImpulsaMarca = lazy(() => import('/src/components/componentesph/ImpulsaMarca'));
 const Metodologia = lazy(() => import('/src/components/componentesph/Metodologia'));
@@ -18,24 +19,24 @@ const Contacto = lazy(() => import('/src/components/componentesph/Contacto'));
 function Home() {
   const [showSplash, setShowSplash] = useState(false);
 
-useEffect(() => {
-  const seen = sessionStorage.getItem("hasSeenSplash");
+  useEffect(() => {
+    const seen = sessionStorage.getItem("hasSeenSplash");
 
-  if (!seen) {
-    setShowSplash(true);
-    const timer = setTimeout(() => {
-      setShowSplash(false);
-    }, 3000); // misma duración que en SplashScreen
+    if (!seen) {
+      setShowSplash(true);
+      const timer = setTimeout(() => {
+        setShowSplash(false);
+        sessionStorage.setItem("hasSeenSplash", "true");
+      }, 3000);
 
-    return () => clearTimeout(timer);
-  }
-}, []);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
-if (showSplash) return <SplashScreen />;
+  if (showSplash) return <SplashScreen />;
 
   return (
     <div className="w-full overflow-x-hidden">
-      {/* CABECERA nueva */}
       <NavBar />
       <LampDemo />
       <InfiniteLogosCarousel />
@@ -49,7 +50,7 @@ if (showSplash) return <SplashScreen />;
       >
         <div className="flex items-center justify-center h-full text-white text-xl">
           <img 
-            src="/src/assets/fotosph/logo-marcaBA.jpg" 
+            src={logoMarca} 
             alt="logo beeagency" 
             className="w-full h-full object-cover rounded-[24px]" 
           />
