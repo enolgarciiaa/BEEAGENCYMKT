@@ -2,29 +2,17 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// ✅ Importaciones con alias @
-import wordpress from "/icons/wordpress-icon.svg";
-import woocommerce from "/icons/VectorWiki-yAnVI__woocommerce.svg";
-import notion from "/icons/notion-icon.svg";
-import photoshop from "/icons/photoshop.svg";
-import slack from "/icons/slack.svg";
-import github from "/icons/github-icon.svg";
-import pinterest from "/icons/pinterest.svg";
-import tiktok from "/icons/TikTok.svg";
-import shopify from "/icons/shopify-icon.svg";
-import figma from "/icons/figma-icon.svg";
-
-const icons = [
-  wordpress,
-  woocommerce,
-  notion,
-  photoshop,
-  slack,
-  github,
-  pinterest,
-  tiktok,
-  shopify,
-  figma,
+const iconPaths = [
+  "/icons/wordpress-icon.svg",
+  "/icons/VectorWiki-yAnVI__woocommerce.svg",
+  "/icons/notion-icon.svg",
+  "/icons/photoshop.svg",
+  "/icons/slack.svg",
+  "/icons/github-icon.svg",
+  "/icons/pinterest.svg",
+  "/icons/TikTok.svg",
+  "/icons/shopify-icon.svg",
+  "/icons/figma-icon.svg",
 ];
 
 const duplicate = (arr, times = 3) => Array(times).fill(arr).flat();
@@ -35,9 +23,9 @@ export default function CarruselIconos() {
   }, []);
 
   const rows = [
-    { content: duplicate(icons, 3), direction: "left" },
-    { content: duplicate(icons, 4), direction: "right" },
-    { content: duplicate(icons, 3), direction: "left" },
+    { content: duplicate(iconPaths, 3), direction: "left" },
+    { content: duplicate(iconPaths, 4), direction: "right" },
+    { content: duplicate(iconPaths, 3), direction: "left" },
   ];
 
   return (
@@ -70,7 +58,7 @@ export default function CarruselIconos() {
             >
               {row.content.map((src, idx) => (
                 <span
-                  key={`${i}-${idx}`} // ✅ clave única combinada
+                  key={`row-${i}-icon-${idx}`}
                   className="shrink-0 w-16 h-16 md:w-16 md:h-16 flex items-center justify-center"
                 >
                   <img
