@@ -3,16 +3,16 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 // ✅ Importaciones con alias @
-import wordpress from "/assets/fotosph/wordpress-icon.svg";
-import woocommerce from "/assets/fotosph/VectorWiki-yAnVI__woocommerce.svg";
-import notion from "/assets/fotosph/notion-icon.svg";
-import photoshop from "/assets/fotosph/photoshop.svg";
-import slack from "/assets/fotosph/slack.svg";
-import github from "/assets/fotosph/github-icon.svg";
-import pinterest from "@/assets/fotosph/pinterest.svg";
-import tiktok from "/assets/fotosph/TikTok.svg";
-import shopify from "/assets/fotosph/shopify-icon.svg";
-import figma from "/assets/fotosph/figma-icon.svg";
+import wordpress from "/icons/wordpress-icon.svg";
+import woocommerce from "/icons/VectorWiki-yAnVI__woocommerce.svg";
+import notion from "/icons/notion-icon.svg";
+import photoshop from "/icons/photoshop.svg";
+import slack from "/icons/slack.svg";
+import github from "/icons/github-icon.svg";
+import pinterest from "/icons/pinterest.svg";
+import tiktok from "/icons/TikTok.svg";
+import shopify from "/icons/shopify-icon.svg";
+import figma from "/icons/figma-icon.svg";
 
 const icons = [
   wordpress,
