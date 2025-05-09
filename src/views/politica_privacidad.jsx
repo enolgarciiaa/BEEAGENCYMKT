@@ -3,36 +3,35 @@ import { motion } from "framer-motion";
 
 export default function PoliticaPrivacidad() {
   return (
-    <section className="w-full min-h-screen bg-[#0e0e10] text-white px-6 sm:px-10 md:px-20 lg:px-32 py-24 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#111] via-[#0e0e10] to-[#1c1c1e] opacity-70 pointer-events-none z-0" />
-
-      <div className="relative z-10 max-w-5xl mx-auto space-y-12">
+    <section className="min-h-screen w-full flex items-center justify-center px-6 py-24 overflow-hidden bg-black relative">
+      <div className="text-center space-y-16 max-w-5xl z-10">
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl sm:text-5xl font-extrabold text-yellow-400 uppercase border-b border-yellow-400 pb-4"
+          className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-300 to-slate-400"
         >
-          Política de Privacidad
+          Política de<br />
+          <span className="neon-blue">Privacidad</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-gray-300 text-lg leading-relaxed"
+          className="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto"
         >
-          En <span className="text-blue-400 font-semibold">BeeAgency</span>, la privacidad de nuestros usuarios es una prioridad. A través de esta política explicamos cómo recopilamos, usamos y protegemos tus datos personales.
+          En <span className="text-cyan-400 font-semibold">BeeAgency</span>, la privacidad de nuestros usuarios es una prioridad. A través de esta política explicamos cómo recopilamos, usamos y protegemos tus datos personales.
         </motion.p>
 
-        <div className="space-y-10 text-gray-300 text-base leading-loose">
+        <div className="space-y-12 text-gray-300 text-left text-base md:text-lg leading-relaxed mx-auto max-w-4xl">
           {[
             {
               title: "1. Responsable del tratamiento",
               content: (
                 <>
                   BeeAgency – CIF: 12345678X – Email:{" "}
-                  <a href="mailto:contacto@beeagency.com" className="text-yellow-400 underline">
+                  <a href="mailto:contacto@beeagency.com" className="text-cyan-400 underline">
                     contacto@beeagency.com
                   </a>
                 </>
@@ -42,7 +41,7 @@ export default function PoliticaPrivacidad() {
               title: "2. Finalidad del tratamiento",
               content: (
                 <>
-                  Utilizamos los datos personales para responder a tus solicitudes, prestarte nuestros servicios y enviarte comunicaciones relacionadas con nuestros productos, eventos o novedades.
+                  Utilizamos los datos personales para responder a tus solicitudes, prestarte nuestros servicios y enviarte comunicaciones relacionadas con nuestros productos o novedades.
                 </>
               ),
             },
@@ -67,14 +66,14 @@ export default function PoliticaPrivacidad() {
               content: (
                 <>
                   <ul className="list-disc list-inside space-y-2">
-                    <li>Derecho a acceder a tus datos personales.</li>
-                    <li>Derecho a solicitar su rectificación o supresión.</li>
-                    <li>Derecho a limitar u oponerte a su tratamiento.</li>
-                    <li>Derecho a la portabilidad de los datos.</li>
+                    <li>Acceder a tus datos personales</li>
+                    <li>Solicitar su rectificación o supresión</li>
+                    <li>Limitar u oponerte a su tratamiento</li>
+                    <li>Solicitar la portabilidad de los datos</li>
                   </ul>
                   <p className="mt-2">
                     Puedes ejercer tus derechos enviando un email a:{" "}
-                    <a href="mailto:contacto@beeagency.com" className="text-yellow-400 underline">
+                    <a href="mailto:contacto@beeagency.com" className="text-cyan-400 underline">
                       contacto@beeagency.com
                     </a>
                   </p>
@@ -93,7 +92,7 @@ export default function PoliticaPrivacidad() {
               title: "7. Transferencias internacionales",
               content: (
                 <>
-                  No se prevén transferencias internacionales de datos. Si en algún momento se realizaran, se garantizará el cumplimiento de los estándares adecuados de protección.
+                  No se prevén transferencias internacionales de datos. En caso de realizarse, se garantizará el cumplimiento de estándares adecuados de protección.
                 </>
               ),
             },
@@ -109,7 +108,7 @@ export default function PoliticaPrivacidad() {
               title: "9. Cambios en la política de privacidad",
               content: (
                 <>
-                  BeeAgency se reserva el derecho a modificar esta política para adaptarla a novedades legislativas o cambios internos. Te recomendamos revisarla periódicamente.
+                  BeeAgency se reserva el derecho a modificar esta política para adaptarla a novedades legislativas o cambios internos. Revisa esta sección periódicamente.
                 </>
               ),
             },
@@ -121,7 +120,7 @@ export default function PoliticaPrivacidad() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
             >
-              <h2 className="text-2xl font-bold text-blue-400 mb-2">{title}</h2>
+              <h2 className="text-2xl font-bold text-cyan-400 mb-2">{title}</h2>
               <div>{content}</div>
             </motion.div>
           ))}
@@ -131,7 +130,7 @@ export default function PoliticaPrivacidad() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="mt-16 text-gray-500 text-sm italic text-center"
+          className="text-gray-500 text-sm italic text-center"
         >
           Última actualización: abril 2025 · BeeAgency
         </motion.div>

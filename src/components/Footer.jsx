@@ -128,9 +128,9 @@ const Footer = () => {
             viewport={{ once: true }}
             className="flex space-x-4 mt-4 md:mt-0"
           >
-            <Link to="/politica_privacidad" target="_blank" className="hover:text-yellow-400 transition-colors" >Política de privacidad</Link>
-            <Link to="/TerminosCondiciones" target="_blank" className="hover:text-yellow-400 transition-colors">Términos y condiciones</Link>
-            <Link to="/PoliticaCookies" target="_blank" className="hover:text-yellow-400 transition-colors">Política de cookies</Link>
+            <Link to="/politica_privacidad" target="_blank" className="hover:text-blue-400 transition-colors" >Política de privacidad</Link>
+            <Link to="/TerminosCondiciones" target="_blank" className="hover:text-blue-400 transition-colors">Términos y condiciones</Link>
+            <Link to="/PoliticaCookies" target="_blank" className="hover:text-blue-400 transition-colors">Política de cookies</Link>
           </motion.div>
         </div>
       </div>

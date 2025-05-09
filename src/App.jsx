@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
 import { Suspense, lazy, useEffect, useState } from 'react';
-import SplashScreen from '/src/components/SplashScreen'; 
 import CookieConsent from '/src/components/CookieConsent'; 
 import ScrollToTop from '/src/components/ScrollToTop';
 import CustomCursor from "/src/components/CustomCursor";
@@ -16,21 +15,9 @@ const TerminosCondiciones = lazy(() => import('/src/views/TerminosCondiciones'))
 const Politicacookies = lazy(() => import('/src/views/Politicacookies'));
 
 function App() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Oculta el splash tras 3 segundos
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
-
+ 
   return (
-    <>
-      {loading ? (
-        <SplashScreen />
-      ) : (
+    
         <>
           <CookieConsent />
           <ScrollToTop />
@@ -48,8 +35,8 @@ function App() {
             </Routes>
           </Suspense>
         </>
-      )}
-    </>
+      
+    
   );
 }
 

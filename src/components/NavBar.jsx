@@ -11,7 +11,7 @@ export default function NavBar() {
     { to: "/Beeagency", text: "Beeagency" },
     { to: "/services", text: "Servicios" },
     { to: "/blog", text: "Blog" },
-    { to: "/contact", text: "Contacto", external: true }, // marcar como externa
+    { to: "/contact", text: "Contacto", external: true },
   ];
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function NavBar() {
           scrolled ? "py-2" : "py-4"
         } bg-white/10 backdrop-blur-md shadow-md border border-white/10`}
       >
-        {/* Logo y nombre (solo si no ha hecho scroll) */}
+        {/* Logo y nombre con enlace a la Home */}
         {!scrolled && (
           <div className="flex items-center gap-2">
             <img
@@ -37,9 +37,12 @@ export default function NavBar() {
               alt="Logo BeeAgency"
               className="h-8 sm:h-10"
             />
-            <span className="text-white font-semibold text-base sm:text-lg tracking-widest">
+            <Link
+              to="/"
+              className="text-white font-semibold text-base sm:text-lg tracking-widest hover:text-cyan-300 transition-colors"
+            >
               BEEAGENCY
-            </span>
+            </Link>
           </div>
         )}
 
@@ -55,7 +58,7 @@ export default function NavBar() {
                 className="relative text-white text-sm font-medium tracking-wide uppercase transition
                           after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px]
                           after:w-0 after:bg-cyan-300 after:transition-all after:duration-500 hover:after:w-full hover:text-cyan-300"
-                >
+              >
                 {link.text}
               </a>
             ) : (
@@ -65,14 +68,14 @@ export default function NavBar() {
                 className="relative text-white text-sm font-medium tracking-wide uppercase transition
                           after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px]
                           after:w-0 after:bg-cyan-300 after:transition-all after:duration-500 hover:after:w-full hover:text-cyan-300"
-                >
+              >
                 {link.text}
               </Link>
             )
           )}
         </div>
 
-        {/* Botón derecho (solo visible en pantallas grandes y sin scroll) */}
+        {/* Botón derecho solo visible sin scroll y en pantallas grandes */}
         {!scrolled && (
           <div className="hidden lg:flex items-center">
             <a
@@ -86,7 +89,7 @@ export default function NavBar() {
           </div>
         )}
 
-        {/* Botón hamburguesa visible en móviles y tablets */}
+        {/* Botón hamburguesa para móviles */}
         <div className="lg:hidden flex items-center">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -97,7 +100,7 @@ export default function NavBar() {
         </div>
       </nav>
 
-      {/* Menú móvil y tablet desplegable */}
+      {/* Menú móvil desplegable */}
       {isOpen && (
         <div className="mt-2 lg:hidden bg-white/10 backdrop-blur-md rounded-xl border border-white/10 px-6 py-4 shadow-md">
           <div className="flex flex-col gap-4">
@@ -109,7 +112,7 @@ export default function NavBar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsOpen(false)}
-                  className="text-white text-sm  font-medium tracking-wide hover:text-cyan-300 transition"
+                  className="text-white text-sm font-medium tracking-wide hover:text-cyan-300 transition"
                 >
                   {link.text}
                 </a>
@@ -118,7 +121,7 @@ export default function NavBar() {
                   key={idx}
                   to={link.to}
                   onClick={() => setIsOpen(false)}
-                  className="text-white text-sm font-medium  tracking-wide hover:text-cyan-300 transition"
+                  className="text-white text-sm font-medium tracking-wide hover:text-cyan-300 transition"
                 >
                   {link.text}
                 </Link>

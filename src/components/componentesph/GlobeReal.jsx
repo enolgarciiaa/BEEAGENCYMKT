@@ -3,7 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 import { motion } from "framer-motion";
-import earthTexture from "/src/assets/World.jpg";
+import earthTexture from "/src/assets/World.png";
 
 
 function Earth() {

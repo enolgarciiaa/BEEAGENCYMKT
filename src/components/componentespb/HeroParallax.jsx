@@ -59,15 +59,15 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0">
-      <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-300 to-slate-200">
+    <div className="max-w-7xl relative mx-auto py-20 md:mt-40 xl:mt-0   px-4 w-full left-0 top-0">
+      <h1 className="text-4xl md:text-6xl md:ml-20 2xl:ml-6 lg:text-7xl xl:text-7xl 2xl:text-8xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-300 to-slate-200">
         Estrategia hecha <br /> de mente y emoción.
       </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 text-neutral-200">
+      <p className="max-w-2xl md:ml-20 2xl:ml-6  text-base md:text-xl mt-8 text-neutral-200">
         Combinamos innovación, análisis y sensibilidad para crear marcas que no solo destacan, sino que se adaptan y evolucionan en un entorno cada vez más inteligente.
       </p>
 
-      <div className="mt-10">
+      <div className="mt-10 md:ml-20 2xl:ml-6">
       <a
         href="/contact"
         target="_blank"
@@ -86,7 +86,7 @@ export const ProductCard = ({ product, translate }) => {
   return (
     <motion.div
       style={{ x: translate }}
-      className="h-96 w-[30rem] relative shrink-0"
+      className="h-[430px] w-[30rem] relative shrink-0"
     >
       <a href={product.link} className="block">
         <img
