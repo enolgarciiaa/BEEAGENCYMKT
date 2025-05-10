@@ -53,7 +53,7 @@ export default function SectoresFondoDoble() {
         </div>
 
         <div className="w-full max-w-7xl relative">
-          <div className="bottom-[-20px] sm:bottom-[-40px] left-24 xl:ml-32  xl:w-[80%] h-[20px] sm:h-[40px] neon-button-cyan" />
+          <div className="bottom-[-20px] sm:bottom-[-40px] left-24 lg:ml-12 xl:ml-32 lg:w-[92%]  xl:w-[80%] h-[20px] sm:h-[40px] neon-button-cyan" />
           <div className="font-[Inspiration,cursive] neon-blue font-medium text-[3rem] md:text-[6rem] lg:text-[7rem] xl:text-[8rem] text-black absolute bottom-[-50px] sm:bottom-[-140px] md:bottom-[-100px] xl:bottom-[-90px] left-16 sm:left-44 md:left-32 lg:left-36 xl:left-72 transform -translate-x-1/2 z-[3]">
             Sectores
           </div>

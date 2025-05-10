@@ -35,7 +35,7 @@ export default function Metodologiaservices() {
 
   return (
     <section
-      className="relative w-full min-h-screen text-white px-6 md:px-10 lg:px-16 2xl:px-32 py-24 flex flex-col items-center justify-center overflow-hidden"
+      className="relative w-full min-h-screen text-white px-6 md:px-20 lg:px-16 2xl:px-32 py-20 flex flex-col items-center justify-center overflow-hidden"
       data-aos="fade-up"
     >
       <div className="absolute -z-10 inset-0" />
