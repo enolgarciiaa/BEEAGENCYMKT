@@ -14,7 +14,7 @@ export default function NotFound() {
           404
         </h1>
         <p className="text-lg sm:text-xl text-gray-300">
-          Esta galaxia no existe. Parece que te has perdido en el universo de BeeAgency.
+          Esta pagina no existe. Parece que te has perdido en el universo de BeeAgency.
         </p>
         <Link
           to="/"
