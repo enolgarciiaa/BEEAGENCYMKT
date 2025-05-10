@@ -1,11 +1,11 @@
 import React from "react";
 
-import wordpress from "/src/assets/fotosph/wordpress-icon.svg";
-import shopify from "/src/assets/fotosph/shopify-icon.svg";
-import tiktok from "/src/assets/fotosph/tiktok.svg";
-import notion from "/src/assets/fotosph/notion-icon.svg";
-import photoshop from "/src/assets/fotosph/photoshop.svg";
-import figma from "/src/assets/fotosph/figma-icon.svg";
+import wordpress from "../../assets/fotosph/wordpress-icon.svg";
+import shopify from "../../assets/fotosph/shopify-icon.svg";
+import tiktok from "../../assets/fotosph/tiktok.svg";
+import notion from "../../assets/fotosph/notion-icon.svg";
+import photoshop from "../../assets/fotosph/photoshop.svg";
+import figma from "../../assets/fotosph/figma-icon.svg";
 
 const logos = [
   { src: wordpress, alt: "wordpress" },
