@@ -36,7 +36,7 @@ export default function ImpulsaMarca() {
             entorno inteligente
           </span>
         </h2>
-        <p className="text-lg md:text-xl text-gray-300 font-light max-w-3xl mx-auto">
+        <p className="text-lg md:text-xl text-gray-300 font-light max-w-3xl mx-auto mt-7">
           La diferencia es la ventaja más buscada. Descubre cómo Bee Agency combina IA, creatividad y estrategia para destacar entre la multitud.
         </p>
         
