@@ -1,4 +1,3 @@
-// src/components/Footer.jsx
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -28,7 +27,7 @@ const Footer = () => {
             </p>
           </motion.div>
 
-          {/* Columna 2: Ubicación */}
+          {/* Columna 2: Ubicación y contacto */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -36,22 +35,30 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <h4 className="text-xl font-semibold mb-6">Ubicación</h4>
-            <address className="not-italic text-gray-300">
-              <p className="mb-4 flex items-start">
+            <address className="not-italic text-gray-300 space-y-4">
+              <div className="flex items-start">
                 <svg className="w-5 h-5 mr-3 mt-1 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                Madrid, 28004<br />
-                
-              </p>
-              <p className="flex items-center">
+                España, 28004
+              </div>
+              <div className="flex items-center">
                 <svg className="w-5 h-5 mr-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                +34 672 40 74 00 <br />
-                +34 635 14 79 92
-              </p>
+                +34 672 40 74 00 <br />+34 635 14 79 92
+              </div>
+              <div className="flex items-center">
+                <svg className="w-5 h-5 mr-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 4H8a4 4 0 00-4 4v8a4 4 0 004 4h8a4 4 0 004-4V8a4 4 0 00-4-4z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M22 6l-10 7L2 6" />
+                </svg>
+                <a href="mailto:contacto@gmail.com" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  contacto@beeagency.es
+                </a>
+              </div>
+
             </address>
           </motion.div>
 
@@ -72,6 +79,7 @@ const Footer = () => {
             </nav>
           </motion.div>
 
+         
           {/* Columna 4: Redes sociales */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -106,7 +114,6 @@ const Footer = () => {
           </motion.div>
         </div>
 
-        
 
         {/* Línea divisoria */}
         <div className="border-t border-gray-800 my-8"></div>
@@ -128,7 +135,7 @@ const Footer = () => {
             viewport={{ once: true }}
             className="flex space-x-4 mt-4 md:mt-0"
           >
-            <Link to="/politica_privacidad" target="_blank" className="hover:text-blue-400 transition-colors" >Política de privacidad</Link>
+            <Link to="/politica_privacidad" target="_blank" className="hover:text-blue-400 transition-colors">Política de privacidad</Link>
             <Link to="/TerminosCondiciones" target="_blank" className="hover:text-blue-400 transition-colors">Términos y condiciones</Link>
             <Link to="/PoliticaCookies" target="_blank" className="hover:text-blue-400 transition-colors">Política de cookies</Link>
           </motion.div>
@@ -139,3 +146,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
