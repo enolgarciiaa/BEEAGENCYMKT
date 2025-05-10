@@ -2,17 +2,18 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+// ✅ Rutas relativas a la carpeta /public
 const iconPaths = [
-  "/images/wordpress-icon.svg",
-  "/images/VectorWiki-yAnVI__woocommerce.svg",
-  "/images/notion-icon.svg",
-  "/images/photoshop.svg",
-  "/images/slack.svg",
-  "/images/github-icon.svg",
-  "/images/pinterest.svg",
-  "/images/TikTok.svg",
-  "/images/shopify-icon.svg",
-  "/images/figma-icon.svg",
+  "/icons/wordpress-icon.svg",
+  "/icons/VectorWiki-yAnVI__woocommerce.svg",
+  "/icons/notion-icon.svg",
+  "/icons/photoshop.svg",
+  "/icons/slack.svg",
+  "/icons/github-icon.svg",
+  "/icons/pinterest.svg",
+  "/icons/TikTok.svg",
+  "/icons/shopify-icon.svg",
+  "/icons/figma-icon.svg",
 ];
 
 const duplicate = (arr, times = 3) => Array(times).fill(arr).flat();
@@ -41,7 +42,8 @@ export default function CarruselIconos() {
           Codo a codo con <span className="text-yellow-400">los mejores</span>
         </h2>
         <p className="text-lg md:text-xl">
-          Personalizamos tus necesidades para conseguir los mejores resultados de la mano de herramientas de primer nivel
+          Personalizamos tus necesidades para conseguir los mejores resultados
+          de la mano de herramientas de primer nivel
         </p>
       </div>
 
