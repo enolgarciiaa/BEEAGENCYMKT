@@ -3,16 +3,16 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const iconPaths = [
-  "/icons/wordpress-icon.svg",
-  "/icons/VectorWiki-yAnVI__woocommerce.svg",
-  "/icons/notion-icon.svg",
-  "/icons/photoshop.svg",
-  "/icons/slack.svg",
-  "/icons/github-icon.svg",
-  "/icons/pinterest.svg",
-  "/icons/TikTok.svg",
-  "/icons/shopify-icon.svg",
-  "/icons/figma-icon.svg",
+  "/images/wordpress-icon.svg",
+  "/images/VectorWiki-yAnVI__woocommerce.svg",
+  "/images/notion-icon.svg",
+  "/images/photoshop.svg",
+  "/images/slack.svg",
+  "/images/github-icon.svg",
+  "/images/pinterest.svg",
+  "/images/TikTok.svg",
+  "/images/shopify-icon.svg",
+  "/images/figma-icon.svg",
 ];
 
 const duplicate = (arr, times = 3) => Array(times).fill(arr).flat();
