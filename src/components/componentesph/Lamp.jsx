@@ -33,12 +33,10 @@ export default function LampDemo() {
         </p>
         <div className="mt-10 flex justify-center gap-6 flex-wrap">
           <a
-            href="/contact"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/Beeagency"
             className="neon-button-cyan bg-black text-white px-10 py-4 rounded-full text-sm md:text-base tracking-widest uppercase font-semibold transition-all hover:scale-105 hover:shadow-[0_0_10px_rgba(255,255,255,0.7)]"
           >
-            Descubre más
+            Conócenos
           </a>
           <a
             href="/services"

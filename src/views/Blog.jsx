@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
+import NavBar from "/src/components/NavBar";
 
 export default function Blog() {
   return (
+    
     <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 py-24 bg-gradient-to-b from-black via-[#0e0e10] to-black text-white relative overflow-hidden">
+      <NavBar />
       {/* Encabezado con animación */}
       <motion.h1
         initial={{ opacity: 0, y: -30 }}

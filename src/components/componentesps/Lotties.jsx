@@ -74,7 +74,7 @@ function FlipCard({ servicio, animationData }) {
           absolute inset-0 backface-hidden 
           bg-white/5 backdrop-blur-md 
           rounded-xl 
-          p-6 flex flex-col items-center justify-start 
+           flex flex-col items-center justify-start 
           transition-all duration-500 
           ${hovered 
             ? "border-transparent shadow-[0_0_60px_#00ffff60]" 

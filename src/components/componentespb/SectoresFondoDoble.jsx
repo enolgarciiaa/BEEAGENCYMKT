@@ -48,20 +48,20 @@ export default function SectoresFondoDoble() {
         viewport={{ once: true }}
         className="relative text-center w-full flex flex-col items-center mb-32  px-2 z-10"
       >
-        <div className="whitespace-nowrap text-[1.6rem] md:text-5xl lg:text-6xl 2xl:text-7xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-300 to-slate-200">
-          <h2>SOMOS NUESTROS <span className="neon-blue">CLIENTES</span></h2>
+        <div className="whitespace-nowrap text-[1.4rem] lg:mb-2  md:text-[3.1rem] lg:text-6xl 2xl:text-7xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-300 to-slate-200">
+          <h2>SOMOS <span className="neon-blue">NUESTROS CLIENTES</span></h2>
         </div>
 
         <div className="w-full max-w-7xl relative">
-          <div className="bottom-[-20px] sm:bottom-[-40px] left-24 lg:ml-12 xl:ml-32 lg:w-[92%]  xl:w-[80%] h-[20px] sm:h-[40px] neon-button-cyan" />
-          <div className="font-[Inspiration,cursive] neon-blue font-medium text-[4rem] md:text-[6rem] lg:text-[7rem] xl:text-[8rem] text-black absolute bottom-[-50px] sm:bottom-[-140px] md:bottom-[-100px] xl:bottom-[-90px] left-16 sm:left-44 md:left-32 lg:left-36 xl:left-72 transform -translate-x-1/2 z-[3]">
-            Sectores
+          <div className="bottom-[-20px] sm:bottom-[-40px]   ml-3  md:ml-0 lg:ml-10 xl:ml-32 w-[95%] md:w-[100%]  lg:w-[92%] xl:w-[80%] h-[20px] sm:h-[40px] neon-button-cyan" />
+          <div className="font-[Inspiration,cursive] text-white font-medium text-[3rem] md:text-[7rem] lg:text-[8rem] xl:text-[9rem]  absolute bottom-[-30px] sm:bottom-[-140px] md:bottom-[-60px] lg:bottom-[-90px] xl:bottom-[-110px] left-[270px]  md:left-[550px] lg:left-[750px] flex xl:left-[950px] transform -translate-x-1/2 z-[3]">
+            Clientes
           </div>
         </div>
       </motion.div>
 
       {/* Tarjetas */}
-      <div className="z-10 grid grid-cols-1 mt-10 sm:grid-cols-2 lg:grid-cols-4 gap-10 w-full max-w-[1800px] px-4">
+      <div className="z-10 grid grid-cols-1 mt-10 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-10 w-full max-w-[1800px] px-4">
         {sectores.map((sector, index) => (
           <motion.div
           key={index}

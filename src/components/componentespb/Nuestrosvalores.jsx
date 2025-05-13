@@ -49,8 +49,8 @@ export default function TextoCreativo() {
           <h2 className="neon-blue">NUESTROS VALORES?</h2>
         </div>
         <div className="absolute top-2 sm:top-3 lg:top-2 xl:top-3 left-28 sm:left-72 md:left-60 lg:left-72 xl:left-72 h-[20px] sm:h-[30px] lg:h-[50px] w-[40%] neon-button-cyan z-0" />
-        <div className="absolute bottom-[-20px] sm:bottom-[-30px] lg:bottom-[-55px] w-[85%] xl:w-[70%] h-[20px] sm:h-[30px] lg:h-[50px] neon-button-cyan z-0" />
-        <div className="font-inspiration text-[4rem] sm:text-[8rem] md:text-[8rem] lg:text-[13rem] neon-blue absolute bottom-[-60px] md:bottom-[-120px] lg:bottom-[-200px] ml-40 sm:ml-72 xl:ml-96 z-20">
+        <div className="absolute bottom-[-20px] sm:bottom-[-30px] lg:bottom-[-55px] w-[90%] xl:w-[70%] h-[20px] sm:h-[30px] lg:h-[50px] neon-button-cyan z-0" />
+        <div className="font-inspiration text-[4rem] sm:text-[8rem] md:text-[8rem] lg:text-[13rem] text-white absolute bottom-[-60px] md:bottom-[-120px] lg:bottom-[-200px] ml-40 sm:ml-72 xl:ml-96 z-20">
           Valores
         </div>
       </motion.div>

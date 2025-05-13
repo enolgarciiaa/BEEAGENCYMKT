@@ -43,14 +43,14 @@ export default function TextoCreativo() {
         viewport={{ once: true }}
         className="relative max-w-5xl mx-6 text-left z-10 lg:ml-20"
       >
-        <div className="text-3xl mt-10 md:text-6xl lg:text-7xl xl:text-7xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-300 to-slate-200">
+        <div className="text-3xl mt-20 md:text-6xl lg:text-7xl xl:text-7xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-300 to-slate-200">
           <h2>¿QUIERES</h2>
           <h2>UNIRTE A</h2>
           <h2 className="neon-blue">NUESTRO EQUIPO?</h2>
         </div>
-        <div className="absolute top-2 lg:top-4 xl:top-3 left-[150px] sm:left-[290px] lg:left-[370px] h-[20px] sm:h-[30px] lg:h-[50px] w-[40%] neon-button-cyan z-0" />
+        <div className="absolute top-2 sm:top-3  lg:top-4 xl:top-3 left-[155px] sm:left-[300px] lg:left-[370px] h-[20px] sm:h-[30px] lg:h-[50px] w-[40%] neon-button-cyan z-0" />
         <div className="absolute bottom-[-20px] sm:bottom-[-30px] lg:bottom-[-55px] left-0 w-[90%] lg:w-[80%] h-[20px] sm:h-[30px] lg:h-[50px] neon-button-cyan z-0" />
-        <div className="font-inspiration text-[4rem] sm:text-[8rem] md:text-[8rem] lg:text-[13rem] neon-blue absolute bottom-[-60px] md:bottom-[-120px] lg:bottom-[-200px] left-10 z-20">
+        <div className="font-inspiration text-[4rem] sm:text-[8rem] md:text-[8rem] lg:text-[13rem] text-white absolute bottom-[-60px] md:bottom-[-120px] lg:bottom-[-200px] left-10 z-20">
           Equipo
         </div>
       </motion.div>

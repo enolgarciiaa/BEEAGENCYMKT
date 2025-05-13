@@ -26,7 +26,7 @@ function Earth() {
 
 export default function GlobeReal() {
   return (
-    <section className="w-full bg-black flex flex-col-reverse lg:flex-col-reverse xl:flex-row items-center justify-center px-4 pb-52  lg:py-16 gap-14 overflow-hidden min-h-[40vh] xl:min-h-screen">
+    <section className="w-full bg-black flex flex-col-reverse lg:flex-col-reverse xl:flex-row  items-center justify-center px-4 pb-52  lg:py-16 gap-14 overflow-hidden min-h-[40vh] xl:min-h-screen">
 
 
       {/* Texto */}
@@ -35,7 +35,7 @@ export default function GlobeReal() {
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="text-center xl:text-left w-full max-w-xl text-white space-y-6"
+        className="text-center xl:text-left w-full max-w-xl text-white space-y-8"
       >
          <h2 className="text-4xl md:text-6xl lg:text-6xl 2xl:text-8xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-300 to-slate-400">
           Conectamos el mundo
@@ -44,9 +44,7 @@ export default function GlobeReal() {
           Visualiza el impacto global de tu marca. La inteligencia artificial y el diseño se unen para llevar tu mensaje a cualquier rincón del planeta.
         </p>
         <a
-          href="/contact"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/services"
           className="inline-block mt-6 neon-button-cyan bg-black text-white px-8 py-3 sm:px-10 sm:py-4 rounded-full text-sm sm:text-base tracking-widest uppercase font-semibold transition-all hover:scale-105 hover:shadow-[0_0_10px_rgba(255,255,255,0.7)]"
         >
           Explorar
@@ -59,7 +57,7 @@ export default function GlobeReal() {
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="w-full h-[250px] sm:h-[350px] md:h-[480px] xl:h-[450px] 2xl:h-[600px] max-w-xs sm:max-w-sm md:max-w-md 2xl:max-w-xl"
+        className="w-full mt-20 h-[250px] sm:h-[350px] md:h-[480px] xl:h-[450px] 2xl:h-[600px] max-w-xs sm:max-w-sm md:max-w-md 2xl:max-w-xl"
       >
         <Canvas camera={{ position: [0, 0, 7] }}>
           <ambientLight intensity={0.4} />
